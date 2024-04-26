@@ -1,0 +1,57 @@
+defaults:
+  - global@_global_: default
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+seed: 942
+year: 2017
+#model_name: "microsoft/deberta-v3-xsmall"
+model_name: "hf-internal-testing/tiny-random-deberta-v2"
+
+fold: null
+
+data:
+  max_length: 64
+
+split:
+  seed: ${seed}
+  num_folds: 5
+  val_to_test_ratio: 0.5
+
+batch_size:
+  tokenization: 128
+  train: 1
+  eval: 32
+
+model:
+  pooler_dropout: 0.1
+
+optim:
+  lrs:
+    embeddings: 1.0e-6
+    pooler: 1.0e-4
+    classifier: 1.0e-3
+  weight_decay: 1.0e-2
+  beta1: 0.9
+  beta2: 0.999
+  eps: 1.0e-6
+  lr_scheduler: "linear"
+  warmup_ratio: 0.05
+
+trainer:
+  seed: ${seed}
+  #max_steps: 3.0e+6
+  #eval_prop: 3.333e-7
+  max_steps: 1000
+  eval_prop: 0.1
+  torch_compile: false
+  memory_metrics: true
+  wandb: False
+  kwargs:
+    metric_for_best_model: "loss"
+    greater_is_better: false
+
+debug: true
+disable_progress_bar: false
+clean_cache: false

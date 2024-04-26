@@ -1,0 +1,12 @@
+[project]
+name = "misinfo_benchmark_models"
+version = "0.0.1"
+description = ""
+authors = [{ name = "Ivo Verhoeven", email = "i.o.verhoeven@uva.nl" }]
+readme = "README.md"
+
+[tool.ruff.lint.per-file-ignores]
+# Ignore in all `__init__.py` files:
+#   1. `F401` (import violations)
+#   2. `F403` (undefined names)
+"__init__.py" = ["F401", "F403"]
