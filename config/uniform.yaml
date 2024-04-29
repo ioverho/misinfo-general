@@ -6,8 +6,8 @@ defaults:
 
 seed: 942
 year: 2017
-#model_name: "microsoft/deberta-v3-xsmall"
-model_name: "hf-internal-testing/tiny-random-deberta-v2"
+model_name: "microsoft/deberta-v3-xsmall"
+#model_name: "hf-internal-testing/tiny-random-deberta-v2"
 
 fold: null
 
@@ -38,20 +38,23 @@ optim:
   eps: 1.0e-6
   lr_scheduler: "linear"
   warmup_ratio: 0.05
+  patience: 3
+
+logging:
+  project: "misinfo_benchmark_models"
+  name: "bert-base-high-lr"
+  tags: 
+    - ${model_name}
+  group: "${year}-${fold}-${model_name}"
 
 trainer:
   seed: ${seed}
-  #max_steps: 3.0e+6
-  #eval_prop: 3.333e-7
-  max_steps: 1000
-  eval_prop: 0.1
+  max_steps: 3.0e+6
+  eval_prop: 0.01
+  logging_prop: 0.005
   torch_compile: false
   memory_metrics: true
-  wandb: False
+  wandb: false
   kwargs:
     metric_for_best_model: "loss"
     greater_is_better: false
-
-debug: true
-disable_progress_bar: false
-clean_cache: false

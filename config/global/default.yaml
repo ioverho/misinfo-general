@@ -1,13 +1,18 @@
 checkpoints_dir: ./checkpoints
 results_dir: ./results
 data_dir: ./data
-logs_dir: ./logs
 
 # Prints the parsed config
 print_args: True
 
 # Throws error after print_args
 dry_run: False
+
+# Activate debug mode
+debug: false
+
+# Removes the progress bar for snellius logging
+disable_progress_bar: false
 
 hydra:
   run:

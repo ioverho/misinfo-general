@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 
-import duckdb
+from ..meta_data import load_db
 
 
 class SourceToLabelMapper(ABC):
-    def __init__(self, metadata_db_loc) -> None:
-        metadata_db = duckdb.connect(str(metadata_db_loc))
+    def __init__(self, data_dir) -> None:
+        metadata_db = load_db(data_dir)
 
         self.source_to_label = dict()
         for source_tuple in self.fetch_sources(metadata_db=metadata_db):

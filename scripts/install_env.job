@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBATCH --job-name=InstallEnvironment
+#SBATCH --time=01:00:00
+
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gpus-per-node=1
+#SBATCH --cpus-per-task=18
+
+#SBATCH --output=./job_outputs/misinfo_benchmark_models/install/%A.out
+
+module purge
+module load 2023
+module load Anaconda3/2023.07-2
+
+cd $HOME/misinfo_benchmark_models/
+#conda env create -f env_snellius.yaml --solver libmamba --yes
+conda env update -f env_snellius.yaml --solver libmamba --prune

@@ -1,0 +1,29 @@
+name: misinfo_benchmark
+channels:
+  - pytorch
+  - nvidia
+  - huggingface
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12.2
+  - pip
+  - numpy
+  - pytorch-cuda=11.8
+  - pytorch::pytorch=2.2.2
+  - pandas
+  - scipy
+  - scikit-learn=1.4.2
+  - huggingface_hub=0.22.2
+  - transformers=4.37.2
+  - datasets=2.19.0
+  - tokenizers
+  - accelerate
+  - pip:
+    - PyYaml
+    - hydra-core
+    - wandb
+    - duckdb
+    - pyarrow
+    - openpyxl
+    - sentencepiece

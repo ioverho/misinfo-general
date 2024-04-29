@@ -1,15 +1,17 @@
-import math
-import logging
-import sys
-from pathlib import Path
-from datetime import datetime
 import os
+import logging
+import math
+import sys
+from datetime import datetime
+from pathlib import Path
 
-import transformers
-import hydra
-from omegaconf import DictConfig
-import sklearn.metrics as metrics
 import numpy as np
+import transformers
+import datasets
+import hydra
+import wandb
+import sklearn.metrics as metrics
+from omegaconf import DictConfig
 
 from misinfo_benchmark_models import SPECIAL_TOKENS
 from misinfo_benchmark_models.labelling import MBFCBinaryLabeller
@@ -20,7 +22,7 @@ from misinfo_benchmark_models.utils import print_config, save_config
 
 
 @hydra.main(version_base="1.3", config_path="../config", config_name="uniform")
-def test(args: DictConfig):
+def train(args: DictConfig):
     # ==========================================================================
     # Setup
     # ==========================================================================
@@ -28,10 +30,7 @@ def test(args: DictConfig):
     data_dir = Path(args.data_dir).resolve()
     assert data_dir.exists()
     assert (data_dir / "hf").exists()
-    assert (data_dir / "db").exists()
-
-    logs_dir = Path(args.logs_dir).resolve()
-    assert logs_dir.exists()
+    assert (data_dir / "db").exists() or (data_dir / "db_export").exists()
 
     experiment_name = "uniform/"
     experiment_name += f"year[{args.year}]_model[{args.model_name.replace('-', '_').replace('/', '-')}]_length[{args.data.max_length}]"
@@ -55,7 +54,7 @@ def test(args: DictConfig):
         format="[%(asctime)s] %(levelname)s: %(message)s",
         level=logging.INFO,
         handlers=[
-            logging.FileHandler(str(logs_dir) + ".log"),
+            logging.FileHandler(str(checkpoints_dir / "log.txt")),
             logging.StreamHandler(sys.stdout),
         ],
     )
@@ -67,15 +66,14 @@ def test(args: DictConfig):
     save_config(args, results_dir=results_dir)
 
     if args.disable_progress_bar:
+        datasets.disable_progress_bars()
         transformers.utils.logging.disable_progress_bar()
 
     # ==========================================================================
     # Data processing
     # ==========================================================================
     # Build the labeller
-    labeller = MBFCBinaryLabeller(
-        metadata_db_loc=data_dir / "db/misinformation_benchmark_metadata.db"
-    )
+    labeller = MBFCBinaryLabeller(data_dir=data_dir)
     logging.info("Data - Built labeller")
 
     # Load in the tokenizer
@@ -157,6 +155,9 @@ def test(args: DictConfig):
     eval_batches = max(1, int(args.trainer.eval_prop * num_batches))
     logging.info(f"Eval every: {eval_batches}")
 
+    log_batches = max(1, int(args.trainer.logging_prop * num_batches))
+    logging.info(f"Logging every: {log_batches}")
+
     num_warmup_steps = round(args.optim.warmup_ratio * num_batches)
     logging.info(f"Number of warmup steps: {num_warmup_steps}")
 
@@ -189,30 +190,30 @@ def test(args: DictConfig):
         eval_steps=eval_batches,
         per_device_train_batch_size=args.batch_size.train,
         per_device_eval_batch_size=args.batch_size.eval,
-        max_steps=int(args.trainer.max_steps),
+        max_steps=num_batches,
         log_level="info",
-        # logging_strategy="steps",
-        # logging_first_step=True,
-        # logging_steps=eval_batches,
+        logging_strategy="steps",
+        logging_steps=log_batches,
+        logging_first_step=True,
         save_strategy="steps",
         save_steps=eval_batches,
         save_total_limit=1,
         save_safetensors=True,
         save_only_model=True,
         seed=args.trainer.seed,
-        # fp16=True,
-        # tf32=True,
-        # label_names=labeller.int_to_label,
         load_best_model_at_end=True,
         report_to=("wandb" if args.trainer.wandb else "none"),
         skip_memory_metrics=not args.trainer.memory_metrics,
         torch_compile=args.trainer.torch_compile,
+        disable_tqdm=args.disable_progress_bar,
         **(args.trainer.kwargs if args.trainer.kwargs is not None else {}),
     )
 
     # ==========================================================================
     # TRAIN
     # ==========================================================================
+    wandb.init(**args.logging)
+
     trainer = transformers.Trainer(
         model=model,
         args=training_args,
@@ -221,6 +222,11 @@ def test(args: DictConfig):
         eval_dataset=dataset_splits["val"],
         compute_metrics=compute_clf_metrics,
         optimizers=(optimizer, lr_scheduler),
+        callbacks=[
+            transformers.EarlyStoppingCallback(
+                early_stopping_patience=args.optim.patience
+            )
+        ],
     )
 
     trainer.train()
@@ -242,4 +248,4 @@ def test(args: DictConfig):
 
 
 if __name__ == "__main__":
-    test()
+    train()

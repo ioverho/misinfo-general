@@ -1,0 +1,49 @@
+#!/bin/bash
+
+#SBATCH --job-name=misinfo
+#SBATCH --time=00:30:00
+
+# GPU Settings
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gpus-per-node=1
+#SBATCH --partition=gpu
+
+#SBATCH --output=./job_outputs/misinfo_benchmark_models/uniform/%A.out
+
+# Move data to scratch system for fast loading
+# Probably not needed for this project
+mkdir -p /scratch-local/ivov/misinfo_benchmark_models/data/
+LOCAL_DATA_DIR=/scratch-local/ivov/misinfo_benchmark_models/data/
+rm -rf LOCAL_DATA_DIR/*
+ls $LOCAL_DATA_DIR
+rsync -aru $HOME/misinfo_benchmark_models/data/* $LOCAL_DATA_DIR
+ls $LOCAL_DATA_DIR
+
+# Load environment
+module purge
+module load 2023
+module load Anaconda3/2023.07-2
+
+# Make sure we're in the right directory
+cd $HOME/misinfo_benchmark_models/
+
+# Activate environment
+source activate misinfo_benchmark
+
+#++trainer.kwargs.tf32=true \
+srun python src/train_uniform.py \
+    fold=0 \
+    year=2017 \
+    seed=942 \
+    model_name='microsoft/deberta-v3-xsmall' \
+    data.max_length=512 \
+    batch_size.tokenization=1024 \
+    batch_size.train=32 \
+    batch_size.eval=64 \
+    ++trainer.kwargs.fp16=true \
+    ++trainer.kwargs.use_cpu=false \
+    data_dir=$LOCAL_DATA_DIR \
+    disable_progress_bar=true
+
+rsync -aru $LOCAL_DATA_DIR/processed/* $HOME/misinfo_benchmark_models/data/processed
