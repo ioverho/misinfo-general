@@ -42,10 +42,9 @@ optim:
 
 logging:
   project: "misinfo_benchmark_models"
-  name: "bert-base-high-lr"
-  tags: 
-    - ${model_name}
-  group: "${year}-${fold}-${model_name}"
+  entity: "verhivo"
+  tags:
+    - "test runs"
 
 trainer:
   seed: ${seed}

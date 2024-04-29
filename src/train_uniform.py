@@ -14,6 +14,7 @@ import sklearn.metrics as metrics
 from omegaconf import DictConfig
 
 from misinfo_benchmark_models import SPECIAL_TOKENS
+from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
 from misinfo_benchmark_models.labelling import MBFCBinaryLabeller
 from misinfo_benchmark_models.data import process_dataset, collator
 from misinfo_benchmark_models.splitting import uniform_split_dataset
@@ -32,17 +33,21 @@ def train(args: DictConfig):
     assert (data_dir / "hf").exists()
     assert (data_dir / "db").exists() or (data_dir / "db_export").exists()
 
-    experiment_name = "uniform/"
-    experiment_name += f"year[{args.year}]_model[{args.model_name.replace('-', '_').replace('/', '-')}]_length[{args.data.max_length}]"
+    experiment_metadata = ExperimentMetaData.from_args(
+        args=args, generalisation_form="uniform"
+    )
 
     if not args.debug:
         time_stamp = datetime.now().strftime("%d%m%y-%H%M%S")
-        experiment_name += f"-{time_stamp}"
+    else:
+        time_stamp = "debug"
 
-    checkpoints_dir = (Path(args.checkpoints_dir) / experiment_name).resolve()
+    experiment_dir = experiment_metadata.loc + f"/{time_stamp}"
+
+    checkpoints_dir = (Path(args.checkpoints_dir) / experiment_dir).resolve()
     os.makedirs(name=checkpoints_dir, exist_ok=args.debug)
 
-    results_dir = (Path(args.results_dir) / experiment_name).resolve()
+    results_dir = (Path(args.results_dir) / experiment_dir).resolve()
     os.makedirs(name=results_dir, exist_ok=args.debug)
 
     # Check additional arg rules
@@ -182,6 +187,15 @@ def train(args: DictConfig):
         num_training_steps=num_batches,
     )
 
+    if args.trainer.wandb:
+        wandb.init(
+            config=experiment_metadata.config,
+            group=experiment_metadata.generalisation_form,
+            job_type=str(experiment_metadata.dataset_year),
+            allow_val_change=False,
+            **args.logging,
+        )
+
     training_args = transformers.TrainingArguments(
         output_dir=checkpoints_dir,
         do_train=True,
@@ -212,8 +226,6 @@ def train(args: DictConfig):
     # ==========================================================================
     # TRAIN
     # ==========================================================================
-    wandb.init(**args.logging)
-
     trainer = transformers.Trainer(
         model=model,
         args=training_args,

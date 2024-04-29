@@ -136,3 +136,4 @@ dmypy.json
 /dev/*
 /results/*
 /checkpoints/*
+/wandb/
