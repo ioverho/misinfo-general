@@ -6,13 +6,12 @@ defaults:
 
 seed: 942
 year: 2017
-model_name: "microsoft/deberta-v3-xsmall"
-#model_name: "hf-internal-testing/tiny-random-deberta-v2"
+model_name: "microsoft/deberta-v3-base"
 
 fold: null
 
 data:
-  max_length: 64
+  max_length: 512
 
 split:
   seed: ${seed}
@@ -20,17 +19,17 @@ split:
   val_to_test_ratio: 0.5
 
 batch_size:
-  tokenization: 128
-  train: 1
-  eval: 32
+  tokenization: 1024
+  train: 64
+  eval: 128
 
 model:
   pooler_dropout: 0.1
 
 optim:
   lrs:
-    embeddings: 1.0e-6
-    pooler: 1.0e-4
+    embeddings: 3.0e-6
+    pooler: 3.0e-4
     classifier: 1.0e-3
   weight_decay: 1.0e-2
   beta1: 0.9
@@ -38,13 +37,7 @@ optim:
   eps: 1.0e-6
   lr_scheduler: "linear"
   warmup_ratio: 0.05
-  patience: 3
-
-logging:
-  project: "misinfo_benchmark_models"
-  entity: "verhivo"
-  tags:
-    - "test runs"
+  patience: 5
 
 trainer:
   seed: ${seed}
@@ -53,7 +46,15 @@ trainer:
   logging_prop: 0.005
   torch_compile: false
   memory_metrics: true
-  wandb: false
+  wandb: true
   kwargs:
     metric_for_best_model: "loss"
     greater_is_better: false
+    fp16: true
+    use_cpu: false
+
+logging:
+  project: "misinfo_benchmark_models"
+  entity: "verhivo"
+  tags:
+    - "train"

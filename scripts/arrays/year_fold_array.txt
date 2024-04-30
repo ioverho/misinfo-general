@@ -1,0 +1,5 @@
+year=2017 fold=0
+year=2017 fold=1
+year=2017 fold=2
+year=2017 fold=3
+year=2017 fold=4

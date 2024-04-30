@@ -12,7 +12,7 @@ def load_db(data_dir: str):
     expected_export_loc = data_dir / "db_export"
 
     if expected_db_loc.exists():
-        return duckdb.connect(str(expected_db_loc))
+        return duckdb.connect(str(expected_db_loc), read_only=True)
 
     elif expected_export_loc.exists():
         if not expected_db_loc.parent.exists():
@@ -28,7 +28,7 @@ def load_db(data_dir: str):
 
         db_con.close()
 
-        return duckdb.connect(str(expected_db_loc))
+        return duckdb.connect(str(expected_db_loc), read_only=True)
 
     else:
         raise ValueError(f"Could not find a db file at: {expected_db_loc}")

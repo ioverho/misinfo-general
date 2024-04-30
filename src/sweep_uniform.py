@@ -4,6 +4,7 @@ import math
 import sys
 from datetime import datetime
 from pathlib import Path
+import hashlib
 
 import numpy as np
 import transformers
@@ -16,10 +17,10 @@ from omegaconf import DictConfig
 from misinfo_benchmark_models import SPECIAL_TOKENS
 from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
 from misinfo_benchmark_models.labelling import MBFCBinaryLabeller
-from misinfo_benchmark_models.data import process_dataset, collator, static_collator
+from misinfo_benchmark_models.data import process_dataset, collator
 from misinfo_benchmark_models.splitting import uniform_split_dataset
 from misinfo_benchmark_models.metrics import compute_clf_metrics
-from misinfo_benchmark_models.utils import print_config, save_config
+from misinfo_benchmark_models.utils import print_config
 
 
 @hydra.main(version_base="1.3", config_path="../config", config_name="uniform")
@@ -37,18 +38,14 @@ def train(args: DictConfig):
         args=args, generalisation_form="uniform"
     )
 
-    if not args.debug:
-        time_stamp = datetime.now().strftime("%d%m%y-%H%M%S")
-    else:
-        time_stamp = "debug"
+    sweep_id = f"{args.fold:d}{args.model.pooler_dropout:.6e}{args.optim.lrs.embeddings:.6e}{args.optim.lrs.pooler:.6e}{args.optim.lrs.classifier:.6e}"
+    
+    sweep_id_hash = hashlib.md5(sweep_id.encode()).hexdigest()
 
-    experiment_dir = experiment_metadata.loc + f"/{time_stamp}"
+    experiment_dir = experiment_metadata.loc + f"/sweep-{sweep_id_hash}"
 
     checkpoints_dir = (Path(args.checkpoints_dir) / experiment_dir).resolve()
     os.makedirs(name=checkpoints_dir, exist_ok=args.debug)
-
-    results_dir = (Path(args.results_dir) / experiment_dir).resolve()
-    os.makedirs(name=results_dir, exist_ok=args.debug)
 
     # Check additional arg rules
     assert isinstance(args.fold, int)
@@ -59,16 +56,12 @@ def train(args: DictConfig):
         format="[%(asctime)s] %(levelname)s: %(message)s",
         level=logging.INFO,
         handlers=[
-            logging.FileHandler(str(checkpoints_dir / "log.txt")),
             logging.StreamHandler(sys.stdout),
         ],
     )
 
     # Print config for logging purposes
     print_config(args, logger=logging)
-
-    save_config(args, results_dir=checkpoints_dir)
-    save_config(args, results_dir=results_dir)
 
     if args.disable_progress_bar:
         datasets.disable_progress_bars()
@@ -215,7 +208,6 @@ def train(args: DictConfig):
         save_safetensors=True,
         save_only_model=True,
         seed=args.trainer.seed,
-        load_best_model_at_end=True,
         report_to=("wandb" if args.trainer.wandb else "none"),
         skip_memory_metrics=not args.trainer.memory_metrics,
         torch_compile=args.trainer.torch_compile,
@@ -229,34 +221,14 @@ def train(args: DictConfig):
     trainer = transformers.Trainer(
         model=model,
         args=training_args,
-        data_collator=static_collator if args.trainer.torch_compile else collator,
+        data_collator=collator,
         train_dataset=dataset_splits["train"],
         eval_dataset=dataset_splits["val"],
         compute_metrics=compute_clf_metrics,
         optimizers=(optimizer, lr_scheduler),
-        callbacks=[
-            transformers.EarlyStoppingCallback(
-                early_stopping_patience=args.optim.patience
-            )
-        ],
     )
 
     trainer.train()
-
-    predict_output = trainer.predict(test_dataset=dataset_splits["test"])
-
-    conf_mat = metrics.confusion_matrix(
-        y_true=np.argmax(predict_output.predictions, axis=1),
-        y_pred=predict_output.label_ids,
-    )
-
-    np.savetxt(
-        fname=results_dir / "conf_mat.csv",
-        X=conf_mat.astype(int),
-        delimiter=",",
-        encoding="utf8",
-        fmt="%d",
-    )
 
 
 if __name__ == "__main__":

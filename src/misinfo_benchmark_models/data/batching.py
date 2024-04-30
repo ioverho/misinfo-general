@@ -25,3 +25,18 @@ def collator(features: typing.List[typing.Dict]) -> typing.Dict[str, typing.Any]
     batch["labels"] = torch.tensor(list(map(itemgetter("label"), features)))
 
     return batch
+
+def static_collator(features: typing.List[typing.Dict]) -> typing.Dict[str, typing.Any]:
+    batch = dict()
+
+    batch["input_ids"] = torch.stack(
+        list(map(lambda x: itemgetter("input_ids")(x), features)), axis=0
+    )
+
+    batch["attention_mask"] = torch.stack(
+        list(map(lambda x: itemgetter("attention_mask")(x), features)), axis=0
+    )
+
+    batch["labels"] = torch.tensor(list(map(itemgetter("label"), features)))
+
+    return batch

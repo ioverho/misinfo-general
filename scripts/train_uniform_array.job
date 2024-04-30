@@ -8,8 +8,9 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=gpu
+#SBATCH --array=1-5
 
-#SBATCH --output=./job_outputs/misinfo_benchmark_models/uniform/%A.out
+#SBATCH --output=./job_outputs/misinfo_benchmark_models/uniform/%A-%a.out
 
 # Move data to scratch system for fast loading
 # Probably not needed for this project
@@ -31,10 +32,9 @@ cd $HOME/misinfo_benchmark_models/
 # Activate environment
 source activate misinfo_benchmark
 
-#++trainer.kwargs.tf32=true \
+HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_fold_array.txt
+
 srun python src/train_uniform.py \
-    fold=0 \
-    year=2017 \
     seed=942 \
     model_name='microsoft/deberta-v3-base' \
     data.max_length=512 \
@@ -44,9 +44,7 @@ srun python src/train_uniform.py \
     ++trainer.kwargs.fp16=true \
     ++trainer.kwargs.use_cpu=false \
     ++trainer.memory_metrics=false \
-    ++trainer.torch_compile=false \
     ++optim.patience=5 \
     data_dir=$LOCAL_DATA_DIR \
-    disable_progress_bar=true
-
-rsync -aru $LOCAL_DATA_DIR/processed/* $HOME/misinfo_benchmark_models/data/processed
+    disable_progress_bar=true \
+    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)

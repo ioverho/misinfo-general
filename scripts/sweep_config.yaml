@@ -1,0 +1,35 @@
+method: bayes
+metric:
+  goal: minimize
+  name: eval/loss
+parameters:
+  model.pooler_dropout:
+    distribution: q_uniform
+    max: 0.2
+    min: 0
+    q: 0.05
+  optim.lrs.embeddings:
+    distribution: log_uniform_values
+    max: 1.0e-5
+    min: 1.0e-7
+  optim.lrs.pooler:
+    distribution: log_uniform_values
+    max: 1.0e-3
+    min: 1.0e-5
+  optim.lrs.classifier:
+    distribution: log_uniform_values
+    max: 1.0e-2
+    min: 1.0e-4
+program: src/sweep_uniform.py
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - disable_progress_bar=true
+  - data_dir="/scratch-local/ivov/misinfo_benchmark_models/data/"
+  - fold=2
+  - optim.warmup_ratio=0.0
+  - trainer.eval_prop=0.05
+  - trainer.logging_prop=0.05
+  - trainer.memory_metrics=false
+  - ${args_no_hyphens}
