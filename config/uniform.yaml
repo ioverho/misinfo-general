@@ -28,16 +28,16 @@ model:
 
 optim:
   lrs:
-    embeddings: 3.0e-6
-    pooler: 3.0e-4
+    embeddings: 1.0e-6
+    pooler: 1.0e-4
     classifier: 1.0e-3
   weight_decay: 1.0e-2
   beta1: 0.9
   beta2: 0.999
   eps: 1.0e-6
   lr_scheduler: "linear"
-  warmup_ratio: 0.05
-  patience: 5
+  warmup_ratio: 0.01
+  patience: 10
 
 trainer:
   seed: ${seed}
@@ -58,3 +58,4 @@ logging:
   entity: "verhivo"
   tags:
     - "train"
+    - "longer training run"

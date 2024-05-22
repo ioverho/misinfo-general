@@ -44,7 +44,6 @@ srun python src/train_uniform.py \
     ++trainer.kwargs.fp16=true \
     ++trainer.kwargs.use_cpu=false \
     ++trainer.memory_metrics=false \
-    ++optim.patience=5 \
     data_dir=$LOCAL_DATA_DIR \
     disable_progress_bar=true \
     $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
