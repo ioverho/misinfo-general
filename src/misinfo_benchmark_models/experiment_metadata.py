@@ -7,10 +7,11 @@ from omegaconf import OmegaConf
 @dataclass(frozen=True, unsafe_hash=True, slots=True)
 class ExperimentMetaData:
     generalisation_form: str
-    dataset_year: int
+    year: int
     model_name: str
     fold: int
-    config: typing.Dict[str, typing.Any]
+
+    config: typing.Optional[typing.Dict[str, typing.Any]] = None
 
     @staticmethod
     def convert_to_safe_model_name(name: str):
@@ -27,7 +28,7 @@ class ExperimentMetaData:
     @property
     def loc(self):
         loc = f"{self.generalisation_form}/"
-        loc += f"{self.dataset_year}/"
+        loc += f"{self.year}/"
         loc += f"{self.model_name}/"
         loc += f"{self.fold}"
 
@@ -41,7 +42,7 @@ class ExperimentMetaData:
 
         meta_data = cls(
             generalisation_form=generalisation_form,
-            dataset_year=str(args.year),
+            year=str(args.year),
             model_name=safe_model_name,
             fold=str(args.fold),
             config={
@@ -62,3 +63,16 @@ class ExperimentMetaData:
         )
 
         return meta_data
+
+    @property
+    def project_name(self):
+        return f"misinfo_benchmark_models/{self.generalisation_form}"
+
+    @property
+    def task_name(self):
+        if "/" in self.model_name:
+            model_name = self.convert_to_safe_model_name(self.model_name)
+        else:
+            model_name = self.model_name
+
+        return f"year[{self.year}]_model[{model_name}]_fold[{self.fold}]"

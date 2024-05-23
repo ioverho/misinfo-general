@@ -137,3 +137,5 @@ dmypy.json
 /results/*
 /checkpoints/*
 /wandb/
+test_experiment_framework.py
+/analysis/

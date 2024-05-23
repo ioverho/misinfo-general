@@ -2,7 +2,6 @@ import os
 import logging
 import math
 import sys
-from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -12,6 +11,7 @@ import hydra
 import wandb
 import sklearn.metrics as metrics
 from omegaconf import DictConfig
+from clearml import Task
 
 from misinfo_benchmark_models import SPECIAL_TOKENS
 from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
@@ -37,18 +37,17 @@ def train(args: DictConfig):
         args=args, generalisation_form="uniform"
     )
 
-    if not args.debug:
-        time_stamp = datetime.now().strftime("%d%m%y-%H%M%S")
-    else:
-        time_stamp = "debug"
+    # ClearML logging ==========================================================
+    Task.set_random_seed(args.seed)
 
-    experiment_dir = experiment_metadata.loc + f"/{time_stamp}"
+    task = Task.init(
+        project_name=experiment_metadata.project_name,
+        task_name=experiment_metadata.task_name,
+        task_type="training",
+    )
 
-    checkpoints_dir = (Path(args.checkpoints_dir) / experiment_dir).resolve()
-    os.makedirs(name=checkpoints_dir, exist_ok=args.debug)
-
-    results_dir = (Path(args.results_dir) / experiment_dir).resolve()
-    os.makedirs(name=results_dir, exist_ok=args.debug)
+    checkpoints_dir = (Path(args.checkpoints_dir) / f"{task.task_id}").resolve()
+    os.makedirs(name=checkpoints_dir, exist_ok=True)
 
     # Check additional arg rules
     assert isinstance(args.fold, int)
@@ -68,7 +67,6 @@ def train(args: DictConfig):
     print_config(args, logger=logging)
 
     save_config(args, results_dir=checkpoints_dir)
-    save_config(args, results_dir=results_dir)
 
     if args.disable_progress_bar:
         datasets.disable_progress_bars()
@@ -216,7 +214,11 @@ def train(args: DictConfig):
         save_only_model=True,
         seed=args.trainer.seed,
         load_best_model_at_end=True,
-        report_to=("wandb" if args.trainer.wandb else "none"),
+        report_to=(
+            []
+            + (["clearml"] if args.trainer.clearml else [])
+            + (["wandb"] if args.trainer.wandb else [])
+        ),
         skip_memory_metrics=not args.trainer.memory_metrics,
         torch_compile=args.trainer.torch_compile,
         disable_tqdm=args.disable_progress_bar,
@@ -251,11 +253,16 @@ def train(args: DictConfig):
     )
 
     np.savetxt(
-        fname=results_dir / "conf_mat.csv",
+        fname=checkpoints_dir / "test_split_conf_mat.csv",
         X=conf_mat.astype(int),
         delimiter=",",
         encoding="utf8",
         fmt="%d",
+    )
+
+    task.upload_artifact(
+        name="test_split_conf_mat",
+        artifact_object=checkpoints_dir / "test_split_conf_mat.csv",
     )
 
 

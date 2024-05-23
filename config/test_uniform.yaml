@@ -1,0 +1,23 @@
+defaults:
+  - global@_global_: default
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+seed: 942
+
+year: null
+eval_year: null
+
+fold: null
+
+checkpoint:
+  generalisation_form: uniform
+  year: ${year}
+  fold: ${fold}
+  model_name: null
+
+batch_size:
+  tokenization: 1024
+  train: 64
+  eval: 128

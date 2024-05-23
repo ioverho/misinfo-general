@@ -5,9 +5,9 @@ defaults:
   - override hydra/job_logging: disabled
 
 seed: 942
+
 year: 2017
 model_name: "microsoft/deberta-v3-base"
-
 fold: null
 
 data:
@@ -46,6 +46,7 @@ trainer:
   logging_prop: 0.005
   torch_compile: false
   memory_metrics: true
+  clearml: true
   wandb: true
   kwargs:
     metric_for_best_model: "loss"
