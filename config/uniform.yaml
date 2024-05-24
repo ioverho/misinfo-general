@@ -47,7 +47,7 @@ trainer:
   torch_compile: false
   memory_metrics: true
   clearml: true
-  wandb: true
+  wandb: false
   kwargs:
     metric_for_best_model: "loss"
     greater_is_better: false

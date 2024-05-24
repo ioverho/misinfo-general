@@ -3,16 +3,16 @@ import sys
 from pathlib import Path
 import csv
 
-import transformers
-import datasets
-import hydra
-from omegaconf import DictConfig
-import duckdb
-import yaml
-import torch
-from torch.utils.data import DataLoader
-import pandas as pd
 from clearml import Task
+from omegaconf import DictConfig, OmegaConf
+from torch.utils.data import DataLoader
+import datasets
+import duckdb
+import hydra
+import pandas as pd
+import torch
+import transformers
+import yaml
 
 from misinfo_benchmark_models import SPECIAL_TOKENS
 from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
@@ -76,10 +76,13 @@ def test(args: DictConfig):
 
     task = Task.init(
         project_name=model_meta_data.project_name,
-        task_name=f"year[{args.eval_year}]_fold[{args.fold}]_model_id[{train_task.task_id}]",
+        task_name=f"eval_year[{args.eval_year}]_fold[{args.fold}]",
         task_type="testing",
-        tags=[f"model_year[{args.year}]"],
+        tags=[f"train_year[{args.year}]", f"checkpoint[{train_task.task_id}]"],
     )
+
+    task.connect(OmegaConf.to_container(args, resolve=True))
+    task.set_parameter(name="model_checkpoint", value=train_task.task_id)
 
     # Setup logging
     logging.basicConfig(

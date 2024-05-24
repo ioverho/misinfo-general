@@ -4,14 +4,14 @@ import math
 import sys
 from pathlib import Path
 
-import numpy as np
-import transformers
+from clearml import Task
+from omegaconf import DictConfig, OmegaConf
 import datasets
 import hydra
-import wandb
+import numpy as np
 import sklearn.metrics as metrics
-from omegaconf import DictConfig
-from clearml import Task
+import transformers
+import wandb
 
 from misinfo_benchmark_models import SPECIAL_TOKENS
 from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
@@ -46,6 +46,9 @@ def train(args: DictConfig):
         task_type="training",
     )
 
+    task.connect(OmegaConf.to_container(args, resolve=True))
+
+    # Save checkpoints to a directory with the ClearML ID to align everything
     checkpoints_dir = (Path(args.checkpoints_dir) / f"{task.task_id}").resolve()
     os.makedirs(name=checkpoints_dir, exist_ok=True)
 
