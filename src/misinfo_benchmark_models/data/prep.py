@@ -95,7 +95,10 @@ def process_dataset(
     logger.info("Data - Finished label mapping")
 
     dataset = dataset.remove_columns(
-        column_names=["author", "title", "content", "domain", "raw_url"]
+        column_names=list(
+            set(dataset.column_names) - 
+            {"source", "publication_date", "input_ids", "attention_mask", "num_tokens", "label"}
+            )
     )
 
     logger.info("Data - Saving processed dataset to disk")

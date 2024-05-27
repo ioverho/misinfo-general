@@ -28,15 +28,15 @@ model:
 
 optim:
   lrs:
-    embeddings: 1.0e-6
-    pooler: 1.0e-4
-    classifier: 1.0e-3
+    embeddings: 1.0e-7
+    pooler: 1.0e-5
+    classifier: 5.0e-4
   weight_decay: 1.0e-2
   beta1: 0.9
   beta2: 0.999
-  eps: 1.0e-6
+  eps: 1.0e-8
   lr_scheduler: "linear"
-  warmup_ratio: 0.01
+  warmup_ratio: 0.05
   patience: 10
 
 trainer:

@@ -1,4 +1,11 @@
 year=2017 fold=0
+year=2018 fold=0
+year=2019 fold=0
+year=2020 fold=0
+year=2021 fold=0
+year=2022 fold=0
+
+year=2017 fold=0
 year=2017 fold=1
 year=2017 fold=2
 year=2017 fold=3
