@@ -211,12 +211,27 @@ def test(args: DictConfig):
     # ==========================================================================
     # Model loading
     # ==========================================================================
+    logging.info("Device")
+
+    cuda_available = torch.cuda.is_available()
+    if cuda_available:
+        logging.info("Device - CUDA available: True")
+        logging.info(f"Device - num GPUs: {torch.cuda.device_count()}")
+        logging.info(f"Device - current device: {torch.cuda.current_device()}")
+
+        device = torch.cuda.current_device()
+    else:
+        logging.info("Device - CUDA available: False")
+        logging.info("Device - <<< RUNNING ON CPU >>>")
+        device = torch.device("cpu")
+
     logging.info("Model - Loading model")
+
     model = transformers.AutoModelForSequenceClassification.from_pretrained(
         checkpoint_loc,
         num_labels=len(labeller.int_to_label),
         ignore_mismatched_sizes=True,
-    )
+    ).to(device)
 
     # Add special tokens to the embeddings layer
     model.resize_token_embeddings(
@@ -255,10 +270,11 @@ def test(args: DictConfig):
     for batch in dataloader:
         with torch.inference_mode():
             logits = model.forward(
-                input_ids=batch["input_ids"], attention_mask=batch["attention_mask"]
+                input_ids=batch["input_ids"].to(device),
+                attention_mask=batch["attention_mask"].to(device),
             ).logits
 
-            preds = torch.argmax(input=logits, dim=-1)
+            preds = torch.argmax(input=logits, dim=-1).cpu()
 
         with open(checkpoints_dir / f"{args.eval_year}_preds.csv", "a") as f:
             writer = csv.writer(f)
