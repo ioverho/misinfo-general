@@ -28,21 +28,24 @@ model:
 
 optim:
   lrs:
-    embeddings: 1.0e-7
-    pooler: 1.0e-5
-    classifier: 5.0e-4
+    embeddings: 5.0e-7
+    pooler: 5.0e-5
+    classifier: 1.0e-3
   weight_decay: 1.0e-2
   beta1: 0.9
   beta2: 0.999
   eps: 1.0e-8
-  lr_scheduler: "linear"
-  warmup_ratio: 0.05
-  patience: 10
+  lr_scheduler: "polynomial"
+  warmup_ratio: 0.032
+  patience: 3
+  scheduler_kwargs:
+    lr_end: 1.0e-8
+    power: 0.3163
 
 trainer:
   seed: ${seed}
-  max_steps: 3.0e+6
-  eval_prop: 0.01
+  max_steps: 2.0e+6
+  eval_prop: 0.05
   logging_prop: 0.005
   torch_compile: false
   memory_metrics: true

@@ -96,9 +96,15 @@ def process_dataset(
 
     dataset = dataset.remove_columns(
         column_names=list(
-            set(dataset.column_names) - 
-            {"source", "publication_date", "input_ids", "attention_mask", "num_tokens", "label"}
-            )
+            set(dataset.column_names)
+            - {
+                "article_id",
+                "input_ids",
+                "attention_mask",
+                "num_tokens",
+                "label",
+            }
+        )
     )
 
     logger.info("Data - Saving processed dataset to disk")

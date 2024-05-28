@@ -186,6 +186,7 @@ def train(args: DictConfig):
         optimizer=optimizer,
         num_warmup_steps=num_warmup_steps,
         num_training_steps=num_batches,
+        scheduler_specific_kwargs=args.optim.scheduler_kwargs,
     )
 
     if args.trainer.wandb:

@@ -9,7 +9,6 @@ from torch.utils.data import DataLoader
 import datasets
 import duckdb
 import hydra
-import pandas as pd
 import torch
 import transformers
 import yaml
@@ -25,6 +24,16 @@ from misinfo_benchmark_models.splitting import uniform_split_dataset
 def test(args: DictConfig):
     if args.year == args.eval_year:
         assert args.fold is not None
+
+    # Setup logging
+    logging.basicConfig(
+        format="[%(asctime)s] %(levelname)s: %(message)s",
+        level=logging.INFO,
+        handlers=[
+            # logging.FileHandler(str(checkpoints_dir / "log.txt")),
+            logging.StreamHandler(sys.stdout),
+        ],
+    )
 
     # ==========================================================================
     # Setup
@@ -74,6 +83,9 @@ def test(args: DictConfig):
     # ClearML logging ==========================================================
     Task.set_random_seed(args.seed)
 
+    if args.debug:
+        Task.set_offline(offline_mode=True)
+
     task = Task.init(
         project_name=model_meta_data.project_name,
         task_name=f"eval_year[{args.eval_year}]_fold[{args.fold}]",
@@ -84,19 +96,13 @@ def test(args: DictConfig):
     task.connect(OmegaConf.to_container(args, resolve=True))
     task.set_parameter(name="model_checkpoint", value=train_task.task_id)
 
-    # Setup logging
-    logging.basicConfig(
-        format="[%(asctime)s] %(levelname)s: %(message)s",
-        level=logging.INFO,
-        handlers=[
-            # logging.FileHandler(str(checkpoints_dir / "log.txt")),
-            logging.StreamHandler(sys.stdout),
-        ],
-    )
-
     if args.disable_progress_bar:
         datasets.disable_progress_bars()
         transformers.utils.logging.disable_progress_bar()
+
+    logging.info(
+        f"Found train checkpoint at {model_meta_data.project_name}/{model_meta_data.task_name}"
+    )
 
     # ==========================================================================
     # Data processing
@@ -145,11 +151,6 @@ def test(args: DictConfig):
         ).fetchall()
     }
 
-    logging.info("Data - Adding an `article_id` column")
-    dataset = dataset.sort(column_names=["publication_date", "source"]).map(
-        lambda _, idx: {"article_id": f"{args.year:4d}-{idx:07d}"}, with_indices=True
-    )
-
     if args.year == args.eval_year:
         logging.info("Data - Splitting dataset into folds")
         dataset_splits = uniform_split_dataset(
@@ -166,47 +167,6 @@ def test(args: DictConfig):
         dataset = dataset.filter(lambda example: example["source"] in year_sources)
 
     dataset = dataset.sort(column_names=["article_id"])
-
-    if args.debug:
-        logging.info("Data - Verifying metadata and data alignment")
-        # Verify metadata db and hf are aligned
-        batch_article_ids = pd.DataFrame.from_dict({"article_id": dataset["label"]})  # noqa: F841
-
-        db_con.sql(
-            """
-            CREATE OR REPLACE TEMP TABLE article_id_checks
-            AS SELECT * FROM batch_article_ids
-            """
-        )
-
-        query = db_con.sql(
-            """
-            SELECT *
-            FROM
-                articles INNER JOIN article_id_checks
-                ON articles.article_id = article_id_checks.article_id
-            ORDER BY article_id_checks.article_id
-            """
-        )
-
-        i = 0
-        while batch := query.fetchmany(2048):
-            for db_example in batch:
-                hf_example = dataset[i]
-
-                assert hf_example["label"] == db_example[0], (i, db_example, hf_example)
-                assert hf_example["source"] == db_example[2], (
-                    i,
-                    db_example,
-                    hf_example,
-                )
-                assert hf_example["publication_date"] == db_example[5], (
-                    i,
-                    db_example,
-                    hf_example,
-                )
-
-                i += 1
 
     # ==========================================================================
     # Model loading
