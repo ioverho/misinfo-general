@@ -135,21 +135,25 @@ def test(args: DictConfig):
 
     # Added steps for eval =====================================================
     # Metadata database
-    db_con = duckdb.connect(
+    metadata_db = duckdb.connect(
         "./data/db/misinformation_benchmark_metadata.db", read_only=True
     )
 
-    year_sources = {
-        source
-        for (source,) in db_con.sql(
-            f"""
-            SELECT DISTINCT source
-            FROM articles
-            WHERE year = {args.year}
-            ORDER BY source
-            """
-        ).fetchall()
-    }
+    permitted_article_ids = metadata_db.sql(
+        """
+        SELECT article_id
+        FROM
+            articles INNER JOIN (
+                SELECT DISTINCT source
+                FROM articles
+                WHERE year = 2017
+                ) AS year_sources
+            ON articles.source = year_sources.source
+        WHERE year = 2017
+        """
+    ).fetchall()
+
+    permitted_article_ids = set(map(lambda x: x[0], permitted_article_ids))
 
     if args.year == args.eval_year:
         logging.info("Data - Splitting dataset into folds")
@@ -164,7 +168,9 @@ def test(args: DictConfig):
         dataset = dataset_splits["test"]
     else:
         logging.info("Data - Filtering dataset")
-        dataset = dataset.filter(lambda example: example["source"] in year_sources)
+        dataset = dataset.filter(
+            lambda example: example["article_id"] in permitted_article_ids
+        )
 
     dataset = dataset.sort(column_names=["article_id"])
 
