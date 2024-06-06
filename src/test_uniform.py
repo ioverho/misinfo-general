@@ -175,12 +175,6 @@ def test(args: DictConfig):
         ).fetchall()
 
         permitted_article_ids = set(map(lambda x: x[0], permitted_article_ids))
-        
-        #dataset = dataset.filter(
-        #    lambda example: example["article_id"] in permitted_article_ids,
-        #    num_proc=72,
-        #    keep_in_memory=True,
-        #)
 
         # Convert article id to index in the dataset
         article_id_to_dataset_id = {idx: i for i, idx in enumerate(dataset["article_id"])}

@@ -1,0 +1,72 @@
+defaults:
+  - global@_global_: default
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+generalisation_form: null
+
+seed: 942
+
+year: 2017
+model_name: "microsoft/deberta-v3-base"
+fold: null
+
+data:
+  max_length: 512
+
+split:
+  seed: ${seed}
+  num_folds: 5
+  val_to_test_ratio: 0.5
+  val_prop: 0.2
+  test_prop: 0.1
+
+batch_size:
+  tokenization: 1024
+  train: 64
+  eval: 128
+
+model:
+  pooler_dropout: 0.1
+
+optim:
+  lrs:
+    embeddings: 5.0e-7
+    pooler: 5.0e-5
+    classifier: 1.0e-3
+  weight_decay: 1.0e-2
+  beta1: 0.9
+  beta2: 0.999
+  eps: 1.0e-8
+  lr_scheduler: "polynomial"
+  warmup_ratio: 0.0213
+  early_stopping_kwargs:
+    early_stopping_patience: 2
+    early_stopping_threshold: 5.0e-4
+  scheduler_kwargs:
+    lr_end: 1.0e-8
+    power: 3.163
+    #power: 2.0
+
+trainer:
+  seed: ${seed}
+  max_steps: 3.0e+6
+  eval_prop: 0.05
+  logging_prop: 0.005
+  torch_compile: false
+  memory_metrics: true
+  clearml: true
+  wandb: false
+  kwargs:
+    metric_for_best_model: "loss"
+    greater_is_better: false
+    fp16: true
+    use_cpu: false
+
+logging:
+  project: "misinfo_benchmark_models"
+  entity: "verhivo"
+  tags:
+    - "train"
+    - "longer training run"

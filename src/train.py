@@ -17,7 +17,10 @@ from misinfo_benchmark_models import SPECIAL_TOKENS
 from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
 from misinfo_benchmark_models.labelling import MBFCBinaryLabeller
 from misinfo_benchmark_models.data import process_dataset, collator, static_collator
-from misinfo_benchmark_models.splitting import uniform_split_dataset
+from misinfo_benchmark_models.splitting import (
+    uniform_split_dataset,
+    publisher_split_dataset,
+)
 from misinfo_benchmark_models.metrics import compute_clf_metrics
 from misinfo_benchmark_models.utils import print_config, save_config
 
@@ -33,8 +36,10 @@ def train(args: DictConfig):
     assert (data_dir / "hf").exists()
     assert (data_dir / "db").exists() or (data_dir / "db_export").exists()
 
+    assert args.generalisation_form is not None
+
     experiment_metadata = ExperimentMetaData.from_args(
-        args=args, generalisation_form="uniform"
+        args=args, generalisation_form=args.generalisation_form
     )
 
     # ClearML logging ==========================================================
@@ -109,13 +114,24 @@ def train(args: DictConfig):
     )
 
     # Split the dataset
-    dataset_splits = uniform_split_dataset(
-        dataset=dataset,
-        seed=args.split.seed,
-        num_folds=args.split.num_folds,
-        val_to_test_ratio=args.split.val_to_test_ratio,
-        cur_fold=args.fold,
-    )
+    if args.generalisation_form == "uniform":
+        dataset_splits = uniform_split_dataset(
+            dataset=dataset,
+            seed=args.split.seed,
+            num_folds=args.split.num_folds,
+            val_to_test_ratio=args.split.val_to_test_ratio,
+            cur_fold=args.fold,
+        )
+
+    elif args.generalisation_form == "publisher":
+        dataset_splits = publisher_split_dataset(
+            dataset=dataset,
+            db_loc="./data/db/misinformation_benchmark_metadata.db",
+            seed=args.seed,
+            year=args.year,
+            val_prop=args.val_prop,
+            test_prop=args.test_prop,
+        )
 
     logging.info("Data - Finished splitting dataset")
     logging.info(f"Data - Train size: {dataset_splits['train'].num_rows}")
@@ -242,7 +258,7 @@ def train(args: DictConfig):
         optimizers=(optimizer, lr_scheduler),
         callbacks=[
             transformers.EarlyStoppingCallback(
-                **args.optim.early_stopping_kwargs,                
+                **args.optim.early_stopping_kwargs,
             )
         ],
     )
