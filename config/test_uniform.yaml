@@ -20,4 +20,9 @@ checkpoint:
 batch_size:
   tokenization: 1024
   train: 64
-  eval: 128
+  eval: 512
+
+accelerator:
+  device_placement: true
+  mixed_precision: "fp16"
+  cpu: false

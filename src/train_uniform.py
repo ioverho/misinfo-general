@@ -242,7 +242,7 @@ def train(args: DictConfig):
         optimizers=(optimizer, lr_scheduler),
         callbacks=[
             transformers.EarlyStoppingCallback(
-                early_stopping_patience=args.optim.patience
+                **args.optim.early_stopping_kwargs,                
             )
         ],
     )

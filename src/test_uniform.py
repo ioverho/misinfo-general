@@ -1,9 +1,12 @@
-import logging
-import sys
+from itertools import groupby
 from pathlib import Path
 import csv
+import logging
+import sys
 
+from accelerate import Accelerator
 from clearml import Task
+from datasets import concatenate_datasets
 from omegaconf import DictConfig, OmegaConf
 from torch.utils.data import DataLoader
 import datasets
@@ -91,6 +94,8 @@ def test(args: DictConfig):
         task_name=f"eval_year[{args.eval_year}]_fold[{args.fold}]",
         task_type="testing",
         tags=[f"train_year[{args.year}]", f"checkpoint[{train_task.task_id}]"],
+        reuse_last_task_id=False,
+        continue_last_task=False,
     )
 
     task.connect(OmegaConf.to_container(args, resolve=True))
@@ -101,7 +106,7 @@ def test(args: DictConfig):
         transformers.utils.logging.disable_progress_bar()
 
     logging.info(
-        f"Found train checkpoint at {model_meta_data.project_name}/{model_meta_data.task_name}"
+        f"Found train checkpoint at {train_task.task_id}: {model_meta_data.project_name}/{model_meta_data.task_name}"
     )
 
     # ==========================================================================
@@ -124,7 +129,7 @@ def test(args: DictConfig):
 
     dataset = process_dataset(
         data_dir=data_dir,
-        year=train_config["year"],
+        year=args.eval_year,
         model_name=train_config["model_name"],
         max_length=train_config["data"]["max_length"],
         batch_size=args.batch_size.tokenization,
@@ -139,22 +144,6 @@ def test(args: DictConfig):
         "./data/db/misinformation_benchmark_metadata.db", read_only=True
     )
 
-    permitted_article_ids = metadata_db.sql(
-        """
-        SELECT article_id
-        FROM
-            articles INNER JOIN (
-                SELECT DISTINCT source
-                FROM articles
-                WHERE year = 2017
-                ) AS year_sources
-            ON articles.source = year_sources.source
-        WHERE year = 2017
-        """
-    ).fetchall()
-
-    permitted_article_ids = set(map(lambda x: x[0], permitted_article_ids))
-
     if args.year == args.eval_year:
         logging.info("Data - Splitting dataset into folds")
         dataset_splits = uniform_split_dataset(
@@ -167,10 +156,50 @@ def test(args: DictConfig):
 
         dataset = dataset_splits["test"]
     else:
+        # Filter out all articles that came from a publisher not in the training set
         logging.info("Data - Filtering dataset")
-        dataset = dataset.filter(
-            lambda example: example["article_id"] in permitted_article_ids
+
+        # Filter out all articles from publishers not in the training data
+        permitted_article_ids = metadata_db.sql(
+            f"""
+            SELECT article_id
+            FROM
+                articles INNER JOIN (
+                    SELECT DISTINCT source
+                    FROM articles
+                    WHERE year = {args.year}
+                    ) AS year_sources
+                ON articles.source = year_sources.source
+            WHERE year = {args.eval_year}
+            """
+        ).fetchall()
+
+        permitted_article_ids = set(map(lambda x: x[0], permitted_article_ids))
+        
+        #dataset = dataset.filter(
+        #    lambda example: example["article_id"] in permitted_article_ids,
+        #    num_proc=72,
+        #    keep_in_memory=True,
+        #)
+
+        # Convert article id to index in the dataset
+        article_id_to_dataset_id = {idx: i for i, idx in enumerate(dataset["article_id"])}
+
+        # Keep only the dataset indices which are allowed
+        permitted_dataset_ids = sorted(
+            [article_id_to_dataset_id[k] for k in article_id_to_dataset_id.keys() & permitted_article_ids]
         )
+
+        # Merge the list of indices into a list of contiguous ranges
+        # Ugly, but sooo much fast than a HuggingFace filter/select on Snellius
+        out = []
+        for _, g in groupby(enumerate(permitted_dataset_ids), lambda k: k[0] - k[1]):
+            start = next(g)[1]
+            end = list(v for _, v in g) or [start]
+            out.append(range(start, end[-1] + 1))
+
+        # Concatenate the sliced datasets together
+        dataset = concatenate_datasets([dataset.select(r, keep_in_memory=True) for r in out])
 
     dataset = dataset.sort(column_names=["article_id"])
 
@@ -185,13 +214,15 @@ def test(args: DictConfig):
         logging.info(f"Device - num GPUs: {torch.cuda.device_count()}")
         logging.info(f"Device - current device: {torch.cuda.current_device()}")
 
-        device = torch.cuda.current_device()
     else:
         logging.info("Device - CUDA available: False")
         logging.info("Device - <<< RUNNING ON CPU >>>")
-        device = torch.device("cpu")
 
     logging.info("Model - Loading model")
+
+    accelerator = Accelerator(**args.accelerator)
+
+    device = accelerator.device
 
     model = transformers.AutoModelForSequenceClassification.from_pretrained(
         checkpoint_loc,
@@ -233,8 +264,12 @@ def test(args: DictConfig):
     # Overwrite the preds file
     (checkpoints_dir / f"{args.eval_year}_preds.csv").unlink(missing_ok=True)
 
-    for batch in dataloader:
-        with torch.inference_mode():
+    model, dataloader = accelerator.prepare(
+        model, dataloader
+    )
+
+    for i, batch in enumerate(dataloader):
+        with torch.inference_mode(True):
             logits = model.forward(
                 input_ids=batch["input_ids"].to(device),
                 attention_mask=batch["attention_mask"].to(device),
@@ -247,11 +282,16 @@ def test(args: DictConfig):
             for row in zip(batch["article_ids"], preds.tolist(), batch["labels"]):
                 writer.writerow(row)
 
+        if i == 0 or i % 10 == 0 or i == len(dataloader) - 1:
+            logging.info(f"Evaluation - {i} / {len(dataloader)} [{(i / len(dataloader))*100:.2f}%]")
+
+    logging.info("Evaluation - Uploading artifacts")
     task.upload_artifact(
         name=f"{args.eval_year}_preds.csv",
         artifact_object=checkpoints_dir / f"{args.eval_year}_preds.csv",
     )
 
+    logging.info("Finished evaluation")
 
 if __name__ == "__main__":
     test()

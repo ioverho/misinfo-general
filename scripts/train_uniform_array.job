@@ -8,7 +8,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=gpu
-#SBATCH --array=6-6
+#SBATCH --array=2-2
 
 #SBATCH --output=./job_outputs/misinfo_benchmark_models/uniform/%A-%a.out
 
@@ -49,3 +49,5 @@ srun python src/train_uniform.py \
     data_dir=$LOCAL_DATA_DIR \
     disable_progress_bar=true \
     $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
+
+rsync -aru $LOCAL_DATA_DIR/processed/* $HOME/misinfo_benchmark_models/data/processed

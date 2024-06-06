@@ -36,15 +36,18 @@ optim:
   beta2: 0.999
   eps: 1.0e-8
   lr_scheduler: "polynomial"
-  warmup_ratio: 0.032
-  patience: 3
+  warmup_ratio: 0.0213
+  early_stopping_kwargs:
+    early_stopping_patience: 2
+    early_stopping_threshold: 5.0e-4
   scheduler_kwargs:
     lr_end: 1.0e-8
-    power: 0.3163
+    power: 3.163
+    #power: 2.0
 
 trainer:
   seed: ${seed}
-  max_steps: 2.0e+6
+  max_steps: 3.0e+6
   eval_prop: 0.05
   logging_prop: 0.005
   torch_compile: false
