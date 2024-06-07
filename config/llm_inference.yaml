@@ -1,0 +1,31 @@
+defaults:
+  - global@_global_: default
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+seed: 942
+
+year: 2017
+#model_name: "meta-llama/Meta-Llama-3-8B-Instruct"
+model_name: "hf-internal-testing/tiny-random-LlamaForCausalLM"
+
+data:
+  max_length: 8
+  num_offset_tokens: 1
+
+batch_size: 4
+
+model:
+  pooler_dropout: 0.1
+  set_pad_token: true
+  compile: true
+
+acceleration:
+  device_map: auto
+  torch_dtype: auto
+  bits_and_bytes: false
+  low_cpu_mem_usage: true
+  data_device: "cpu"
+  max_gpu_memory: "0GB"
+  max_cpu_memory: "4GB"

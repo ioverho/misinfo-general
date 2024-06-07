@@ -20,11 +20,12 @@ dependencies:
   - tokenizers
   - accelerate
   - pip:
-    - PyYaml
-    - hydra-core
-    - duckdb
-    - pyarrow
-    - openpyxl
-    - sentencepiece
-    - clearml
-    - wandb
+      - PyYaml
+      - hydra-core
+      - duckdb
+      - pyarrow
+      - openpyxl
+      - sentencepiece
+      - clearml
+      - wandb
+      - python-dotenv
