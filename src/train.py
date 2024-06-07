@@ -129,8 +129,8 @@ def train(args: DictConfig):
             db_loc="./data/db/misinformation_benchmark_metadata.db",
             seed=args.seed,
             year=args.year,
-            val_prop=args.val_prop,
-            test_prop=args.test_prop,
+            val_prop=args.split.val_prop,
+            test_prop=args.split.test_prop,
         )
 
     logging.info("Data - Finished splitting dataset")
