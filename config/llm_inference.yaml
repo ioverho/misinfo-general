@@ -7,25 +7,25 @@ defaults:
 seed: 942
 
 year: 2017
-#model_name: "meta-llama/Meta-Llama-3-8B-Instruct"
-model_name: "hf-internal-testing/tiny-random-LlamaForCausalLM"
+model_name: "meta-llama/Meta-Llama-3-8B-Instruct"
+#model_name: "hf-internal-testing/tiny-random-LlamaForCausalLM"
 
 data:
-  max_length: 8
+  max_length: 512
   num_offset_tokens: 1
 
-batch_size: 4
+batch_size: 32
 
 model:
-  pooler_dropout: 0.1
   set_pad_token: true
-  compile: true
+  compile: false
+  better_transformer: true
 
 acceleration:
   device_map: auto
-  torch_dtype: auto
+  torch_dtype: "fp16"
   bits_and_bytes: false
   low_cpu_mem_usage: true
-  data_device: "cpu"
-  max_gpu_memory: "0GB"
-  max_cpu_memory: "4GB"
+  data_device: "cuda:0"
+  max_gpu_memory: "40GB"
+  max_cpu_memory: "120GB"

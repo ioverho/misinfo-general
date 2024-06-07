@@ -1,25 +1,23 @@
 #!/bin/bash
 
 #SBATCH --job-name=misinfo
-#SBATCH --time=02:00:00
+#SBATCH --time=08:00:00
 
 # GPU Settings
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=gpu
-#SBATCH --array=1-6
+#SBATCH --array=1-1
 
-#SBATCH --output=./job_outputs/misinfo_benchmark_models/publisher/%A-%a.out
+#SBATCH --output=./job_outputs/misinfo_benchmark_models/llm_inference/%A-%a.out
 
 # Move data to scratch system for fast loading
 # Probably not needed for this project
 mkdir -p /scratch-local/ivov/misinfo_benchmark_models/data/
 LOCAL_DATA_DIR=/scratch-local/ivov/misinfo_benchmark_models/data/
 rm -rf LOCAL_DATA_DIR/*
-ls $LOCAL_DATA_DIR
 rsync -aru $HOME/misinfo_benchmark_models/data/* $LOCAL_DATA_DIR
-ls $LOCAL_DATA_DIR
 
 # Load environment
 module purge
@@ -32,25 +30,22 @@ cd $HOME/misinfo_benchmark_models/
 # Activate environment
 source activate misinfo_benchmark
 
-HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_fold_array.txt
+HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_array.txt
 
-srun python src/train.py \
-    generalisation_form='publisher' \
+srun python src/llm_inference.py \
     seed=942 \
-    model_name='microsoft/deberta-v3-base' \
+    year=2017 \
+    model_name='meta-llama/Meta-Llama-3-8B-Instruct' \
     data.max_length=512 \
-    split.val_prop=0.2 \
-    split.test_prop=0.1 \
-    batch_size.tokenization=1024 \
-    batch_size.train=64 \
-    batch_size.eval=128 \
-    trainer.clearml=true \
-    trainer.wandb=false \
-    ++trainer.kwargs.fp16=true \
-    ++trainer.kwargs.use_cpu=false \
-    ++trainer.memory_metrics=false \
+    model.compile=false \
+    model.better_transformer=true \
+    batch_size=16 \
+    acceleration.device_map='auto' \
+    acceleration.torch_dtype='fp16' \
+    acceleration.low_cpu_mem_usage=true \
+    acceleration.data_device='cuda:0' \
+    acceleration.max_gpu_memory='40GB' \
+    acceleration.max_cpu_memory='120GB' \
     data_dir=$LOCAL_DATA_DIR \
     disable_progress_bar=true \
     $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
-
-rsync -aru $LOCAL_DATA_DIR/processed/* $HOME/misinfo_benchmark_models/data/processed

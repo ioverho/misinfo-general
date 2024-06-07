@@ -26,6 +26,14 @@ TASK_DESCRIPTION = "Does the following text come from a reliable news publisher?
 DOMAIN_PREMISE = "Does this article come from a reliable news publisher? 'yes' or 'no':"
 ANSWERS = ["yes", "no"]
 
+NAME_TO_DTYPE = {
+    "float32": torch.float32,
+    "fp32": torch.float32,
+    "float16": torch.float16,
+    "fp16": torch.float16,
+    "bfloat16": torch.bfloat16,
+    "bf16": torch.bfloat16,
+}
 
 def generate_user_query(article):
     user_query = "\n\n".join(
@@ -173,7 +181,7 @@ def inference(args: DictConfig):
         logging.info("Model - Not using quantized inference.")
 
     if args.acceleration.torch_dtype is not None:
-        model_loading_kwargs["torch_dtype"] = args.acceleration.torch_dtype
+        model_loading_kwargs["torch_dtype"] = NAME_TO_DTYPE[args.acceleration.torch_dtype]
 
     # Decide where we are going to be keeping the data before letting
     # the accelerator handle the forward pass
@@ -208,9 +216,16 @@ def inference(args: DictConfig):
     if args.model.compile:
         logging.info("Model - Compiling model")
 
-        model = torch.compile(model, mode="default", dynamic=True)
+        model = torch.compile(model, mode="default")
 
         logging.info("Model - Finished compiling model")
+
+    if args.model.better_transformer:
+        try:
+            model = model.to_bettertransformer()
+            logging.info("Model - Moved to `BetterTransformers`")
+        except ValueError:
+            logging.info("Model - `BetterTransformers` already natively applied")
 
     # ==========================================================================
     # Compute domain conditional
@@ -230,19 +245,11 @@ def inference(args: DictConfig):
         ),
         return_tensors="pt",
         pad_to_multiple_of=64,
-    )
+    ).to(data_device)
 
     logging.info("Domain Conditional - Starting forward pass")
 
     with torch.inference_mode(True):
-        with torch.backends.cuda.sdp_kernel(
-            enable_flash=True, enable_math=False, enable_mem_efficient=False
-        ):
-            tokenized_domain_conditionals = {
-                k: (obj.to(data_device) if isinstance(obj, torch.Tensor) else obj)
-                for k, obj in tokenized_domain_conditionals.items()
-            }
-
         model_output = model(**tokenized_domain_conditionals)
 
     domain_conditional_probabilities = F.softmax(model_output.logits, dim=1)[
@@ -275,7 +282,7 @@ def inference(args: DictConfig):
             return_tensors="pt",
             return_special_tokens_mask=True,
             padding="longest",
-            truncation=True,
+            truncation=False,
         )
 
         truncated_article_texts = tokenizer.batch_decode(
@@ -304,17 +311,9 @@ def inference(args: DictConfig):
             return_tensors="pt",
             padding=True,
             pad_to_multiple_of=64,
-        )
+        ).to(data_device)
 
         with torch.inference_mode(True):
-            with torch.backends.cuda.sdp_kernel(
-                enable_flash=True, enable_math=False, enable_mem_efficient=False
-            ):
-                tokenized_prompts = {
-                    k: (obj.to(data_device) if isinstance(obj, torch.Tensor) else obj)
-                    for k, obj in tokenized_prompts.items()
-                }
-
             model_output = model(**tokenized_prompts)
 
         answer_probabilities = F.softmax(model_output.logits, dim=1)[
@@ -335,13 +334,10 @@ def inference(args: DictConfig):
         all_probability_decisions.append(probability_decisions)
         all_pmi_dc_decisions.append(pmi_dc_decisions)
 
-        if batch_num == 0 or batch_num == num_batches - 1 or (batch_num + 1) % 10 == 0:
+        if batch_num == 0 or batch_num == num_batches - 1 or (batch_num + 1) % 100 == 0:
             logging.info(
                 f"Inference - Batch {batch_num}/{num_batches} [{batch_num/num_batches*100:.2f}%]"
             )
-
-        if batch_num == 100:
-            break
 
     logging.info("Inference - Finished")
 
