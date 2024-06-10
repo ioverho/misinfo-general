@@ -1,5 +1,6 @@
 from functools import reduce
 from itertools import groupby
+import logging
 
 import duckdb
 import numpy as np
@@ -104,8 +105,8 @@ def publisher_split_dataset(
         lambda a, b: a | b, label_bias_selected_sources.values()
     )
 
-    print(
-        f"Reserved {len(chosen_test_sources) / len(label_bias_source_count) * 100:.2f}% of publishers for testing"
+    logging.info(
+        f"Data - Reserved {len(chosen_test_sources) / len(label_bias_source_count) * 100:.2f}% of publishers for testing"
     )
 
     # Fetch the article_ids for the train and test splits
