@@ -9,7 +9,7 @@ from misinfo_benchmark_models.splitting.utils import (
 )
 
 
-def publisher_split_dataset(
+def covid_split_dataset(
     dataset: datasets.Dataset,
     db_loc: str,
     seed: int,
