@@ -20,6 +20,7 @@ from misinfo_benchmark_models.data import process_dataset, collator, static_coll
 from misinfo_benchmark_models.splitting import (
     uniform_split_dataset,
     publisher_split_dataset,
+    covid_split_dataset,
 )
 from misinfo_benchmark_models.metrics import compute_clf_metrics
 from misinfo_benchmark_models.utils import print_config, save_config
@@ -129,6 +130,15 @@ def train(args: DictConfig):
             db_loc="./data/db/misinformation_benchmark_metadata.db",
             seed=args.seed,
             year=args.year,
+            val_prop=args.split.val_prop,
+            test_prop=args.split.test_prop,
+        )
+
+    elif args.generalisation_form == "covid":
+        dataset_splits = covid_split_dataset(
+            dataset=dataset,
+            db_loc="./data/db/misinformation_benchmark_metadata.db",
+            seed=args.seed,
             val_prop=args.split.val_prop,
             test_prop=args.split.test_prop,
         )
