@@ -8,7 +8,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=gpu
-#SBATCH --array=2-2
+#SBATCH --array=6-6
 
 #SBATCH --output=./job_outputs/misinfo_benchmark_models/uniform-eval/%A-%a.out
 
@@ -36,37 +36,37 @@ source activate misinfo_benchmark
 
 HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_fold_array.txt
 
-echo -e "\n\n>>> 2017 <<<\n\n"
-srun python src/test_uniform.py \
-    seed=942 \
-    eval_year=2017 \
-    checkpoint.model_name="microsoft/deberta-v3-base"\
-    disable_progress_bar=true \
-    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
+#echo -e "\n\n>>> 2017 <<<\n\n"
+#srun python src/test_uniform.py \
+#    seed=942 \
+#    eval_year=2017 \
+#    checkpoint.model_name="microsoft/deberta-v3-base"\
+#    disable_progress_bar=true \
+#    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
 
-echo -e "\n\n>>> 2018 <<<\n\n"
-srun python src/test_uniform.py \
-    seed=942 \
-    eval_year=2018 \
-    checkpoint.model_name="microsoft/deberta-v3-base"\
-    disable_progress_bar=true \
-    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
+#echo -e "\n\n>>> 2018 <<<\n\n"
+#srun python src/test_uniform.py \
+#    seed=942 \
+#    eval_year=2018 \
+#    checkpoint.model_name="microsoft/deberta-v3-base"\
+#    disable_progress_bar=true \
+#    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
 
-echo -e "\n\n>>> 2019 <<<\n\n"
-srun python src/test_uniform.py \
-    seed=942 \
-    eval_year=2019 \
-    checkpoint.model_name="microsoft/deberta-v3-base"\
-    disable_progress_bar=true \
-    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
+#echo -e "\n\n>>> 2019 <<<\n\n"
+#srun python src/test_uniform.py \
+#    seed=942 \
+#    eval_year=2019 \
+#    checkpoint.model_name="microsoft/deberta-v3-base"\
+#    disable_progress_bar=true \
+#    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
 
-echo -e "\n\n>>> 2020 <<<\n\n"
-srun python src/test_uniform.py \
-    seed=942 \
-    eval_year=2020 \
-    checkpoint.model_name="microsoft/deberta-v3-base"\
-    disable_progress_bar=true \
-    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
+#echo -e "\n\n>>> 2020 <<<\n\n"
+#srun python src/test_uniform.py \
+#    seed=942 \
+#    eval_year=2020 \
+#    checkpoint.model_name="microsoft/deberta-v3-base"\
+#    disable_progress_bar=true \
+#    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
 
 echo -e "\n\n>>> 2021 <<<\n\n"
 srun python src/test_uniform.py \
