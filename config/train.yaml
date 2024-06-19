@@ -63,10 +63,3 @@ trainer:
     greater_is_better: false
     fp16: true
     use_cpu: false
-
-logging:
-  project: "misinfo_benchmark_models"
-  entity: "verhivo"
-  tags:
-    - "train"
-    - "longer training run"
