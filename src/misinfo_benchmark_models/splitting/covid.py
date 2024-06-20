@@ -3,13 +3,8 @@ import logging
 
 import duckdb
 import datasets
-from datasets import concatenate_datasets, DatasetDict
 from sklearn.model_selection import StratifiedShuffleSplit
 
-from misinfo_benchmark_models.splitting.utils import (
-    #subset_dataset_by_article_id,
-    subset_dataset_by_dataset_id,
-)
 
 def subset_dataset_by_dataset_id(dataset: datasets.Dataset, dataset_ids: set):
     # Keep only the dataset indices which are allowed
@@ -32,7 +27,6 @@ def subset_dataset_by_dataset_id(dataset: datasets.Dataset, dataset_ids: set):
 
 
 def subset_dataset_by_article_id(dataset: datasets.Dataset, article_ids: set):
-    
     dataset = dataset.filter(
         lambda x: x["article_id"] in article_ids,
         keep_in_memory=True,
@@ -40,6 +34,7 @@ def subset_dataset_by_article_id(dataset: datasets.Dataset, article_ids: set):
     )
 
     return dataset
+
 
 def covid_split_dataset(
     dataset: datasets.Dataset,

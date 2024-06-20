@@ -1,0 +1,141 @@
+import logging
+
+import duckdb
+import numpy as np
+import datasets
+from sklearn.model_selection import StratifiedShuffleSplit
+
+from misinfo_benchmark_models.splitting.utils import (
+    subset_dataset_by_article_id,
+    subset_dataset_by_dataset_id,
+)
+
+
+def topic_split_dataset(
+    dataset: datasets.Dataset,
+    year: int,
+    seed: int,
+    db_loc: str = "./data/db/misinformation_benchmark_metadata.db",
+    val_prop: float = 0.2,
+    test_prop: float = 0.1,
+):
+    metadata_db = duckdb.connect(db_loc, read_only=True)
+
+    num_articles = len(
+        metadata_db.sql(
+            f"""
+            SELECT *
+            FROM articles
+            WHERE year = {year}
+            """
+        )
+    )
+
+    # Get sizes for each of the (hyper-)topics
+    topic_sizes = metadata_db.sql(
+        f"""
+        SELECT hyper_topic, count(1) as topic_size
+        FROM (
+            SELECT topic_id, imbalanced_hyper_cluster as hyper_topic
+            FROM topics
+            WHERE year = {year}
+            ) AS topics
+            INNER JOIN articles
+            ON topics.topic_id = articles.topic_id
+        GROUP BY hyper_topic
+        """
+    ).fetchall()
+
+    # Get paired sorted lists of hyper_topic size and id
+    hyper_topic_ids, hyper_cluster_proportion = list(
+        zip(
+            *map(
+                lambda x: (x[0], x[1] / num_articles),
+                sorted(topic_sizes, key=lambda x: x[1]),
+            )
+        )
+    )
+
+    # Select as many hyper_topics as needed to get as close to the desired test set size
+    num_of_hyper_topics_for_test_set = (
+        np.argmin(np.abs(np.cumsum(hyper_cluster_proportion) - val_prop)) + 1
+    )
+
+    logging.info(
+        f"Data - Reserving {num_of_hyper_topics_for_test_set} hyper-topics for test set"
+    )
+    logging.info(
+        f"Data - Contains {np.sum(hyper_cluster_proportion[: num_of_hyper_topics_for_test_set])*100:.2f}% of articles"
+    )
+
+    hyper_topic_ids_for_test_set = hyper_topic_ids[:num_of_hyper_topics_for_test_set]
+
+    # Get the article_id for the train and test sets
+    # Make sure these sets are disjoint
+    test_article_ids = metadata_db.sql(
+        f"""
+        SELECT article_id
+        FROM (
+            SELECT topic_id, imbalanced_hyper_cluster as hyper_topic
+            FROM topics
+            WHERE year = {year} AND hyper_topic IN {hyper_topic_ids_for_test_set}
+            ) AS topics
+            INNER JOIN articles
+            ON topics.topic_id = articles.topic_id
+        """
+    ).fetchall()
+
+    train_article_ids = metadata_db.sql(
+        f"""
+        SELECT article_id
+        FROM (
+            SELECT topic_id, imbalanced_hyper_cluster as hyper_topic
+            FROM topics
+            WHERE year = {year} AND hyper_topic NOT IN {hyper_topic_ids_for_test_set}
+            ) AS topics
+            INNER JOIN articles
+            ON topics.topic_id = articles.topic_id
+        """
+    ).fetchall()
+
+    train_article_ids = set(map(lambda x: x[0], train_article_ids))
+    test_article_ids = set(map(lambda x: x[0], test_article_ids))
+
+    assert (
+        len(train_article_ids & test_article_ids) == 0
+    ), "Overlap in train and test article_ids"
+
+    logging.info("Data - Fetched all of the article_ids")
+
+    train_dataset = subset_dataset_by_article_id(
+        dataset=dataset, article_ids=train_article_ids
+    )
+    test_dataset = subset_dataset_by_article_id(
+        dataset=dataset, article_ids=test_article_ids
+    )
+
+    logging.info("Data - Built train/test datasets")
+
+    actual_test_size = test_prop / (1 - val_prop)
+    splitter = StratifiedShuffleSplit(
+        n_splits=1,
+        train_size=(1 - actual_test_size),
+        test_size=actual_test_size,
+        random_state=seed,
+    )
+
+    train_idx, val_idx = next(
+        splitter.split(X=train_dataset["label"], y=train_dataset["label"])
+    )
+
+    dataset_splits = datasets.DatasetDict(
+        {
+            "train": subset_dataset_by_dataset_id(train_dataset, train_idx),
+            "val": subset_dataset_by_dataset_id(train_dataset, val_idx),
+            "test": test_dataset,
+        }
+    )
+
+    logging.info("Data - Built train/test/val datasets")
+
+    return dataset_splits
