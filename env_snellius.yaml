@@ -22,7 +22,7 @@ dependencies:
   - pip:
       - PyYaml
       - hydra-core
-      - duckdb
+      - duckdb>=1.0.0
       - pyarrow
       - openpyxl
       - sentencepiece

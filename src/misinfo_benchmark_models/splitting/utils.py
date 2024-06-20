@@ -8,7 +8,7 @@ def subset_dataset_by_dataset_id(dataset: datasets.Dataset, dataset_ids: set):
     permitted_dataset_ids = sorted(dataset_ids)
 
     # Merge the list of indices into a list of contiguous ranges
-    # Ugly, but sooo much fast than a HuggingFace filter/select on Snellius
+    # Ugly, but sooo much faster than a HuggingFace filter/select on Snellius
     out = []
     for _, g in groupby(enumerate(permitted_dataset_ids), lambda k: k[0] - k[1]):
         start = next(g)[1]

@@ -1,0 +1,57 @@
+#!/bin/bash
+
+#SBATCH --job-name=misinfo
+#SBATCH --time=02:00:00
+
+# GPU Settings
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gpus-per-node=1
+#SBATCH --partition=gpu
+
+#SBATCH --output=./job_outputs/misinfo_benchmark_models/covid/%A.out
+
+# Move data to scratch system for fast loading
+# Probably not needed for this project
+mkdir -p /scratch-local/ivov/misinfo_benchmark_models/data/
+LOCAL_DATA_DIR=/scratch-local/ivov/misinfo_benchmark_models/data/
+rm -rf LOCAL_DATA_DIR/*
+rsync -aru $HOME/misinfo_benchmark_models/data/* $LOCAL_DATA_DIR
+
+# Load environment
+module purge
+module load 2023
+module load Anaconda3/2023.07-2
+
+# Make sure we're in the right directory
+cd $HOME/misinfo_benchmark_models/
+
+# Activate environment
+source activate misinfo_benchmark
+
+srun python src/train.py \
+    generalisation_form='covid' \
+    year='all' \
+    fold=0 \
+    seed=942 \
+    model_name='microsoft/deberta-v3-base' \
+    data.max_length=512 \
+    split.val_prop=0.2 \
+    split.test_prop=0.1 \
+    batch_size.tokenization=1024 \
+    batch_size.train=64 \
+    batch_size.eval=128 \
+    optim.warmup_ratio=0.0128 \
+    optim.lrs.embeddings=1.0e-7 \
+    optim.lrs.classifier=1.0e-5 \
+    optim.lrs.embeddings=5.0e-4 \
+    trainer.max_steps=5.0e+6 \
+    trainer.clearml=true \
+    trainer.wandb=false \
+    ++trainer.kwargs.fp16=true \
+    ++trainer.kwargs.use_cpu=false \
+    ++trainer.memory_metrics=false \
+    data_dir=$LOCAL_DATA_DIR \
+    disable_progress_bar=true \
+
+rsync -aru $LOCAL_DATA_DIR/processed/* $HOME/misinfo_benchmark_models/data/processed

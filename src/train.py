@@ -12,6 +12,8 @@ import numpy as np
 import sklearn.metrics as metrics
 import transformers
 import wandb
+import datasets
+from datasets import concatenate_datasets
 
 from misinfo_benchmark_models import SPECIAL_TOKENS
 from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
@@ -37,7 +39,10 @@ def train(args: DictConfig):
     assert (data_dir / "hf").exists()
     assert (data_dir / "db").exists() or (data_dir / "db_export").exists()
 
+    # Check additional arg rules
     assert args.generalisation_form is not None
+    assert isinstance(args.fold, int)
+    assert args.fold >= 0 and args.fold < args.split.num_folds
 
     experiment_metadata = ExperimentMetaData.from_args(
         args=args, generalisation_form=args.generalisation_form
@@ -57,10 +62,6 @@ def train(args: DictConfig):
     # Save checkpoints to a directory with the ClearML ID to align everything
     checkpoints_dir = (Path(args.checkpoints_dir) / f"{task.task_id}").resolve()
     os.makedirs(name=checkpoints_dir, exist_ok=True)
-
-    # Check additional arg rules
-    assert isinstance(args.fold, int)
-    assert args.fold >= 0 and args.fold < args.split.num_folds
 
     # Setup logging
     logging.basicConfig(
@@ -103,16 +104,37 @@ def train(args: DictConfig):
     logging.info("Data - Fetched tokenizer")
     logging.info(f"Data - Added {new_num_tokens} new tokens")
 
-    dataset = process_dataset(
-        data_dir=data_dir,
-        year=args.year,
-        model_name=args.model_name,
-        max_length=args.data.max_length,
-        batch_size=args.batch_size.tokenization,
-        tokenizer=tokenizer,
-        labeller=labeller,
-        logger=logging,
-    )
+    if args.year == "all":
+        
+        dataset = concatenate_datasets(
+            [
+                process_dataset(
+                    data_dir=data_dir,
+                    year=year,
+                    model_name=args.model_name,
+                    max_length=args.data.max_length,
+                    batch_size=args.batch_size.tokenization,
+                    tokenizer=tokenizer,
+                    labeller=labeller,
+                    logger=logging,
+                ) for year in [2017, 2018, 2019, 2020, 2021, 2022]
+            ]
+        )
+
+        logging.info("Data - Concatenated all dataset years together")
+        logging.info(f"Data - Num rows: {dataset.num_rows}")
+
+    else:
+        dataset = process_dataset(
+            data_dir=data_dir,
+            year=args.year,
+            model_name=args.model_name,
+            max_length=args.data.max_length,
+            batch_size=args.batch_size.tokenization,
+            tokenizer=tokenizer,
+            labeller=labeller,
+            logger=logging,
+        )
 
     # Split the dataset
     if args.generalisation_form == "uniform":

@@ -1,13 +1,45 @@
+from itertools import groupby
+import logging
+
 import duckdb
 import datasets
 from datasets import concatenate_datasets, DatasetDict
 from sklearn.model_selection import StratifiedShuffleSplit
 
 from misinfo_benchmark_models.splitting.utils import (
-    subset_dataset_by_article_id,
+    #subset_dataset_by_article_id,
     subset_dataset_by_dataset_id,
 )
 
+def subset_dataset_by_dataset_id(dataset: datasets.Dataset, dataset_ids: set):
+    # Keep only the dataset indices which are allowed
+    permitted_dataset_ids = sorted(dataset_ids)
+
+    # Merge the list of indices into a list of contiguous ranges
+    # Ugly, but sooo much faster than a HuggingFace filter/select on Snellius
+    out = []
+    for _, g in groupby(enumerate(permitted_dataset_ids), lambda k: k[0] - k[1]):
+        start = next(g)[1]
+        end = list(v for _, v in g) or [start]
+        out.append(range(start, end[-1] + 1))
+
+    # Concatenate the sliced datasets together
+    dataset = datasets.concatenate_datasets(
+        [dataset.select(r, keep_in_memory=True) for r in out]
+    )
+
+    return dataset
+
+
+def subset_dataset_by_article_id(dataset: datasets.Dataset, article_ids: set):
+    
+    dataset = dataset.filter(
+        lambda x: x["article_id"] in article_ids,
+        keep_in_memory=True,
+        num_proc=17,
+    )
+
+    return dataset
 
 def covid_split_dataset(
     dataset: datasets.Dataset,
@@ -44,23 +76,21 @@ def covid_split_dataset(
         )
     )
 
+    logging.info("Data - Fetched article_ids")
+
     assert (
         len(covid_article_ids_set & covid_article_ids_anti_set) == 0
-    ), "Overlap between datasets."
-
-    dataset = DatasetDict.load_from_disk("../data/hf/")
-
-    full_dataset = concatenate_datasets(
-        [dataset[str(year)] for year in [2017, 2018, 2019, 2020, 2021, 2022]]
-    )
+    ), "Overlap between dataset `article_id`."
 
     train_dataset = subset_dataset_by_article_id(
-        dataset=full_dataset, article_ids=covid_article_ids_anti_set
+        dataset=dataset, article_ids=covid_article_ids_anti_set
     )
 
     test_dataset = subset_dataset_by_article_id(
-        dataset=full_dataset, article_ids=covid_article_ids_set
+        dataset=dataset, article_ids=covid_article_ids_set
     )
+
+    logging.info("Data - Built train/test datasets")
 
     actual_test_size = test_prop / (1 - val_prop)
     splitter = StratifiedShuffleSplit(
@@ -81,5 +111,7 @@ def covid_split_dataset(
             "test": test_dataset,
         }
     )
+
+    logging.info("Data - Built train/test/val datasets")
 
     return dataset_splits
