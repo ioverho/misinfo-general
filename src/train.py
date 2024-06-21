@@ -12,8 +12,6 @@ import numpy as np
 import sklearn.metrics as metrics
 import transformers
 import wandb
-import datasets
-from datasets import concatenate_datasets
 
 from misinfo_benchmark_models import SPECIAL_TOKENS
 from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
@@ -104,46 +102,7 @@ def train(args: DictConfig):
     logging.info("Data - Fetched tokenizer")
     logging.info(f"Data - Added {new_num_tokens} new tokens")
 
-    if args.generalisation_form == "covid":
-        
-        dataset = datasets.DatasetDict({
-            "train": process_dataset(
-                    data_dir=data_dir,
-                    year="covid_train",
-                    model_name=args.model_name,
-                    max_length=args.data.max_length,
-                    batch_size=args.batch_size.tokenization,
-                    tokenizer=tokenizer,
-                    labeller=labeller,
-                    logger=logging,
-                ),
-            
-            "val": process_dataset(
-                    data_dir=data_dir,
-                    year="covid_val",
-                    model_name=args.model_name,
-                    max_length=args.data.max_length,
-                    batch_size=args.batch_size.tokenization,
-                    tokenizer=tokenizer,
-                    labeller=labeller,
-                    logger=logging,
-                ),
-            
-            "test": process_dataset(
-                    data_dir=data_dir,
-                    year="covid_test",
-                    model_name=args.model_name,
-                    max_length=args.data.max_length,
-                    batch_size=args.batch_size.tokenization,
-                    tokenizer=tokenizer,
-                    labeller=labeller,
-                    logger=logging,
-                ),
-        })
-
-        logging.info("Data - Concatenated all COVID datasets together")
-
-    else:
+    if args.generalisation_form != "covid":
         dataset = process_dataset(
             data_dir=data_dir,
             year=args.year,
@@ -189,7 +148,42 @@ def train(args: DictConfig):
 
     elif args.generalisation_form == "covid":
         # COVID is special, have already done the text-processing and splitting
-        dataset_splits = dataset
+        dataset_splits = datasets.DatasetDict(
+            {
+                "train": process_dataset(
+                    data_dir=data_dir,
+                    year="covid_train",
+                    model_name=args.model_name,
+                    max_length=args.data.max_length,
+                    batch_size=args.batch_size.tokenization,
+                    tokenizer=tokenizer,
+                    labeller=labeller,
+                    logger=logging,
+                ),
+                "val": process_dataset(
+                    data_dir=data_dir,
+                    year="covid_val",
+                    model_name=args.model_name,
+                    max_length=args.data.max_length,
+                    batch_size=args.batch_size.tokenization,
+                    tokenizer=tokenizer,
+                    labeller=labeller,
+                    logger=logging,
+                ),
+                "test": process_dataset(
+                    data_dir=data_dir,
+                    year="covid_test",
+                    model_name=args.model_name,
+                    max_length=args.data.max_length,
+                    batch_size=args.batch_size.tokenization,
+                    tokenizer=tokenizer,
+                    labeller=labeller,
+                    logger=logging,
+                ),
+            }
+        )
+
+        logging.info("Data - Concatenated all COVID datasets together")
 
     logging.info("Data - Finished splitting dataset")
     logging.info(f"Data - Train size: {dataset_splits['train'].num_rows}")

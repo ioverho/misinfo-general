@@ -17,10 +17,10 @@ from misinfo_benchmark_models import SPECIAL_TOKENS
 from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
 from misinfo_benchmark_models.labelling import MBFCBinaryLabeller
 from misinfo_benchmark_models.data import process_dataset, eval_collator
-from misinfo_benchmark_models.splitting import publisher_split_dataset
+from misinfo_benchmark_models.splitting import topic_split_dataset
 
 
-@hydra.main(version_base="1.3", config_path="../config", config_name="test_publisher")
+@hydra.main(version_base="1.3", config_path="../config", config_name="test_topic")
 def test(args: DictConfig):
     assert args.year is not None
     assert args.checkpoint.model_name is not None
@@ -129,6 +129,7 @@ def test(args: DictConfig):
     logging.info("Data - Fetched tokenizer")
     logging.info(f"Data - Added {new_num_tokens} new tokens")
 
+    # Process the data
     dataset = process_dataset(
         data_dir=data_dir,
         year=args.year,
@@ -140,7 +141,8 @@ def test(args: DictConfig):
         logger=logging,
     )
 
-    dataset = publisher_split_dataset(
+    # Split the dataset to test for the generalisation form
+    dataset = topic_split_dataset(
         dataset=dataset,
         db_loc="./data/db/misinformation_benchmark_metadata.db",
         seed=train_config["seed"],
@@ -210,7 +212,7 @@ def test(args: DictConfig):
     )
 
     # Overwrite the preds file
-    preds_file_name = f"preds_generalisation[publisher]_year[{args.year}].csv"
+    preds_file_name = f"preds_generalisation[topic]_year[{args.year}].csv"
 
     (checkpoints_dir / preds_file_name).unlink(missing_ok=True)
 
