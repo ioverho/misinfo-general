@@ -22,7 +22,7 @@ from misinfo_benchmark_models.data import process_dataset, collator, static_coll
 from misinfo_benchmark_models.splitting import (
     uniform_split_dataset,
     publisher_split_dataset,
-    covid_split_dataset,
+    topic_split_dataset,
 )
 from misinfo_benchmark_models.metrics import compute_clf_metrics
 from misinfo_benchmark_models.utils import print_config, save_config
@@ -104,25 +104,44 @@ def train(args: DictConfig):
     logging.info("Data - Fetched tokenizer")
     logging.info(f"Data - Added {new_num_tokens} new tokens")
 
-    if args.year == "all":
+    if args.generalisation_form == "covid":
         
-        dataset = concatenate_datasets(
-            [
-                process_dataset(
+        dataset = datasets.DatasetDict({
+            "train": process_dataset(
                     data_dir=data_dir,
-                    year=year,
+                    year="covid_train",
                     model_name=args.model_name,
                     max_length=args.data.max_length,
                     batch_size=args.batch_size.tokenization,
                     tokenizer=tokenizer,
                     labeller=labeller,
                     logger=logging,
-                ) for year in [2017, 2018, 2019, 2020, 2021, 2022]
-            ]
-        )
+                ),
+            
+            "val": process_dataset(
+                    data_dir=data_dir,
+                    year="covid_val",
+                    model_name=args.model_name,
+                    max_length=args.data.max_length,
+                    batch_size=args.batch_size.tokenization,
+                    tokenizer=tokenizer,
+                    labeller=labeller,
+                    logger=logging,
+                ),
+            
+            "test": process_dataset(
+                    data_dir=data_dir,
+                    year="covid_test",
+                    model_name=args.model_name,
+                    max_length=args.data.max_length,
+                    batch_size=args.batch_size.tokenization,
+                    tokenizer=tokenizer,
+                    labeller=labeller,
+                    logger=logging,
+                ),
+        })
 
-        logging.info("Data - Concatenated all dataset years together")
-        logging.info(f"Data - Num rows: {dataset.num_rows}")
+        logging.info("Data - Concatenated all COVID datasets together")
 
     else:
         dataset = process_dataset(
@@ -135,6 +154,8 @@ def train(args: DictConfig):
             labeller=labeller,
             logger=logging,
         )
+
+        logging.info("Data - Processed dataset")
 
     # Split the dataset
     if args.generalisation_form == "uniform":
@@ -156,14 +177,19 @@ def train(args: DictConfig):
             test_prop=args.split.test_prop,
         )
 
-    elif args.generalisation_form == "covid":
-        dataset_splits = covid_split_dataset(
+    elif args.generalisation_form == "topic":
+        dataset_splits = topic_split_dataset(
             dataset=dataset,
             db_loc="./data/db/misinformation_benchmark_metadata.db",
             seed=args.seed,
+            year=args.year,
             val_prop=args.split.val_prop,
             test_prop=args.split.test_prop,
         )
+
+    elif args.generalisation_form == "covid":
+        # COVID is special, have already done the text-processing and splitting
+        dataset_splits = dataset
 
     logging.info("Data - Finished splitting dataset")
     logging.info(f"Data - Train size: {dataset_splits['train'].num_rows}")

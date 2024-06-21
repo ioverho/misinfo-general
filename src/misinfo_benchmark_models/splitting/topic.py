@@ -117,25 +117,22 @@ def topic_split_dataset(
     logging.info("Data - Built train/test datasets")
 
     actual_test_size = test_prop / (1 - val_prop)
-    splitter = StratifiedShuffleSplit(
-        n_splits=1,
-        train_size=(1 - actual_test_size),
+
+    train_val_dataset = train_dataset.train_test_split(
         test_size=actual_test_size,
-        random_state=seed,
-    )
-
-    train_idx, val_idx = next(
-        splitter.split(X=train_dataset["label"], y=train_dataset["label"])
-    )
-
-    dataset_splits = datasets.DatasetDict(
-        {
-            "train": subset_dataset_by_dataset_id(train_dataset, train_idx),
-            "val": subset_dataset_by_dataset_id(train_dataset, val_idx),
-            "test": test_dataset,
-        }
+        shuffle=True,
+        stratify_by_column="label",
+        seed=seed,
     )
 
     logging.info("Data - Built train/test/val datasets")
+    
+    dataset_splits = datasets.DatasetDict(
+        {
+            "train": train_val_dataset["train"],
+            "val": train_val_dataset["test"],
+            "test": test_dataset,
+        }
+    )
 
     return dataset_splits
