@@ -8,8 +8,6 @@ from clearml import Task
 from omegaconf import DictConfig, OmegaConf
 import datasets
 import hydra
-import numpy as np
-import sklearn.metrics as metrics
 import transformers
 import wandb
 
@@ -21,6 +19,7 @@ from misinfo_benchmark_models.splitting import (
     uniform_split_dataset,
     publisher_split_dataset,
     topic_split_dataset,
+    misinfo_type_split_dataset,
 )
 from misinfo_benchmark_models.metrics import compute_clf_metrics
 from misinfo_benchmark_models.utils import print_config, save_config
@@ -139,6 +138,17 @@ def train(args: DictConfig):
     elif args.generalisation_form == "topic":
         dataset_splits = topic_split_dataset(
             dataset=dataset,
+            db_loc="./data/db/misinformation_benchmark_metadata.db",
+            seed=args.seed,
+            year=args.year,
+            val_prop=args.split.val_prop,
+            test_prop=args.split.test_prop,
+        )
+
+    elif args.generalisation_form == "misinfo_type":
+        dataset_splits = misinfo_type_split_dataset(
+            dataset=dataset,
+            positive_label=args.split.positive_label,
             db_loc="./data/db/misinformation_benchmark_metadata.db",
             seed=args.seed,
             year=args.year,
@@ -316,26 +326,6 @@ def train(args: DictConfig):
     )
 
     trainer.train()
-
-    predict_output = trainer.predict(test_dataset=dataset_splits["test"])
-
-    conf_mat = metrics.confusion_matrix(
-        y_true=np.argmax(predict_output.predictions, axis=1),
-        y_pred=predict_output.label_ids,
-    )
-
-    np.savetxt(
-        fname=checkpoints_dir / "test_split_conf_mat.csv",
-        X=conf_mat.astype(int),
-        delimiter=",",
-        encoding="utf8",
-        fmt="%d",
-    )
-
-    task.upload_artifact(
-        name="test_split_conf_mat",
-        artifact_object=checkpoints_dir / "test_split_conf_mat.csv",
-    )
 
 
 if __name__ == "__main__":

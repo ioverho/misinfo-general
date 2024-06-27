@@ -3,12 +3,8 @@ import logging
 import duckdb
 import numpy as np
 import datasets
-from sklearn.model_selection import StratifiedShuffleSplit
 
-from misinfo_benchmark_models.splitting.utils import (
-    subset_dataset_by_article_id,
-    subset_dataset_by_dataset_id,
-)
+from misinfo_benchmark_models.splitting.utils import subset_dataset_by_article_id
 
 
 def topic_split_dataset(
