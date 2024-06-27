@@ -19,8 +19,8 @@ split:
   seed: ${seed}
   num_folds: 5
   val_to_test_ratio: 0.5
-  val_prop: 0.2
-  test_prop: 0.1
+  val_prop: 0.1
+  test_prop: 0.2
 
 batch_size:
   tokenization: 1024

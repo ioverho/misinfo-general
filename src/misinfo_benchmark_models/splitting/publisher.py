@@ -18,8 +18,8 @@ def publisher_split_dataset(
     db_loc: str,
     seed: int,
     year: int,
-    val_prop: float = 0.2,
-    test_prop: float = 0.1,
+    val_prop: float = 0.1,
+    test_prop: float = 0.2,
 ):
     metadata_db = duckdb.connect(db_loc, read_only=True)
 
@@ -61,7 +61,7 @@ def publisher_split_dataset(
         group.loc[:, "prop"] = group["count"] / group["count"].sum()
         group = group.sort_values(by="prop")
 
-        select_until_index = np.argmin(np.abs(np.cumsum(group["prop"]) - val_prop)) + 1
+        select_until_index = np.argmin(np.abs(np.cumsum(group["prop"]) - test_prop)) + 1
 
         label_bias_selected_sources[label_bias_combo] = set(
             group.iloc[:select_until_index]["source"]
@@ -111,11 +111,11 @@ def publisher_split_dataset(
         dataset=dataset, article_ids=test_article_ids
     )
 
-    actual_test_size = test_prop / (1 - val_prop)
+    actual_val_size = val_prop / (1 - test_prop)
     splitter = StratifiedShuffleSplit(
         n_splits=1,
-        train_size=(1 - actual_test_size),
-        test_size=actual_test_size,
+        train_size=(1 - actual_val_size),
+        test_size=actual_val_size,
         random_state=seed,
     )
 

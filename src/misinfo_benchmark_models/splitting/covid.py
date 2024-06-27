@@ -40,8 +40,8 @@ def covid_split_dataset(
     dataset: datasets.Dataset,
     db_loc: str,
     seed: int,
-    val_prop: float = 0.2,
-    test_prop: float = 0.1,
+    val_prop: float = 0.1,
+    test_prop: float = 0.2,
 ):
     metadata_db = duckdb.connect(db_loc, read_only=True)
 
@@ -87,11 +87,11 @@ def covid_split_dataset(
 
     logging.info("Data - Built train/test datasets")
 
-    actual_test_size = test_prop / (1 - val_prop)
+    actual_val_size = val_prop / (1 - test_prop)
     splitter = StratifiedShuffleSplit(
         n_splits=1,
-        train_size=(1 - actual_test_size),
-        test_size=actual_test_size,
+        train_size=(1 - actual_val_size),
+        test_size=actual_val_size,
         random_state=seed,
     )
 

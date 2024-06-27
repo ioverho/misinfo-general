@@ -6,8 +6,7 @@ defaults:
 
 seed: 942
 
-year: null
-fold: 0
+year: "all"
 
 split:
   seed: ${seed}
@@ -16,7 +15,7 @@ split:
   split_name: test
 
 checkpoint:
-  generalisation_form: "topic"
+  generalisation_form: "covid"
   year: ${year}
   fold: ${fold}
   model_name: null

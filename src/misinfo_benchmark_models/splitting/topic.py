@@ -16,8 +16,8 @@ def topic_split_dataset(
     year: int,
     seed: int,
     db_loc: str = "./data/db/misinformation_benchmark_metadata.db",
-    val_prop: float = 0.2,
-    test_prop: float = 0.1,
+    val_prop: float = 0.1,
+    test_prop: float = 0.2,
 ):
     metadata_db = duckdb.connect(db_loc, read_only=True)
 
@@ -58,7 +58,7 @@ def topic_split_dataset(
 
     # Select as many hyper_topics as needed to get as close to the desired test set size
     num_of_hyper_topics_for_test_set = (
-        np.argmin(np.abs(np.cumsum(hyper_cluster_proportion) - val_prop)) + 1
+        np.argmin(np.abs(np.cumsum(hyper_cluster_proportion) - test_prop)) + 1
     )
 
     logging.info(
@@ -116,17 +116,17 @@ def topic_split_dataset(
 
     logging.info("Data - Built train/test datasets")
 
-    actual_test_size = test_prop / (1 - val_prop)
+    actual_val_size = val_prop / (1 - test_prop)
 
     train_val_dataset = train_dataset.train_test_split(
-        test_size=actual_test_size,
+        test_size=actual_val_size,
         shuffle=True,
         stratify_by_column="label",
         seed=seed,
     )
 
     logging.info("Data - Built train/test/val datasets")
-    
+
     dataset_splits = datasets.DatasetDict(
         {
             "train": train_val_dataset["train"],

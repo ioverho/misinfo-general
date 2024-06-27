@@ -39,8 +39,8 @@ srun python src/train.py \
     seed=942 \
     model_name='microsoft/deberta-v3-base' \
     data.max_length=512 \
-    split.val_prop=0.2 \
-    split.test_prop=0.1 \
+    split.val_prop=0.1 \
+    split.test_prop=0.2 \
     batch_size.tokenization=1024 \
     batch_size.train=64 \
     batch_size.eval=128 \
