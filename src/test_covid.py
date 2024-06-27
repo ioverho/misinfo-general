@@ -131,8 +131,8 @@ def test(args: DictConfig):
     dataset = process_dataset(
         data_dir=data_dir,
         year=f"covid_{args.split.split_name}",
-        model_name=args.model_name,
-        max_length=args.data.max_length,
+        model_name=train_config["model_name"],
+        max_length=train_config["data"]["max_length"],
         batch_size=args.batch_size.tokenization,
         tokenizer=tokenizer,
         labeller=labeller,
