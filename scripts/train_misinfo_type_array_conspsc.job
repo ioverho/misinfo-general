@@ -10,7 +10,7 @@
 #SBATCH --partition=gpu
 #SBATCH --array=1-6
 
-#SBATCH --output=./job_outputs/misinfo_benchmark_models/misinfo_type_qs/%A-%a.out
+#SBATCH --output=./job_outputs/misinfo_benchmark_models/misinfo_type_conspsc/%A-%a.out
 
 set -e
 
@@ -38,7 +38,7 @@ HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_fold_array.txt
 
 srun python src/train.py \
     generalisation_form='misinfo_type' \
-    ++split.positive_label='Questionable Source' \
+    ++split.positive_label='Conspiracy-Pseudoscience' \
     seed=942 \
     model_name='microsoft/deberta-v3-base' \
     data.max_length=512 \
