@@ -18,7 +18,7 @@ from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
 from misinfo_benchmark_models.labelling import MBFCBinaryLabeller
 from misinfo_benchmark_models.data import process_dataset, eval_collator
 from misinfo_benchmark_models.splitting import misinfo_type_split_dataset
-
+from misinfo_benchmark_models.utils import print_config
 
 @hydra.main(
     version_base="1.3", config_path="../config", config_name="test_misinfo_type"
@@ -38,6 +38,9 @@ def test(args: DictConfig):
         ],
     )
 
+    # Print config for logging purposes
+    print_config(args, logger=logging)
+
     # ==========================================================================
     # Setup
     # ==========================================================================
@@ -54,7 +57,7 @@ def test(args: DictConfig):
         project_name=model_meta_data.project_name,
         task_name=model_meta_data.task_name,
         allow_archived=False,
-        tags=[f"misinfo_type[{args.split.positive_label}]"],
+        tags=["__$all", f"misinfo_type[{args.positive_label}]"],
         task_filter={
             "type": ["training"],
             "order_by": ["last_update"],
@@ -63,7 +66,7 @@ def test(args: DictConfig):
 
     if train_task is None:
         raise KeyboardInterrupt(
-            f"ClearML cannot find train task at: {model_meta_data.project_name} /  {model_meta_data.task_name}"
+            f"ClearML cannot find train task at: {model_meta_data.project_name} / {model_meta_data.task_name}"
         )
 
     checkpoints_dir = (Path(args.checkpoints_dir) / f"{train_task.task_id}").resolve()
@@ -98,6 +101,7 @@ def test(args: DictConfig):
             f"train_year[{args.year}]",
             f"checkpoint[{train_task.task_id}]",
             f"split[{args.split.split_name}]",
+            f"misinfo_type[{args.positive_label}]",
         ],
         reuse_last_task_id=False,
         continue_last_task=False,
@@ -147,7 +151,7 @@ def test(args: DictConfig):
     # Split the dataset to test for the generalisation form
     dataset = misinfo_type_split_dataset(
         dataset=dataset,
-        positive_label=args.split.positive_label,
+        positive_label=args.positive_label,
         db_loc="./data/db/misinformation_benchmark_metadata.db",
         seed=args.seed,
         year=args.year,

@@ -9,6 +9,8 @@ seed: 942
 year: null
 fold: 0
 
+positive_label: null
+
 split:
   seed: ${seed}
   val_prop: 0.1
@@ -16,11 +18,10 @@ split:
   split_name: test
 
 checkpoint:
-  generalisation_form: "topic"
+  generalisation_form: "misinfo_type"
   year: ${year}
   fold: ${fold}
   model_name: null
-  positive_label: null
 
 batch_size:
   tokenization: 1024
