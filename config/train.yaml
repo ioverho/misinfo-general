@@ -22,6 +22,7 @@ split:
   val_prop: 0.1
   test_prop: 0.2
   positive_label: null
+  positive_bias: null
 
 batch_size:
   tokenization: 1024

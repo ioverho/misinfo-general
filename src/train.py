@@ -20,6 +20,7 @@ from misinfo_benchmark_models.splitting import (
     publisher_split_dataset,
     topic_split_dataset,
     misinfo_type_split_dataset,
+    pol_bias_split_dataset,
 )
 from misinfo_benchmark_models.metrics import compute_clf_metrics
 from misinfo_benchmark_models.utils import print_config, save_config
@@ -156,6 +157,17 @@ def train(args: DictConfig):
             test_prop=args.split.test_prop,
         )
 
+    elif args.generalisation_form == "pol_bias":
+        dataset_splits = pol_bias_split_dataset(
+            dataset=dataset,
+            positive_bias=args.split.positive_bias,
+            db_loc="./data/db/misinformation_benchmark_metadata.db",
+            seed=args.seed,
+            year=args.year,
+            val_prop=args.split.val_prop,
+            test_prop=args.split.test_prop,
+        )
+
     elif args.generalisation_form == "covid":
         # COVID is special, have already done the text-processing and splitting
         dataset_splits = datasets.DatasetDict(
@@ -194,6 +206,11 @@ def train(args: DictConfig):
         )
 
         logging.info("Data - Concatenated all COVID datasets together")
+
+    else:
+        raise ValueError(
+            f"Did not recognize generalisation form: '{args.generalisation_form}'"
+        )
 
     logging.info("Data - Finished splitting dataset")
     logging.info(f"Data - Train size: {dataset_splits['train'].num_rows}")
