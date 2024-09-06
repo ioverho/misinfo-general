@@ -133,7 +133,7 @@ dmypy.json
 /logs/*
 /misc/
 /data/*
-/dev/*
+/dev/
 /results/*
 /checkpoints/*
 /wandb/

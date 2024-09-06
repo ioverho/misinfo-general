@@ -21,6 +21,7 @@ from misinfo_benchmark_models.splitting import (
     topic_split_dataset,
     misinfo_type_split_dataset,
     pol_bias_split_dataset,
+    limited_publisher_split_dataset,
 )
 from misinfo_benchmark_models.metrics import compute_clf_metrics
 from misinfo_benchmark_models.utils import print_config, save_config
@@ -206,6 +207,23 @@ def train(args: DictConfig):
         )
 
         logging.info("Data - Concatenated all COVID datasets together")
+
+    elif args.generalisation_form == "limited_publisher":
+        dataset_splits = limited_publisher_split_dataset(
+            dataset=dataset,
+            db_loc="./data/db/misinformation_benchmark_metadata.db",
+            seed=args.seed,
+            year=args.year,
+            val_prop=args.split.val_prop,
+            test_prop=args.split.test_prop,
+            use_political_bias=args.split.use_political_bias,
+            num_sources=args.split.num_sources,
+        )
+
+        logging.info("Data - Generated limited publisher splits")
+        logging.info(
+            f"Data - {len(dataset_splits['train'])}/{len(dataset_splits['val'])}/{len(dataset_splits['test'])}"
+        )
 
     else:
         raise ValueError(

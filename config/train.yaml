@@ -23,6 +23,8 @@ split:
   test_prop: 0.2
   positive_label: null
   positive_bias: null
+  use_political_bias: false
+  num_sources: 1
 
 batch_size:
   tokenization: 1024
