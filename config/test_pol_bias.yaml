@@ -7,15 +7,18 @@ defaults:
 seed: 942
 
 year: null
-eval_year: null
+fold: 0
 
-fold: null
+positive_bias: null
 
 split:
+  seed: ${seed}
+  val_prop: 0.1
+  test_prop: 0.2
   split_name: test
 
 checkpoint:
-  generalisation_form: uniform
+  generalisation_form: "pol_bias"
   year: ${year}
   fold: ${fold}
   model_name: null

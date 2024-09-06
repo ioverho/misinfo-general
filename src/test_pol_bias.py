@@ -22,7 +22,7 @@ from misinfo_benchmark_models.utils import print_config
 
 
 @hydra.main(
-    version_base="1.3", config_path="../config", config_name="test_misinfo_type"
+    version_base="1.3", config_path="../config", config_name="test_pol_bias"
 )
 def test(args: DictConfig):
     assert args.year is not None
@@ -102,7 +102,7 @@ def test(args: DictConfig):
             f"train_year[{args.year}]",
             f"checkpoint[{train_task.task_id}]",
             f"split[{args.split.split_name}]",
-            f"misinfo_type[{args.positive_label}]",
+            f"pol_bias[{args.positive_bias}]",
         ],
         reuse_last_task_id=False,
         continue_last_task=False,
@@ -152,7 +152,7 @@ def test(args: DictConfig):
     # Split the dataset to test for the generalisation form
     dataset = pol_bias_split_dataset(
         dataset=dataset,
-        positive_label=args.positive_label,
+        positive_bias=args.positive_bias,
         db_loc="./data/db/misinformation_benchmark_metadata.db",
         seed=args.seed,
         year=args.year,

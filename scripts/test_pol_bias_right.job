@@ -38,9 +38,9 @@ HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_array.txt
 echo -e "Running with the following hyperparameters:"
 echo -e $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
 
-srun python src/test_misinfo_type.py \
-    generalisation_form='pol_bias' \
-    ++split.positive_bias='Right' \
+srun python src/test_pol_bias.py \
+    ++checkpoint.generalisation_form="pol_bias" \
+    ++positive_bias="Right" \
     seed=942 \
     fold=0 \
     checkpoint.model_name="microsoft/deberta-v3-base" \
@@ -49,9 +49,9 @@ srun python src/test_misinfo_type.py \
     $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
 
 
-srun python src/test_misinfo_type.py \
-    generalisation_form='pol_bias' \
-    ++split.positive_bias='Right' \
+srun python src/test_pol_bias.py \
+    ++checkpoint.generalisation_form="pol_bias" \
+    ++positive_bias="Right" \
     seed=942 \
     fold=0 \
     checkpoint.model_name="microsoft/deberta-v3-base" \

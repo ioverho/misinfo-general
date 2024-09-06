@@ -10,7 +10,7 @@
 #SBATCH --partition=gpu
 #SBATCH --array=2-6
 
-#SBATCH --output=./job_outputs/misinfo_benchmark_models/pol_bias_left-eval/%A-%a.out
+#SBATCH --output=./job_outputs/misinfo_benchmark_models/uniform-eval/%A-%a.out
 
 set -e
 
@@ -18,6 +18,7 @@ set -e
 # Probably not needed for this project
 mkdir -p /scratch-local/ivov/misinfo_benchmark_models/data/
 LOCAL_DATA_DIR=/scratch-local/ivov/misinfo_benchmark_models/data/
+rm -rf LOCAL_DATA_DIR/*
 echo -e "Syncing data to node"
 rsync -aru $HOME/misinfo_benchmark_models/data/* $LOCAL_DATA_DIR
 echo -e "Finished syncing data to node"
@@ -33,28 +34,13 @@ cd $HOME/misinfo_benchmark_models/
 # Activate environment
 source activate misinfo_benchmark
 
-HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_array.txt
+HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_fold_eval-year_array.txt
 
-echo -e "Running with the following hyperparameters:"
-echo -e $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
-
-srun python src/test_pol_bias.py \
-    ++checkpoint.generalisation_form="pol_bias" \
-    ++positive_bias="Left" \
+srun python src/test_uniform.py \
     seed=942 \
-    fold=0 \
-    checkpoint.model_name="microsoft/deberta-v3-base" \
-    split.split_name="val" \
+    ++split.split_name='val' \
+    checkpoint.model_name="microsoft/deberta-v3-base"\
     disable_progress_bar=true \
     $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
 
-
-srun python src/test_pol_bias.py \
-    ++checkpoint.generalisation_form="pol_bias" \
-    ++positive_bias="Left" \
-    seed=942 \
-    fold=0 \
-    checkpoint.model_name="microsoft/deberta-v3-base" \
-    split.split_name="test" \
-    disable_progress_bar=true \
-    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
+rsync -aru $LOCAL_DATA_DIR/processed/* $HOME/misinfo_benchmark_models/data/processed

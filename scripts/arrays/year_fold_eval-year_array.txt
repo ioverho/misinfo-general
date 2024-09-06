@@ -1,0 +1,6 @@
+year=2017 fold=0 eval_year=2017
+year=2018 fold=0 eval_year=2018
+year=2019 fold=0 eval_year=2019
+year=2020 fold=0 eval_year=2020
+year=2021 fold=0 eval_year=2021
+year=2022 fold=0 eval_year=2022

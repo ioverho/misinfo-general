@@ -91,9 +91,9 @@ def test(args: DictConfig):
 
     task = Task.init(
         project_name=model_meta_data.project_name,
-        task_name=f"eval_year[{args.eval_year}]_fold[{args.fold}]",
+        task_name=f"eval_year[{args.eval_year}]_fold[{args.fold}]_split[{args.split.split_name}]",
         task_type="testing",
-        tags=[f"train_year[{args.year}]", f"checkpoint[{train_task.task_id}]"],
+        tags=[f"train_year[{args.year}]", f"checkpoint[{train_task.task_id}]", f"split[{args.split.split_name}]"],
         reuse_last_task_id=False,
         continue_last_task=False,
     )
@@ -154,7 +154,7 @@ def test(args: DictConfig):
             cur_fold=args.fold,
         )
 
-        dataset = dataset_splits["test"]
+        dataset = dataset_splits[args.split.split_name]
     else:
         # Filter out all articles that came from a publisher not in the training set
         logging.info("Data - Filtering dataset")
