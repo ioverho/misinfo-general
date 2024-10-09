@@ -11,11 +11,11 @@ import hydra
 import transformers
 import wandb
 
-from misinfo_benchmark_models import SPECIAL_TOKENS
-from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
-from misinfo_benchmark_models.labelling import MBFCBinaryLabeller
-from misinfo_benchmark_models.data import process_dataset, collator, static_collator
-from misinfo_benchmark_models.splitting import (
+from misinfo_general import SPECIAL_TOKENS
+from misinfo_general.experiment_metadata import ExperimentMetaData
+from misinfo_general.labelling import MBFCBinaryLabeller
+from misinfo_general.data import process_dataset, collator, static_collator
+from misinfo_general.splitting import (
     uniform_split_dataset,
     publisher_split_dataset,
     topic_split_dataset,
@@ -23,8 +23,8 @@ from misinfo_benchmark_models.splitting import (
     pol_bias_split_dataset,
     limited_publisher_split_dataset,
 )
-from misinfo_benchmark_models.metrics import compute_clf_metrics
-from misinfo_benchmark_models.utils import print_config, save_config
+from misinfo_general.metrics import compute_clf_metrics
+from misinfo_general.utils import print_config, save_config
 
 
 @hydra.main(version_base="1.3", config_path="../config", config_name="train")

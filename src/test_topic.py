@@ -13,11 +13,11 @@ import torch
 import transformers
 import yaml
 
-from misinfo_benchmark_models import SPECIAL_TOKENS
-from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
-from misinfo_benchmark_models.labelling import MBFCBinaryLabeller
-from misinfo_benchmark_models.data import process_dataset, eval_collator
-from misinfo_benchmark_models.splitting import topic_split_dataset
+from misinfo_general import SPECIAL_TOKENS
+from misinfo_general.experiment_metadata import ExperimentMetaData
+from misinfo_general.labelling import MBFCBinaryLabeller
+from misinfo_general.data import process_dataset, eval_collator
+from misinfo_general.splitting import topic_split_dataset
 
 
 @hydra.main(version_base="1.3", config_path="../config", config_name="test_topic")

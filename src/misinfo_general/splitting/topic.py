@@ -4,7 +4,7 @@ import duckdb
 import numpy as np
 import datasets
 
-from misinfo_benchmark_models.splitting.utils import subset_dataset_by_article_id
+from misinfo_general.splitting.utils import subset_dataset_by_article_id
 
 
 def topic_split_dataset(

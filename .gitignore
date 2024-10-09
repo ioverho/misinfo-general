@@ -132,7 +132,7 @@ dmypy.json
 .vscode
 /logs/*
 /misc/
-/data/*
+/data/*/
 /dev/
 /results/*
 /checkpoints/*

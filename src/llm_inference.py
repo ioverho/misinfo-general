@@ -14,7 +14,7 @@ from omegaconf import DictConfig, OmegaConf
 import hydra
 from clearml import Task
 
-from misinfo_benchmark_models.utils import print_config, save_config
+from misinfo_general.utils import print_config, save_config
 
 dotenv.load_dotenv()
 

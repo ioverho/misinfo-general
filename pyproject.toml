@@ -1,7 +1,6 @@
 [project]
-name = "misinfo_benchmark_models"
+name = "misinfo-general"
 version = "0.0.1"
-description = ""
 authors = [{ name = "Ivo Verhoeven", email = "i.o.verhoeven@uva.nl" }]
 readme = "README.md"
 

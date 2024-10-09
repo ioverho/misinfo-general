@@ -14,13 +14,13 @@ import wandb
 import sklearn.metrics as metrics
 from omegaconf import DictConfig
 
-from misinfo_benchmark_models import SPECIAL_TOKENS
-from misinfo_benchmark_models.experiment_metadata import ExperimentMetaData
-from misinfo_benchmark_models.labelling import MBFCBinaryLabeller
-from misinfo_benchmark_models.data import process_dataset, collator
-from misinfo_benchmark_models.splitting import uniform_split_dataset
-from misinfo_benchmark_models.metrics import compute_clf_metrics
-from misinfo_benchmark_models.utils import print_config
+from misinfo_general import SPECIAL_TOKENS
+from misinfo_general.experiment_metadata import ExperimentMetaData
+from misinfo_general.labelling import MBFCBinaryLabeller
+from misinfo_general.data import process_dataset, collator
+from misinfo_general.splitting import uniform_split_dataset
+from misinfo_general.metrics import compute_clf_metrics
+from misinfo_general.utils import print_config
 
 
 @hydra.main(version_base="1.3", config_path="../config", config_name="uniform")

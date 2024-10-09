@@ -4,7 +4,7 @@ import logging
 import duckdb
 import datasets
 
-from misinfo_benchmark_models.splitting.utils import subset_dataset_by_article_id
+from misinfo_general.splitting.utils import subset_dataset_by_article_id
 
 POSITIVE_LABELS = {"Questionable Source", "Conspiracy-Pseudoscience", "Satire"}
 

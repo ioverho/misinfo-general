@@ -7,7 +7,7 @@ import pandas as pd
 import datasets
 from sklearn.model_selection import StratifiedShuffleSplit
 
-from misinfo_benchmark_models.splitting.utils import (
+from misinfo_general.splitting.utils import (
     subset_dataset_by_article_id,
     subset_dataset_by_dataset_id,
 )
