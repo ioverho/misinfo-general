@@ -3,7 +3,7 @@
 ## Dataset Description
 <!-- TODO: add paper url -->
 - **Homepage:** [https://github.com/ioverho/misinfo-general](https://github.com/ioverho/misinfo-general)
-- **Paper:** [Yesterday’s News: Benchmarking Multi-Dimensional Out-of-Distribution Generalisation of Misinformation Detection Models]()
+- **Paper:** [Yesterday’s News: Benchmarking Multi-Dimensional Out-of-Distribution Generalisation of Misinformation Detection Models](https://arxiv.org/abs/2410.18122)
 - **Point of Contact:** [i.o.verhoeven@uva.nl](mailto:i.o.verhoeven@uva.nl)
 
 ### Dataset Summary
@@ -132,7 +132,7 @@ To see how we use these to generate the above splits, check out our GitHub: [git
 
 The following figure depicts the metadata database schema.
 
-![A depiction of the metadata SQL schema.](../assets/db_schema.png)
+![A depiction of the metadata SQL schema.](/assets/db_schema.png)
 
 Acronyms `PK` means primary key, a unique identifier for each row, whereas `FK` implies a foreign-key relationship, which links unique entities to rows in other tables. Each source has many articles in the `articles` table, and each topic also has many articles in the `articles` table. This is allows for rapid join operations to find articles belonging to a specific publisher or topic.
 
@@ -228,15 +228,20 @@ This dataset was initially created by Ivo Verhoeven, supervised by Pushkar Mishr
 
 ### Licensing Information
 
+[![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
 We licensed this dataset under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en). This allows users to copy, adapt and redistribute the data as long as the data is attributed, shared under the same license and used for non-commercial purposes. To ensure responsible usage, we have also decided to limit initally review access requests.
 
 ### Citation Information
 
 ```bibtex
-@article{TODO: finish paper citation
-  title="Yesterday’s News: Benchmarking Multi-Dimensional Out-of-Distribution Generalisation of Misinformation Detection Models",
-  author = {Verhoeven, Ivo and Mishra, Pushkar and Shutova, Ekaterina},
-  year = {2024},
-  month = oct,
+@misc{verhoeven2024yesterdaysnewsbenchmarkingmultidimensional,
+      title={Yesterday's News: Benchmarking Multi-Dimensional Out-of-Distribution Generalisation of Misinformation Detection Models},
+      author={Ivo Verhoeven and Pushkar Mishra and Ekaterina Shutova},
+      year={2024},
+      eprint={2410.18122},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2410.18122},
 }
 ```

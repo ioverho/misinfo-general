@@ -11,19 +11,10 @@
 </br>
 <small>&dagger; ILLC, University of Amsterdam, &Dagger; MetaAI, London</small>
 </br></br>
-<a href="https://arxiv.org/abs/2410.18122">
-    <img src="https://img.shields.io/badge/arXiv-2410.18122-%20?style=flat&logo=arxiv&logoColor=b31b1b&labelColor=0b0f19&color=b31b1b"
-        alt="Arxiv Link"
-        style="float: center;"
-    />
-</a>
+<a href="https://arxiv.org/abs/2410.18122"><img src="https://img.shields.io/badge/arXiv-2410.18122-%20?style=flat&logo=arxiv&logoColor=b31b1b&labelColor=0b0f19&color=b31b1b" alt="arXiv Link"/></a>
 </br>
-<a href="https://huggingface.co/datasets/ioverho/misinfo-general">
-    <img src="./assets/hf-badge-hf.svg" alt="Dataset on HF" style="float: center;">
-</a>
-<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TXXUFN">
-    <img src="./assets/hf-badge-dataverse.svg" alt="Dataset on Harvard Dataverse" style="float: center;">
-</a>
+<a href="https://huggingface.co/datasets/ioverho/misinfo-general"><img src="./assets/hf-badge-hf.svg" alt="Dataset on HF"></a>
+<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TXXUFN"><img src="./assets/hf-badge-dataverse.svg" alt="Dataset on Harvard Dataverse"></a>
 </p>
 
 This GitHub repository contains documentation for `misinfo-general`, and code used for our accompanying paper. With it we hope to introduce new data and evaluation methods for testing and training for out-of-distribution of generalisation in misinformation detection models.
@@ -106,7 +97,7 @@ uses the data stored at `$LOCAL_DATA_DIR` to train a uniform split model on the 
 
 ```bibtex
 @misc{verhoeven2024yesterdaysnewsbenchmarkingmultidimensional,
-      title={Yesterday's News: Benchmarking Multi-Dimensional Out-of-Distribution Generalisation of Misinformation Detection Models}, 
+      title={Yesterday's News: Benchmarking Multi-Dimensional Out-of-Distribution Generalisation of Misinformation Detection Models},
       author={Ivo Verhoeven and Pushkar Mishra and Ekaterina Shutova},
       year={2024},
       eprint={2410.18122},
