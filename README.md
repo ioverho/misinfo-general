@@ -6,25 +6,25 @@
 <!-- TODO add URL to ACL anthology -->
 
 
-<p align="center"><b>Ivo Verhoeven<sup>&dagger;</sup>, Pushkar Mishra<sup>&Dagger;</sup> and Ekaterina Shutova<sup>&dagger;</sup></b></p>
-
-<p align="center"><small>&dagger; ILLC, University of Amsterdam, &Dagger; MetaAI, London</small></p>
-
-<!-- <p align="center">
-<a href="https://arxiv.org/abs/2404.01822">
-    <img src="https://img.shields.io/static/v1.svg?logo=arxiv&label=Paper&message=Open%20Paper&color=green"
-    alt="Arxiv Link"
-    style="float: center;"
+<p align="center">
+<b>Ivo Verhoeven<sup>&dagger;</sup>, Pushkar Mishra<sup>&Dagger;</sup> and Ekaterina Shutova<sup>&dagger;</sup></b>
+</br>
+<small>&dagger; ILLC, University of Amsterdam, &Dagger; MetaAI, London</small>
+</br></br>
+<a href="https://arxiv.org/abs/2410.18122">
+    <img src="https://img.shields.io/badge/arXiv-2410.18122-%20?style=flat&logo=arxiv&logoColor=b31b1b&labelColor=0b0f19&color=b31b1b"
+        alt="Arxiv Link"
+        style="float: center;"
     />
 </a>
-</p> -->
-
-<p align="center">
-<a href="https://huggingface.co/datasets/ioverho/misinfo-general"><img src="./assets/hf-badge-hf.svg" alt="Dataset on HF"></a>
-<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TXXUFN"><img src="./assets/hf-badge-dataverse.svg" alt="Dataset on Harvard Dataverse"></a>
+</br>
+<a href="https://huggingface.co/datasets/ioverho/misinfo-general">
+    <img src="./assets/hf-badge-hf.svg" alt="Dataset on HF" style="float: center;">
+</a>
+<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TXXUFN">
+    <img src="./assets/hf-badge-dataverse.svg" alt="Dataset on Harvard Dataverse" style="float: center;">
+</a>
 </p>
-
-
 
 This GitHub repository contains documentation for `misinfo-general`, and code used for our accompanying paper. With it we hope to introduce new data and evaluation methods for testing and training for out-of-distribution of generalisation in misinformation detection models.
 
@@ -58,6 +58,8 @@ Please direct your questions to: [i.o.verhoeven@uva.nl](mailto:i.o.verhoeven@uva
 ```
 
 ## Data
+
+[![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 We have released our data on two separate platforms: [Hugging Face Hub](https://huggingface.co/datasets/ioverho/misinfo-general) and [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TXXUFN). Both of these repositories require access requests before downloading is possible. We provide additional detail on their respective [dataset cards](./data/).
 
@@ -103,5 +105,13 @@ uses the data stored at `$LOCAL_DATA_DIR` to train a uniform split model on the 
 <!-- TODO add paper URL to citation-->
 
 ```bibtex
-Add example citation
+@misc{verhoeven2024yesterdaysnewsbenchmarkingmultidimensional,
+      title={Yesterday's News: Benchmarking Multi-Dimensional Out-of-Distribution Generalisation of Misinformation Detection Models}, 
+      author={Ivo Verhoeven and Pushkar Mishra and Ekaterina Shutova},
+      year={2024},
+      eprint={2410.18122},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2410.18122},
+}
 ```
