@@ -108,6 +108,7 @@ def test(args: DictConfig):
             f"split[{args.split.split_name}]",
             f"num_sources[{args.split.num_sources}]",
             f"use_political_bias[{args.split.use_political_bias}]",
+            f"split[{args.split.split_name}]",
         ],
         reuse_last_task_id=False,
         continue_last_task=False,

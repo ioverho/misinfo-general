@@ -8,7 +8,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=gpu
-#SBATCH --array=2-6
+#SBATCH --array=1-6
 
 #SBATCH --output=./job_outputs/misinfo_benchmark_models/dataset_effect/%A-%a.out
 
@@ -39,7 +39,7 @@ HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_fold_array.txt
 srun python src/train.py \
     generalisation_form='limited_publisher' \
     ++split.use_political_bias=false \
-    ++split.num_sources=1 \
+    ++split.num_sources=3 \
     trainer.logging_prop=0.0005 \
     trainer.eval_prop=0.005 \
     seed=942 \
