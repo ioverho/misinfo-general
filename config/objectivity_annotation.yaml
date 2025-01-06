@@ -1,0 +1,26 @@
+defaults:
+  - _self_
+  - global@_global_: default
+  - override hydra/hydra_logging: none
+  - override hydra/job_logging: none
+
+seed: 942
+year: 2020
+batch_size: 32
+waiting_time: 5
+
+dataset_loc: "${data_dir}/hf/"
+metadata_db_loc: "${data_dir}/db/misinformation_benchmark_metadata.db"
+
+included_articles_start: 0
+included_articles_end: 10
+context_length: 512
+
+output_loc: "${data_dir}/open_ai/"
+
+task:
+  endpoint: "/v1/chat/completions"
+  completion_window: "24h"
+  model: "gpt-4o"
+  model_params:
+    temperature: 0.0
