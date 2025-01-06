@@ -18,3 +18,11 @@ module load Anaconda3/2023.07-2
 cd $HOME/misinfo_benchmark_models/
 #conda env create -f env_snellius.yaml --solver libmamba --yes
 conda env update -f env_snellius.yaml --solver libmamba --prune
+
+source activate misinfo_benchmark
+
+cd $HOME/misinfo_benchmark_models
+
+pip install -e .
+
+python -c "from misinfo_general import SPECIAL_TOKENS;print(SPECIAL_TOKENS)"
