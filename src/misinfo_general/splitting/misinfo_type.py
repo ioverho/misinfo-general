@@ -17,7 +17,7 @@ def misinfo_type_split_dataset(
     db_loc: str = "./data/db/misinformation_benchmark_metadata.db",
     val_prop: float = 0.1,
     test_prop: float = 0.2,
-):
+) -> datasets.DatasetDict:
     metadata_db = duckdb.connect(db_loc, read_only=True)
 
     assert (

@@ -5,3 +5,4 @@ from .topic import topic_split_dataset
 from .misinfo_type import misinfo_type_split_dataset
 from .pol_bias import pol_bias_split_dataset
 from .limited_publisher import limited_publisher_split_dataset
+from .dataset_map import dataset_map_split_dataset

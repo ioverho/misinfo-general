@@ -22,6 +22,7 @@ from misinfo_general.splitting import (
     misinfo_type_split_dataset,
     pol_bias_split_dataset,
     limited_publisher_split_dataset,
+    dataset_map_split_dataset,
 )
 from misinfo_general.metrics import compute_clf_metrics
 from misinfo_general.utils import print_config, save_config
@@ -221,6 +222,24 @@ def train(args: DictConfig):
         )
 
         logging.info("Data - Generated limited publisher splits")
+        logging.info(
+            f"Data - {len(dataset_splits['train'])}/{len(dataset_splits['val'])}/{len(dataset_splits['test'])}"
+        )
+
+    elif args.generalistation_form == "dataset_map":
+        dataset_splits = dataset_map_split_dataset(
+            dataset=dataset,
+            db_loc="./data/db/misinformation_benchmark_metadata.db",
+            seed=args.seed,
+            year=args.year,
+            val_prop=args.split.val_prop,
+            test_prop=args.split.test_prop,
+            split=args.split.split,
+            num_buckets=args.split.num_buckets,
+            publisher_occurences=args.split.publisher_occurences,
+        )
+
+        logging.info("Data - Generated dataset map splits")
         logging.info(
             f"Data - {len(dataset_splits['train'])}/{len(dataset_splits['val'])}/{len(dataset_splits['test'])}"
         )

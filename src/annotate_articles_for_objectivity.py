@@ -181,7 +181,7 @@ def construct_batch_row(
                 )
             )
 
-        prompt_data = f"Title: {article["title"]}\nBody: {article_content_detokens}"
+        prompt_data = f"Title: {article['title']}\nBody: {article_content_detokens}"
 
         full_prompt = USER_PROMPT_PREFIX.strip()
         full_prompt += f"\n\n{prompt_data}:"
