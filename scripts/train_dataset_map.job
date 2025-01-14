@@ -1,0 +1,61 @@
+#!/bin/bash
+
+#SBATCH --job-name=misinfo
+#SBATCH --time=12:00:00
+
+# GPU Settings
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gpus-per-node=1
+#SBATCH --partition=gpu
+#SBATCH --array=1-1
+
+#SBATCH --output=/home/ivov/job_outputs/misinfo_benchmark_models/dataset_map/%A-%a.out
+
+set -e
+
+# Move data to scratch system for fast loading
+# Probably not needed for this project
+mkdir -p /scratch-local/ivov/misinfo_benchmark_models/data/
+LOCAL_DATA_DIR=/scratch-local/ivov/misinfo_benchmark_models/data/
+echo -e "Syncing data to node"
+rsync -aru $HOME/misinfo_benchmark_models/data/* $LOCAL_DATA_DIR
+echo -e "Finished syncing data to node"
+
+# Load environment
+module purge
+module load 2024
+module load Anaconda3/2024.06-1
+
+# Make sure we're in the right directory
+cd $HOME/misinfo_benchmark_models/
+
+# Activate environment
+source activate misinfo_benchmark
+
+HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/dataset_map_array.txt
+
+echo -e "Running with the following hyperparameters:"
+echo -e $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
+
+srun python src/train.py \
+    generalisation_form='dataset_map' \
+    ++split.num_folds=15 \
+    ++split.num_buckets=15 \
+    ++split.publisher_occurences=5 \
+    seed=942 \
+    model_name="microsoft/deberta-v3-base" \
+    data.max_length=512 \
+    split.val_prop=0.1 \
+    split.test_prop=0.2 \
+    batch_size.tokenization=1024 \
+    batch_size.train=64 \
+    batch_size.eval=128 \
+    trainer.clearml=true \
+    trainer.wandb=false \
+    ++trainer.kwargs.fp16=true \
+    ++trainer.kwargs.use_cpu=false \
+    ++trainer.memory_metrics=false \
+    data_dir=$LOCAL_DATA_DIR \
+    disable_progress_bar=true \
+    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)

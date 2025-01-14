@@ -226,7 +226,7 @@ def train(args: DictConfig):
             f"Data - {len(dataset_splits['train'])}/{len(dataset_splits['val'])}/{len(dataset_splits['test'])}"
         )
 
-    elif args.generalistation_form == "dataset_map":
+    elif args.generalisation_form == "dataset_map":
         dataset_splits = dataset_map_split_dataset(
             dataset=dataset,
             db_loc="./data/db/misinformation_benchmark_metadata.db",
@@ -240,9 +240,6 @@ def train(args: DictConfig):
         )
 
         logging.info("Data - Generated dataset map splits")
-        logging.info(
-            f"Data - {len(dataset_splits['train'])}/{len(dataset_splits['val'])}/{len(dataset_splits['test'])}"
-        )
 
     else:
         raise ValueError(

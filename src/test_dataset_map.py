@@ -23,7 +23,7 @@ from misinfo_general.utils import print_config
 
 
 @hydra.main(
-    version_base="1.3", config_path="../config", config_name="test_limited_publisher"
+    version_base="1.3", config_path="../config", config_name="test_dataset_map"
 )
 def test(args: DictConfig):
     assert args.year is not None

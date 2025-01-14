@@ -1,0 +1,44 @@
+#!/bin/bash
+
+#SBATCH --job-name=misinfo
+#SBATCH --time=02:00:00
+
+# GPU Settings
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gpus-per-node=1
+#SBATCH --partition=gpu
+
+#SBATCH --output=./job_outputs/misinfo_benchmark_models/dataset_map-eval/%A-%a.out
+
+set -e
+
+# Move data to scratch system for fast loading
+# Probably not needed for this project
+mkdir -p /scratch-local/ivov/misinfo_benchmark_models/data/
+LOCAL_DATA_DIR=/scratch-local/ivov/misinfo_benchmark_models/data/
+echo -e "Syncing data to node"
+rsync -aru $HOME/misinfo_benchmark_models/data/* $LOCAL_DATA_DIR
+echo -e "Finished syncing data to node"
+
+# Load environment
+module purge
+module load 2023
+module load Anaconda3/2023.07-2
+
+# Make sure we're in the right directory
+cd $HOME/misinfo_benchmark_models/
+
+# Activate environment
+source activate misinfo_benchmark
+
+echo -e "Running with the following hyperparameters:"
+echo -e $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
+
+srun python src/test_dataset_map.py \
+    seed=942 \
+    fold=0 \
+    checkpoint.model_name="microsoft/deberta-v3-base" \
+    split.split_name="test" \
+    disable_progress_bar=true \
+    year=2017

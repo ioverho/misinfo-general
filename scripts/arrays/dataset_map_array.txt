@@ -1,0 +1,15 @@
+year=2021 fold=0 ++split.split=0
+year=2021 fold=1 ++split.split=1
+year=2021 fold=2 ++split.split=2
+year=2021 fold=3 ++split.split=3
+year=2021 fold=4 ++split.split=4
+year=2021 fold=5 ++split.split=5
+year=2021 fold=6 ++split.split=6
+year=2021 fold=7 ++split.split=7
+year=2021 fold=8 ++split.split=8
+year=2021 fold=9 ++split.split=9
+year=2021 fold=10 ++split.split=10
+year=2021 fold=11 ++split.split=11
+year=2021 fold=12 ++split.split=12
+year=2021 fold=13 ++split.split=13
+year=2021 fold=14 ++split.split=14

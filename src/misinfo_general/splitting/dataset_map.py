@@ -159,6 +159,10 @@ def dataset_map_split_dataset(
 
     logging.info(f"Data - Reserved {len(chosen_test_sources)} publishers for testing")
 
+    chosen_test_sources = tuple(sorted(list(map(str, list(chosen_test_sources)))))
+
+    print(f"SELECT source FROM sources WHERE source NOT IN {chosen_test_sources}")
+
     # Fetch the article_ids for the train and test splits
     train_article_ids = metadata_db.sql(
         f"""
@@ -166,7 +170,7 @@ def dataset_map_split_dataset(
         FROM articles INNER JOIN (
             SELECT source
             FROM sources
-            WHERE source NOT IN {tuple(sorted(chosen_test_sources))}
+            WHERE source NOT IN {chosen_test_sources}
         ) AS train_sources ON articles.source = train_sources.source
         WHERE year = {year}
         """
@@ -178,7 +182,7 @@ def dataset_map_split_dataset(
         FROM articles INNER JOIN (
             SELECT source
             FROM sources
-            WHERE source IN {tuple(sorted(chosen_test_sources))}
+            WHERE source IN {chosen_test_sources}
         ) AS test_sources ON articles.source = test_sources.source
         WHERE year = {year}
         """
