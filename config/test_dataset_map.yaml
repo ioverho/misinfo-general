@@ -16,7 +16,7 @@ split:
   test_prop: 0.2
 
 checkpoint:
-  generalisation_form: uniform
+  generalisation_form: dataset_map
   year: ${year}
   fold: ${fold}
   model_name: null

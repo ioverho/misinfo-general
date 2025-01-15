@@ -7,7 +7,8 @@ defaults:
 seed: 942
 year: 2020
 batch_size: 32
-waiting_time: 5
+inner_waiting_time: 5
+outer_waiting_time: 5
 
 dataset_loc: "${data_dir}/hf/"
 metadata_db_loc: "${data_dir}/db/misinformation_benchmark_metadata.db"

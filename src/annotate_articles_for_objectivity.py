@@ -49,7 +49,8 @@ class ObjectivityAnnotationConfig(BaseConfig):
 
     batch_size: pydantic.PositiveInt
 
-    waiting_time: pydantic.PositiveInt
+    inner_waiting_time: pydantic.PositiveInt
+    outer_waiting_time: pydantic.PositiveInt
 
     dataset_loc: pydantic.DirectoryPath
     metadata_db_loc: pydantic.FilePath
@@ -211,6 +212,62 @@ def construct_batch_row(
     return batch_row
 
 
+def submit_batch_job(config, batch: typing.List[typing.Any], client: openai.Client, batch_num: int, num_batches: int, run_timestamp: str) -> str:
+
+    logger.info(f"Processing mini batch {batch_num}/{num_batches}.")
+
+    mini_batch = batch[
+        batch_num * config.batch_size : (batch_num + 1) * config.batch_size
+    ]
+
+    # ==================================================================
+    # Dump the data
+    # ==================================================================
+    logger.info(msg=f"{batch_num}/{num_batches} - Dumping data.")
+
+    os.makedirs(config.output_loc / f"{run_timestamp}", exist_ok=True)
+
+    input_fp = (
+        config.output_loc / f"{run_timestamp}" / f"input_{batch_num}.jsonl"
+    ).resolve()
+    with open(input_fp, "w") as f:
+        for batch_row in mini_batch:
+            jout = json.dumps(batch_row) + "\n"
+            f.write(jout)
+
+    logger.info(msg=f"{batch_num}/{num_batches} - Finished dumping data.")
+    logger.info(
+        msg=f"{batch_num}/{num_batches} - File can be found at: {str(input_fp)}."
+    )
+
+    # ==================================================================
+    # Uploading mini batch to OpenAI
+    # ==================================================================
+    logger.info(msg=f"{batch_num}/{num_batches} - Uploading batch file to OpenAI.")
+
+    batch_input_file = client.files.create(
+        file=open(str(input_fp), "rb"), purpose="batch"
+    )
+
+    # ======================================================================
+    # Submit batch job
+    # ======================================================================
+    logger.info(msg=f"{batch_num}/{num_batches} - Submitting batch job.")
+
+    submitted_mini_batch = client.batches.create(
+        input_file_id=batch_input_file.id,
+        endpoint=config.task.endpoint,
+        completion_window=config.task.completion_window,
+    )
+
+    mini_batch_id = submitted_mini_batch.id
+
+    logger.info(
+        msg=f"{batch_num}/{num_batches} - Submitted batch job: {mini_batch_id}."
+    )
+
+    return mini_batch_id
+
 @hydra.main(
     version_base="1.3", config_path="../config", config_name="objectivity_annotation"
 )
@@ -305,73 +362,55 @@ def annotate_articles(parsed_config: omegaconf.DictConfig) -> None:
 
     client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
+    batches = []
     for batch_num in range(num_batches):
-        logger.info(f"Processing mini batch {batch_num}/{num_batches}.")
+        try:
+            batch_id = submit_batch_job(config=config, batch=batch, client=client, batch_num=batch_num, num_batches=num_batches, run_timestamp=run_timestamp)
+        except Exception as e:
+            logger.error(f"{batch_num}/{num_batches} - Could not submit batch job. Encountered following exception: {e}")
+            continue
 
-        mini_batch = batch[
-            batch_num * config.batch_size : (batch_num + 1) * config.batch_size
-        ]
-
-        # ==================================================================
-        # Dump the data
-        # ==================================================================
-        logger.info(msg=f"{batch_num}/{num_batches} - Dumping data.")
-
-        os.makedirs(config.output_loc / f"{run_timestamp}", exist_ok=True)
-
-        input_fp = (
-            config.output_loc / f"{run_timestamp}" / f"input_{batch_num}.jsonl"
-        ).resolve()
-        with open(input_fp, "w") as f:
-            for batch_row in mini_batch:
-                jout = json.dumps(batch_row) + "\n"
-                f.write(jout)
-
-        logger.info(msg=f"{batch_num}/{num_batches} - Finished dumping data.")
-        logger.info(
-            msg=f"{batch_num}/{num_batches} - File can be found at: {str(input_fp)}."
-        )
-
-        # ==================================================================
-        # Uploading mini batch to OpenAI
-        # ==================================================================
-        logger.info(msg=f"{batch_num}/{num_batches} - Uploading batch file to OpenAI.")
-
-        batch_input_file = client.files.create(
-            file=open(str(input_fp), "rb"), purpose="batch"
-        )
-
-        # ======================================================================
-        # Submit batch job
-        # ======================================================================
-        logger.info(msg=f"{batch_num}/{num_batches} - Submitting batch job.")
-
-        submitted_mini_batch = client.batches.create(
-            input_file_id=batch_input_file.id,
-            endpoint=config.task.endpoint,
-            completion_window=config.task.completion_window,
-        )
-
-        mini_batch_id = submitted_mini_batch.id
+        batches.append(batch_id)
 
         logger.info(
-            msg=f"{batch_num}/{num_batches} - Submitted batch job: {mini_batch_id}."
+            msg=f"{batch_num}/{num_batches} - Waiting."
         )
 
-        while True:
-            time.sleep(config.waiting_time)
+        time.sleep(60)
+
+    finished_batches = set()
+    while True:
+        if len(finished_batches) == len(batches):
             logger.info(
-                msg=f"{batch_num}/{num_batches} - Checking status of mini batch {mini_batch_id}"
+                msg=f"All batches finished"
             )
 
-            submitted_mini_batch = client.batches.retrieve(mini_batch_id)
+            break
+
+        for batch_num, batch_id in enumerate(batches):
+            if batch_id in finished_batches:
+                continue
+
+            logger.info(
+                msg=f"{batch_num}/{num_batches} - Checking status of mini batch {batch_id}"
+            )
+
+            try:
+                submitted_mini_batch = client.batches.retrieve(batch_id)
+            except Exception as e:
+                logger.error(f"{batch_num}/{num_batches} - Cannot retrieve status of batch {batch_id}. Encountered following exception: {e}")
+                finished_batches.add(batch_id)
+                continue
 
             status = submitted_mini_batch.status
 
             logger.info(f"{batch_num}/{num_batches} - Current status: {status}")
 
             if status == "failed":
-                raise KeyboardInterrupt("Job failed...")
+                logger.error(f"{batch_num}/{num_batches} - Batch {batch_id} failed!")
+                finished_batches.add(batch_id)
+                continue
+
             elif status == "completed":
                 logger.info(
                     f"{batch_num}/{num_batches} - Finished processing mini batch."
@@ -389,7 +428,13 @@ def annotate_articles(parsed_config: omegaconf.DictConfig) -> None:
 
                 logger.info(f"{batch_num}/{num_batches} - Fetched output file.")
 
+                finished_batches.add(batch_id)
+
                 break
+            else:
+                time.sleep(config.inner_waiting_time)
+
+        time.sleep(config.outer_waiting_time)
 
     return None
 

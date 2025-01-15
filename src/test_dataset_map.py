@@ -18,13 +18,11 @@ from misinfo_general import SPECIAL_TOKENS
 from misinfo_general.experiment_metadata import ExperimentMetaData
 from misinfo_general.labelling import MBFCBinaryLabeller
 from misinfo_general.data import process_dataset, eval_collator
-from misinfo_general.splitting import uniform_split_dataset
+from misinfo_general.splitting import dataset_map_split_dataset
 from misinfo_general.utils import print_config
 
 
-@hydra.main(
-    version_base="1.3", config_path="../config", config_name="test_dataset_map"
-)
+@hydra.main(version_base="1.3", config_path="../config", config_name="test_dataset_map")
 def test(args: DictConfig):
     assert args.year is not None
     assert args.checkpoint.model_name is not None
@@ -57,9 +55,8 @@ def test(args: DictConfig):
 
     # TODO: make dynamic
     train_task = Task.get_task(
-        project_name="misinfo_benchmark_models/uniform",
-        task_name="year[2017]_model[microsoft-deberta_v3_base]_fold[0]",
-        task_id="5b3ccc47d4984a07815bc129177afe43",
+        project_name="misinfo_benchmark_models/dataset_map",
+        task_name=f"year[{args.checkpoint.year}]_model[{args.checkpoint.model_name}]_fold[{args.checkpoint.fold}]",
     )
 
     if train_task is None:
@@ -147,12 +144,16 @@ def test(args: DictConfig):
     )
 
     # Split the dataset to test for the generalisation form
-    dataset = uniform_split_dataset(
+    dataset = dataset_map_split_dataset(
         dataset=dataset,
+        db_loc="./data/db/misinformation_benchmark_metadata.db",
         seed=train_config["split"]["seed"],
-        num_folds=train_config["split"]["num_folds"],
-        val_to_test_ratio=train_config["split"]["val_to_test_ratio"],
-        cur_fold=args.fold,
+        year=train_config["split"]["year"],
+        val_prop=train_config["split"]["val_prop"],
+        test_prop=train_config["split"]["test_prop"],
+        split=train_config["split"]["split"],
+        num_buckets=train_config["split"]["num_buckets"],
+        publisher_occurences=train_config["split"]["publisher_occurences"],
     )[args.split.split_name]
 
     dataset = dataset.sort(column_names=["article_id"])
