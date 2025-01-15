@@ -3,6 +3,7 @@ from collections import Counter
 import warnings
 import typing
 import logging
+import hashlib
 
 import duckdb
 import numpy as np
@@ -160,6 +161,11 @@ def dataset_map_split_dataset(
     logging.info(f"Data - Reserved {len(chosen_test_sources)} publishers for testing")
 
     chosen_test_sources = tuple(sorted(list(map(str, list(chosen_test_sources)))))
+
+    hashed = hashlib.sha256(", ".join(sorted(chosen_test_sources)).encode()).hexdigest()
+
+    logging.info(f"Data - Reserved publishers hash: {hashed}")
+    logging.info(f"Data - Reserved publishers: {chosen_test_sources}")
 
     print(f"SELECT source FROM sources WHERE source NOT IN {chosen_test_sources}")
 
