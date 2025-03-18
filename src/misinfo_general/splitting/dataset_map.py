@@ -167,8 +167,6 @@ def dataset_map_split_dataset(
     logging.info(f"Data - Reserved publishers hash: {hashed}")
     logging.info(f"Data - Reserved publishers: {chosen_test_sources}")
 
-    print(f"SELECT source FROM sources WHERE source NOT IN {chosen_test_sources}")
-
     # Fetch the article_ids for the train and test splits
     train_article_ids = metadata_db.sql(
         f"""
@@ -194,16 +192,25 @@ def dataset_map_split_dataset(
         """
     ).fetchall()
 
+    logging.info(f"Data - Fetched all article_id belonging to reserved set")
+
     train_article_ids = set(map(lambda x: x[0], train_article_ids))
     test_article_ids = set(map(lambda x: x[0], test_article_ids))
+
+    logging.info(f"Data - Converted article_id to set")
 
     # Split the dataset into train and test
     train_dataset = subset_dataset_by_article_id(
         dataset=dataset, article_ids=train_article_ids
     )
+
+    logging.info(f"Data - Split dataset into training data")
+
     test_dataset = subset_dataset_by_article_id(
         dataset=dataset, article_ids=test_article_ids
     )
+
+    logging.info(f"Data - Split dataset into testing data")
 
     # Figure out how much of the training dataset to reserve for validation
     test_prop = test_dataset.num_rows / (train_dataset.num_rows + test_dataset.num_rows)
@@ -217,12 +224,14 @@ def dataset_map_split_dataset(
         seed=seed,
     )
 
-    dataset_splits = datasets.DatasetDict(
-        {
-            "train": train_val_dataset["train"],
-            "val": train_val_dataset["test"],
-            "test": test_dataset,
-        }
-    )
+    logging.info(f"Data - Split train dataset into train/val data")
+
+    dataset_splits = {
+        "train": train_val_dataset["train"],
+        "val": train_val_dataset["test"],
+        "test": test_dataset,
+    }
+
+    logging.info(f"Data - Wrapped dataset into dictionary")
 
     return dataset_splits

@@ -7,8 +7,11 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=1
-#SBATCH --partition=gpu
-#SBATCH --array=2-5
+#SBATCH --partition=gpu_a100
+#SBATCH --array=12-16
+
+# Exclude certain nodes where the script fails (for some reason)
+#SBATCH --exclude=gcn25,gcn28,gcn56
 
 #SBATCH --output=/home/ivov/job_outputs/misinfo_benchmark_models/dataset_map/%A-%a.out
 

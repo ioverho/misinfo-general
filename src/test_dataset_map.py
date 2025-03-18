@@ -26,7 +26,8 @@ from misinfo_general.utils import print_config
 def test(args: DictConfig):
     assert args.year is not None
     assert args.checkpoint.model_name is not None
-    assert args.split.split_name in ["val", "test"]
+    # This is the only experiment where testing on the train set is allowed
+    #assert args.split.split_name in ["val", "test"]
 
     # Setup logging
     logging.basicConfig(
@@ -53,15 +54,19 @@ def test(args: DictConfig):
     # Fetch the training configuration =========================================
     model_meta_data = ExperimentMetaData(**args.checkpoint)
 
+    logging.info(
+        f"Looking for train task in: {model_meta_data.project_name}/ {model_meta_data.task_name}"
+    )
+
     # TODO: make dynamic
     train_task = Task.get_task(
-        project_name="misinfo_benchmark_models/dataset_map",
-        task_name=f"year[{args.checkpoint.year}]_model[{args.checkpoint.model_name}]_fold[{args.checkpoint.fold}]",
+        project_name=model_meta_data.project_name,
+        task_name=model_meta_data.task_name,
     )
 
     if train_task is None:
         raise KeyboardInterrupt(
-            f"ClearML cannot find train task at: {model_meta_data.project_name} / {model_meta_data.task_name}"
+            f"ClearML cannot find train task at: {model_meta_data.project_name}/ {model_meta_data.task_name}"
         )
 
     checkpoints_dir = (Path(args.checkpoints_dir) / f"{train_task.task_id}").resolve()
@@ -90,7 +95,7 @@ def test(args: DictConfig):
 
     # TODO: make dynamic
     task = Task.init(
-        project_name="dataset_map",
+        project_name=model_meta_data.project_name,
         task_name=f"year[{args.year}]_fold[{args.fold}]",
         task_type="testing",
         tags=[
@@ -143,12 +148,14 @@ def test(args: DictConfig):
         logger=logging,
     )
 
+    logging.info(f"Data - Processed data")
+
     # Split the dataset to test for the generalisation form
     dataset = dataset_map_split_dataset(
         dataset=dataset,
         db_loc="./data/db/misinformation_benchmark_metadata.db",
-        seed=train_config["split"]["seed"],
-        year=train_config["split"]["year"],
+        seed=train_config["seed"],
+        year=train_config["year"],
         val_prop=train_config["split"]["val_prop"],
         test_prop=train_config["split"]["test_prop"],
         split=train_config["split"]["split"],
@@ -156,7 +163,13 @@ def test(args: DictConfig):
         publisher_occurences=train_config["split"]["publisher_occurences"],
     )[args.split.split_name]
 
-    dataset = dataset.sort(column_names=["article_id"])
+
+    # For some reason the sorting now hangs the script
+    # Not needed for testing, article_id is output as well
+    #dataset = dataset.sort(column_names=["article_id"])
+    #logging.info(f"Data - Sorted dataset on article_id column")
+
+    logging.info(f"Data - Split dataset into separate splits")
 
     # ==========================================================================
     # Model loading
@@ -196,6 +209,8 @@ def test(args: DictConfig):
         p.requires_grad = False
 
     model.eval()
+
+    logging.info("Model - Finished loading model")
 
     # ==========================================================================
     # EVAL

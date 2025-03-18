@@ -7,9 +7,13 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=1
-#SBATCH --partition=gpu
+#SBATCH --partition=gpu_a100
+#SBATCH --array=1-10
 
-#SBATCH --output=./job_outputs/misinfo_benchmark_models/dataset_map-eval/%A-%a.out
+# Exclude certain nodes where the script fails (for some reason)
+#SBATCH --exclude=gcn25,gcn28,gcn56
+
+#SBATCH --output=/home/ivov/job_outputs/misinfo_benchmark_models/dataset_map-eval/%A-%a.out
 
 set -e
 
@@ -23,8 +27,8 @@ echo -e "Finished syncing data to node"
 
 # Load environment
 module purge
-module load 2023
-module load Anaconda3/2023.07-2
+module load 2024
+module load Anaconda3/2024.06-1
 
 # Make sure we're in the right directory
 cd $HOME/misinfo_benchmark_models/
@@ -32,13 +36,33 @@ cd $HOME/misinfo_benchmark_models/
 # Activate environment
 source activate misinfo_benchmark
 
+HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/dataset_map_array.txt
+
 echo -e "Running with the following hyperparameters:"
 echo -e $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
 
 srun python src/test_dataset_map.py \
+    split.split_name="train" \
+    ++split.num_folds=15 \
+    ++split.num_buckets=15 \
+    ++split.publisher_occurences=5 \
     seed=942 \
-    fold=0 \
     checkpoint.model_name="microsoft/deberta-v3-base" \
-    split.split_name="test" \
+    split.val_prop=0.1 \
+    split.test_prop=0.2 \
+    data_dir=$LOCAL_DATA_DIR \
     disable_progress_bar=true \
-    year=2017
+    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
+
+#srun python src/test_dataset_map.py \
+#    split.split_name="test" \
+#    ++split.num_folds=15 \
+#    ++split.num_buckets=15 \
+#    ++split.publisher_occurences=5 \
+#    seed=942 \
+#    checkpoint.model_name="microsoft/deberta-v3-base" \
+#    split.val_prop=0.1 \
+#    split.test_prop=0.2 \
+#    data_dir=$LOCAL_DATA_DIR \
+#    disable_progress_bar=true \
+#    $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
