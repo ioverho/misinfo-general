@@ -236,33 +236,21 @@ def test(args: DictConfig):
 
     for i, batch in enumerate(dataloader):
         with torch.inference_mode(True):
-            model_output = model.forward(
-                input_ids=batch["input_ids"],
-                attention_mask=batch["attention_mask"],
-            )
+            logits = model.forward(
+                input_ids=batch["input_ids"].to(device),
+                attention_mask=batch["attention_mask"].to(device),
+            ).logits
 
-            logits = model_output.logits.to("cpu")
+            preds = torch.argmax(input=logits, dim=-1).cpu()
 
-            probs = F.softmax(logits, dim=1)
-
-        with open(checkpoints_dir / model_outputs_file_name, "a") as f:
+        with open(checkpoints_dir / f"{args.eval_year}_preds.csv", "a") as f:
             writer = csv.writer(f)
-
-            for row in zip(
-                batch["article_ids"], logits.tolist(), probs.tolist(), batch["labels"]
-            ):
-                row_flattened = []
-                for item in row:
-                    if isinstance(item, list):
-                        row_flattened.extend(item)
-                    else:
-                        row_flattened.append(item)
-
-                writer.writerow(row_flattened)
+            for row in zip(batch["article_ids"], preds.tolist(), batch["labels"]):
+                writer.writerow(row)
 
         if i == 0 or i % 10 == 0 or i == len(dataloader) - 1:
             logging.info(
-                f"Evaluation - {i} / {len(dataloader) - 1} [{(i / (len(dataloader) - 1))*100:.2f}%]"
+                f"Evaluation - {i} / {len(dataloader)} [{(i / len(dataloader)) * 100:.2f}%]"
             )
 
     logging.info("Evaluation - Uploading artifacts")
