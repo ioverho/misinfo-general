@@ -37,11 +37,17 @@ def process_dataset(
     tokenizer,
     labeller,
     logger,
+    dataset_tag: str = None,
 ):
     if isinstance(data_dir, str):
         data_dir = Path(data_dir)
 
-    processed_data_name = f"year[{year}]_model[{model_name.replace('-', '_').replace('/', '-')}]_length[{max_length}]"
+    if dataset_tag is None:
+        processed_data_name = ""
+    else:
+        processed_data_name = f"tag[{dataset_tag}]_"
+
+    processed_data_name += f"year[{year}]_model[{model_name.replace('-', '_').replace('/', '-')}]_length[{max_length}]"
 
     processed_data_loc = data_dir / "processed" / processed_data_name
 

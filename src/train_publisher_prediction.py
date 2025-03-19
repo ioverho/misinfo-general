@@ -30,7 +30,8 @@ def train(args: DictConfig):
     assert (data_dir / "db").exists() or (data_dir / "db_export").exists()
 
     # Check additional arg rules
-    assert args.generalisation_form is not None
+    # No generalisation form needed for publisher prediction
+    #assert args.generalisation_form is not None
     assert isinstance(args.fold, int)
     assert args.fold >= 0 and args.fold < args.split.num_folds
 
@@ -102,12 +103,13 @@ def train(args: DictConfig):
         tokenizer=tokenizer,
         labeller=labeller,
         logger=logging,
+        dataset_tag="publisher_prediction",
     )
 
     logging.info("Data - Processed dataset")
 
-    if args.generalisation_form != "uniform":
-        raise ValueError("Publisher prediction only uses uniform splitting")
+    #if args.generalisation_form != "uniform":
+    #    raise ValueError("Publisher prediction only uses uniform splitting")
 
     dataset_splits = uniform_split_dataset(
         dataset=dataset,

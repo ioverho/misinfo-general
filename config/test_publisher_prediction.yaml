@@ -1,0 +1,32 @@
+defaults:
+  - global@_global_: default
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+seed: 942
+
+year: null
+fold: 0
+
+split:
+  seed: ${seed}
+  split_name: test
+  val_prop: 0.1
+  test_prop: 0.2
+
+checkpoint:
+  generalisation_form: null
+  year: ${year}
+  fold: ${fold}
+  model_name: null
+
+batch_size:
+  tokenization: 1024
+  train: 64
+  eval: 512
+
+accelerator:
+  device_placement: true
+  mixed_precision: "fp16"
+  cpu: false

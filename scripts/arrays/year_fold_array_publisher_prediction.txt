@@ -1,0 +1,6 @@
+year=2017 fold=0 optim.lrs.classifier=0.001 optim.lrs.embeddings=1e-06 optim.lrs.pooler=1e-04 trainer.max_steps=300000
+year=2018 fold=0 optim.lrs.classifier=0.001 optim.lrs.embeddings=5e-07 optim.lrs.pooler=5e-05 trainer.max_steps=3000000
+year=2019 fold=0 optim.lrs.classifier=0.001 optim.lrs.embeddings=5e-07 optim.lrs.pooler=5e-05 trainer.max_steps=3000000
+year=2020 fold=0 optim.lrs.classifier=0.001 optim.lrs.embeddings=5e-07 optim.lrs.pooler=5e-05 trainer.max_steps=3000000
+year=2021 fold=0 optim.lrs.classifier=0.001 optim.lrs.embeddings=5e-07 optim.lrs.pooler=5e-05 trainer.max_steps=3000000
+year=2022 fold=0 optim.lrs.classifier=0.001 optim.lrs.embeddings=5e-07 optim.lrs.pooler=5e-05 trainer.max_steps=3000000

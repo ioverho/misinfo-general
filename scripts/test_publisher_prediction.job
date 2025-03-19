@@ -1,16 +1,16 @@
 #!/bin/bash
 
 #SBATCH --job-name=misinfo
-#SBATCH --time=12:00:00
+#SBATCH --time=00:30:00
 
 # GPU Settings
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=gpu_a100
-#SBATCH --array=2-6
+#SBATCH --array=1-1
 
-#SBATCH --output=./job_outputs/misinfo_benchmark_models/publisher_prediction/%A-%a.out
+#SBATCH --output=/home/ivov/job_outputs/misinfo_benchmark_models/publisher_prediction-eval/%A-%a.out
 
 set -e
 
@@ -33,22 +33,17 @@ cd $HOME/misinfo_benchmark_models/
 # Activate environment
 source activate misinfo_benchmark
 
-HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_fold_array_publisher_prediction.txt
+HPARAMS=$HOME/misinfo_benchmark_models/scripts/arrays/year_fold_array.txt
 
-srun python src/train_publisher_prediction.py \
+echo -e "Running with the following hyperparameters:"
+echo -e $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
+
+srun python src/test_publisher_prediction.py \
+    split.split_name="test" \
     seed=942 \
-    model_name='microsoft/deberta-v3-base' \
-    data.max_length=512 \
-    batch_size.tokenization=1024 \
-    batch_size.train=64 \
-    batch_size.eval=128 \
-    trainer.clearml=true \
-    trainer.wandb=false \
-    ++trainer.kwargs.fp16=true \
-    ++trainer.kwargs.use_cpu=false \
-    ++trainer.memory_metrics=false \
+    checkpoint.model_name="microsoft/deberta-v3-base" \
+    split.val_prop=0.1 \
+    split.test_prop=0.2 \
     data_dir=$LOCAL_DATA_DIR \
     disable_progress_bar=true \
     $(head -$SLURM_ARRAY_TASK_ID $HPARAMS | tail -1)
-
-rsync -aru $LOCAL_DATA_DIR/processed/* $HOME/misinfo_benchmark_models/data/processed
