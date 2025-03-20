@@ -243,7 +243,7 @@ def test(args: DictConfig):
 
             preds = torch.argmax(input=logits, dim=-1).cpu()
 
-        with open(checkpoints_dir / f"{args.eval_year}_preds.csv", "a") as f:
+        with open(checkpoints_dir / model_outputs_file_name, "a") as f:
             writer = csv.writer(f)
             for row in zip(batch["article_ids"], preds.tolist(), batch["labels"]):
                 writer.writerow(row)
