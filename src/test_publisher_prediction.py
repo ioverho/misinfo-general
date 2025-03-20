@@ -10,7 +10,6 @@ from torch.utils.data import DataLoader
 import datasets
 import hydra
 import torch
-import torch.nn.functional as F
 import transformers
 import yaml
 
@@ -52,9 +51,7 @@ def test(args: DictConfig):
     project_name = "misinfo_benchmark_models/publisher_prediction"
     task_name = f"year[{args.checkpoint.year}]_model[{args.checkpoint.model_name}]_fold[{args.checkpoint.fold}]"
 
-    logging.info(
-        f"Looking for train task in: {project_name}/{task_name}"
-    )
+    logging.info(f"Looking for train task in: {project_name}/{task_name}")
 
     # TODO: make dynamic
     train_task = Task.get_task(
@@ -147,7 +144,7 @@ def test(args: DictConfig):
         dataset_tag="publisher_prediction",
     )
 
-    logging.info(f"Data - Processed data")
+    logging.info("Data - Processed data")
 
     # Split the dataset to test for the generalisation form
     dataset = uniform_split_dataset(
@@ -160,10 +157,10 @@ def test(args: DictConfig):
 
     # For some reason the sorting now hangs the script
     # Not needed for testing, article_id is output as well
-    #dataset = dataset.sort(column_names=["article_id"])
-    #logging.info(f"Data - Sorted dataset on article_id column")
+    # dataset = dataset.sort(column_names=["article_id"])
+    # logging.info(f"Data - Sorted dataset on article_id column")
 
-    logging.info(f"Data - Split dataset into separate splits")
+    logging.info("Data - Split dataset into separate splits")
 
     # ==========================================================================
     # Model loading
