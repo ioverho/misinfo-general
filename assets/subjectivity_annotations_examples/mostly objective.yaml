@@ -1,0 +1,941 @@
+- publisher:
+    name: mcclatchydc
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: '''I make great deals for our country'': Trump talks about impeachment
+      trial while in Davos'
+    content: "President Donald Trump denied committing impeachable offenses and announced\
+      \ the lowest US unemployment rates \"ever recorded in history\" \u2026 on January\
+      \ 22.\nHe made the comments at a surprise press conference in Davos @"
+  GPT4o-mini:
+    Final Answer: mixed
+    Reasoning: The article presents a statement made by President Trump regarding
+      his impeachment trial and includes a factual claim about unemployment rates.
+      The language used is straightforward and reports on what Trump said without
+      inserting the author's opinion or bias. However, the article does include a
+      quote from Trump, which reflects his subjective viewpoint. Overall, while the
+      article contains factual reporting, it also includes subjective elements due
+      to the nature of the quotes and the context of the impeachment discussion. Therefore,
+      it can be classified as 'mixed' because it combines objective reporting with
+      subjective statements.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article reports on President Donald Trump's statements during a
+      press conference in Davos. It mentions his denial of committing impeachable
+      offenses and his announcement regarding unemployment rates. The article seems
+      to focus on reporting what Trump said, which is factual information. However,
+      the title 'I make great deals for our country' is a direct quote from Trump,
+      which could imply a subjective stance if not balanced with other perspectives.
+      The body of the article, as provided, does not include any analysis or opinion
+      from the author, which suggests it is mostly reporting factual information.
+      Therefore, the article appears to be mostly objective, as it primarily reports
+      on Trump's statements without adding subjective commentary or opinions from
+      the author.
+- publisher:
+    name: healthyfoodhouse
+    label: Conspiracy-Pseudoscience
+    bias: null
+    factuality: Low
+  article:
+    title: Crow Captured Taking A Rest On The Back Of A Bald Eagle
+    content: "In nature, miracles happen every day, you just have to keep a close\
+      \ eye on it.\nSeveral years ago, while shooting near Kitsap, Washington, photographer\
+      \ Phoo Chan, 50, managed to take a unique photo by doing so- a crow resting\
+      \ on the back of a bald eagle!\nThe bald eagle was looking for a snack while\
+      \ flying over Seabeck, Washington, when, for a few seconds, he had a visitor\
+      \ on its back.\n\"I was photographing a bald eagle flying around hunting for\
+      \ an early meal \u2026 from behind.\nAt first I thought the crow was going to\
+      \ chase away the eagle.\nI have seen crows harassing a hawk by swooping back\
+      \ and forth in order to drive it away from their territory.\nI was completely\
+      \ awed to see the crow actually land on the back of the flying eagle.\nIt was\
+      \ as if it was taking a short break and at the same time a free ride.\nWhat's\
+      \ more surprising was the eagle didn't seem to mind and kept flying \u2026 think\
+      \ the crow decided to land on the eagle because the eagle did not respond to\
+      \ its harassment so it landed briefly and then left.\nEventually the crow flew\
+      \ away and the eagle continued to hunt for its breakfast.\nThey both flew in\
+      \ different directions and it looked like they became friends.\n\"Chan said\
+      \ that numerous people were fascinated by the photos, and asked him how he managed\
+      \ to capture them in such a short time, and he explained that 'you have to be\
+      \ in the right \u2026 happens.\n'The photos went viral, with a lot of people\
+      \ admiring and commenting them.\nSome even said they were Photoshopped.\nYet,\
+      \ many had pretty hilarious comments, like the tweet by Jeff Hamada: \"I CAN\
+      \ DIE HAPPY.\nmy fav tattoo has become reality.\na crow riding on a bald eagle!\n\
+      !\n\""
+  GPT4o-mini:
+    Final Answer: mostly subjective
+    Reasoning: The article presents a unique event involving a crow resting on a bald
+      eagle, primarily focusing on the photographer's experience and the reactions
+      to the photo. While it does report on a factual occurrence, the language used
+      is somewhat subjective, particularly in phrases like "miracles happen every
+      day" and the description of the crow's actions as if it were taking a "short
+      break" or a "free ride." Additionally, the article includes personal opinions
+      and reactions from the photographer and social media users, which adds a subjective
+      layer to the reporting. Overall, while there are factual elements, the article
+      leans more towards subjective interpretation and personal anecdotes rather than
+      strictly objective reporting.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: 'The article primarily reports on a factual event: a crow landing on
+      the back of a bald eagle, as captured by photographer Phoo Chan. The article
+      includes direct quotes from the photographer, describing the event and his thoughts
+      while capturing the photos. These quotes provide a personal perspective but
+      are based on the factual occurrence of the crow and eagle interaction. The article
+      also mentions the public''s reaction to the photos, including skepticism and
+      humorous comments, which adds a layer of subjectivity. However, the core of
+      the article is about reporting the event and the photographer''s experience,
+      which is factual. The language used, such as ''miracles happen every day,''
+      introduces a subjective tone, but it does not dominate the article. Overall,
+      the article leans towards being objective as it focuses on reporting a real
+      event, but it includes subjective elements in the form of personal reflections
+      and public reactions.'
+- publisher:
+    name: wnd
+    label: Questionable Source
+    bias: Extreme Right
+    factuality: Low
+  article:
+    title: NYC's de Blasio sends staff to monitor Christian coronavirus tent-hospital
+    content: "(THE BLAZE) Evangelist Franklin Graham's charity organization, Samaritan's\
+      \ Purse, opened up a temporary tent hospital in Central Park to help treat patients\
+      \ infected with COVID-19, but New York City Mayor Bill de Blasio does n't trust\
+      \ the organization not to discriminate against LGBTQ patients, FaithWire reported.\n\
+      Samaritan's Purse set up a facility with 68 beds for the coronavirus patients,\
+      \ an attempt to ease the burden of overwhelmed hospitals in New York City.\n\
+      De Blasio expressed distrust that the organization would treat LGBTQ people\
+      \ equally, and reportedly sent \u2026 the situation.\n\"I said immediately to\
+      \ my team that we had to find out exactly what was happening,\" de Blasio said,\
+      \ according to the New York Post.\n\"Was there going to be an approach that\
+      \ was truly consistent with the values and the laws in New York City, that everyone\
+      \ would be served and served equally?\nWe've received those assurances from\
+      \ the organization.\n... We're going to send people over from the Mayor's Office\
+      \ to monitor.\nI am very \u2026 But if it is done right, we need all the help\
+      \ we can get. \""
+  GPT4o-mini:
+    Final Answer: mixed
+    Reasoning: The article presents a situation involving NYC Mayor Bill de Blasio's
+      response to the establishment of a temporary hospital by Samaritan's Purse,
+      a Christian organization. It includes direct quotes from de Blasio expressing
+      his concerns about potential discrimination against LGBTQ patients. The article
+      reports on factual events, such as the opening of the hospital and de Blasio's
+      actions, but it also includes subjective elements, particularly in the framing
+      of de Blasio's distrust and the implications of his concerns. The use of phrases
+      like 'doesn't trust the organization' suggests a negative connotation towards
+      Samaritan's Purse, which leans towards a subjective interpretation of the events.
+      Overall, while the article contains factual reporting, the inclusion of de Blasio's
+      opinions and concerns introduces a subjective element, making it not entirely
+      objective.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: 'The article reports on a factual event: the opening of a temporary
+      tent hospital by Samaritan''s Purse in Central Park and the response by NYC
+      Mayor Bill de Blasio. It includes quotes from de Blasio expressing his concerns
+      about potential discrimination against LGBTQ patients and his actions to monitor
+      the situation. The article presents these facts without overt editorializing
+      or opinionated language. However, the choice of words like "doesn''t trust"
+      and the focus on de Blasio''s distrust could imply a slight bias, but overall,
+      the article sticks to reporting the events and statements made by the involved
+      parties. Therefore, it leans towards being objective, but the framing could
+      suggest a slight subjective angle.'
+- publisher:
+    name: forbes
+    label: Right-Center
+    bias: Right-Center
+    factuality: Mostly Factual
+  article:
+    title: Coronavirus Stimulus Offered By House Financial Services Committee Creates
+      New Digital Dollar
+    content: "Updated on 3/ 24/ 20 at 11: 45 AM: The final version of the economic\
+      \ stimulus package offered by Speaker Pelosi the House Democrats no longer includes\
+      \ the U.S. Digital Dollar proposal; however, the language as proposed by Chairwoman\
+      \ Waters of the House Financial Services Committee still contains this language.\
+      \ Links to the original and updated stimulus bills with the latest language\
+      \ are at the end of the story. As the markets continue to drop and the U.S.\
+      \ looks to Congress for agreement on a massive stimulus package to save the\
+      \ economy from impacts of the coronavirus pandemic \u2026 includes a very forward-looking\
+      \ kind of stimulus: the creation of a 'digital dollar 'and the establishment\
+      \ of 'digital dollar wallets.' In what will send shock waves through the cryptocurrency\
+      \ and blockchain industry, particularly for those following central bank digital\
+      \ currencies around the world, this signals the U.S. is serious in establishing\
+      \ infrastructure for a central bank digital currency. Both Speaker Pelosi's\
+      \ 'Take Responsibility for Workers and Families Act 'and the' Financial Protections\
+      \ and Assistance for America's Consumers, \u2026 Act (H.R. 6321), 'introduced\
+      \ by Chairwoman Maxine Waters of Financial Services Committee, introduced these\
+      \ concepts today as a way of delivering the economic stimulus payments to U.S.\
+      \ citizens. The bill establishes a digital dollar, which it defines as' a balance\
+      \ expressed as a dollar value consisting of digital ledger entries that \u2026\
+      \ chief innovation officer at CFTC, as well as a founding director of the Digital\
+      \ Dollar Project, stated to \u2026, 'It is worth exploring, testing, and piloting\
+      \ a true USD CBDC and broader digital infrastructure in order to improve our\
+      \ future capabilities and resiliency, but it is also important that this effort\
+      \ not delay the government from deploying critical emergency funds using existing\
+      \ channels during this crisis. While the crisis underscores the importance of\
+      \ \u2026 a CBDC will require time and thoughtful coordination between the government\
+      \ and private sector stakeholders.' Carmelle Cadet, Founder and CEO of EMTECH,\
+      \ a modern central bank technology and services company, is a technology provider\
+      \ in the world's first live retail CBDC with the Central Bank of Bahamas called\
+      \ the Sand Dollar. She has recently started a new initiative in the U.S. called\
+      \ 'Project New Dawn 'to ensure the unbanked and underbanked receive economic\
+      \ stimulus payments. Pointing to a FDIC report in 2017 that \u2026 and underbanked\
+      \ in the U.S., she notes,' If checks are the form of payment, the stimulus is\
+      \ not going to reach many of them. That would be approximately$ 100B underutilized\
+      \ of stimulus for lower income householders. 'Financial Services Committee Proposal:\
+      \ Financial Protections and Assistance for America's Consumers, States, Businesses,\
+      \ and Vulnerable Populations Act (H.R. 6321) Take Responsibility For Workers\
+      \ And Families Act (H.R. 6379 \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article discusses the economic stimulus package proposed by the
+      House Financial Services Committee, focusing on the inclusion of a digital dollar.
+      It presents factual information about the legislative proposals, the context
+      of the coronavirus pandemic, and quotes from relevant stakeholders. While it
+      includes some opinions from experts regarding the implications of a digital
+      dollar, the overall tone remains largely informative and centered on reporting
+      the developments in the stimulus package. The article does not advocate for
+      or against the proposals but rather explains them and provides context. Therefore,
+      it leans towards being objective, though it does contain some subjective elements
+      due to the expert opinions included.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on the proposal of a digital dollar as
+      part of a stimulus package, providing factual information about the legislative
+      process and the implications of such a proposal. It includes quotes from relevant
+      stakeholders and experts, which adds to the factual nature of the article. However,
+      it also includes some analysis and interpretation of the potential impact on
+      the cryptocurrency and blockchain industry, which introduces a slight subjective
+      element. Overall, the article maintains a neutral tone and focuses on reporting
+      the facts of the proposal and its context, with minimal opinion or bias.
+- publisher:
+    name: themanchestereveningnews
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: Remote beaches in the UK to visit this bank holiday weekend
+    content: "It's the final bank holiday weekend before Christmas which means summer\
+      \ has officially come to an end. If you 're looking to make the most of it,\
+      \ but don't want to be surrounded by crowds of people amid coronavirus, then\
+      \ heading to a lesser known beach could be the answer. You could even make a\
+      \ stay of it seeing as some of the more remote beaches in the UK are a bit of\
+      \ a journey away from Manchester. And, despite the local lockdown measures imposed\
+      \ on the region, \u2026 out of the area for leisure and visit beaches, as long\
+      \ as you 're just with your household. \u2026 has discovered some of the UK's\
+      \ hidden gems by analysing Instagram data to see which beauty spots had the\
+      \ least hashtags. And these six secluded sites promises a much needed break\
+      \ from city life and a calming change of scenery in difficult times. Coves Haven,\
+      \ located at the north side of Holy Island in Northumberland, has been identified\
+      \ as the most remote beach to visit \u2026 cove is surrounded by high sand dunes\
+      \ and steep cliffs, providing a beautiful view of the coast. And if you visit\
+      \ when the tide is low, you 'll be able to explore plenty of rock pools. There's\
+      \ no lifeguard service so do be careful if you go in for a swim, dogs are allowed\
+      \ to visit. This beach in \u2026 family. A little further inland you can also\
+      \ visit Howick Hall, once home to Lord Grey, if the weather does n't hold out\
+      \ at the beach. This remote spot \u2026 backed by towering cliffs, so it can\
+      \ only be reached by taking the very steep metal stairs. Visit Pembrokeshire's\
+      \ website says it's 'so remote, you 'll probably find you 're the only one on\
+      \ it '. Although it's a sandy beach, it's also rocky with plenty of rock pools\
+      \ to explore. This beach is a rare find but the most popular of the least tagged\
+      \ beaches, garnering 658 hashtags. Drigg is a small village on \u2026 Ravenglass,\
+      \ and even has its own train station for accessibility. The stretch of sand\
+      \ is the largest dune system in Cumbria, supporting many species such as blue\
+      \ fleabane and also home to the largest seabird breeding colonies in the north\
+      \ west. On the border of the Lake District, it's an ideal area to stop over\
+      \ where you can also take in the many waterfalls and breathtaking hikes nearby.\
+      \ The study also discovered these other remote beaches: West Voe, Shetland Islands;\
+      \ Shepherd' \u2026 Sinclairs Bay, Highland; Porthbeor, Cornwall; Speke's Mill\
+      \ Mouth, Devon; Langamull Beach, Isle of Mull; Fidden, Isle of Mull; Traeth\
+      \ Mawr, Glamorgan; Traeth Bychan Beach, Anglesey \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily focuses on providing information about remote
+      beaches in the UK that people can visit during the bank holiday weekend. It
+      includes factual details about the beaches, such as their locations, characteristics,
+      and accessibility. While it does mention the context of the coronavirus and
+      local lockdown measures, it does not express a personal opinion or take a stance
+      on these issues. The language used is descriptive and informative rather than
+      persuasive or opinionated. Therefore, the article can be classified as mostly
+      objective, as it presents factual information with minimal subjective interpretation.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article provides information about remote beaches in the UK that
+      can be visited during the bank holiday weekend. It focuses on factual descriptions
+      of the beaches, their locations, and features, such as the presence of rock
+      pools, sand dunes, and accessibility. The article also mentions the context
+      of the coronavirus pandemic and local lockdown measures, but it does so in a
+      factual manner, explaining the conditions under which people can visit these
+      beaches. The use of Instagram data to identify less crowded beaches is also
+      presented as a factual method. While the article does suggest that visiting
+      these beaches could provide a 'much needed break' and a 'calming change of scenery,'
+      these statements are relatively mild and do not dominate the article. Overall,
+      the article maintains a neutral tone and focuses on providing information rather
+      than opinions or persuasive arguments. Therefore, it can be classified as mostly
+      objective.
+- publisher:
+    name: themanchestereveningnews
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: Care home apologises after dementia sufferer, 87, was 'pinned' to her bed
+      by support worker - she was allowed to keep working during police investigation
+    content: "A care home has apologised after an 87-year-old dementia sufferer was\
+      \ 'pinned 'to her bed by a support worker, who was then allowed to keep working\
+      \ during a police investigation. Amanda Thornhill was found guilty of wilful\
+      \ neglect after she restrained Marian Johnson and prevented her getting out\
+      \ of bed at the Each Step care home in Blackley in March 2018. But Mrs Johnson's\
+      \ family have told of their anger after Ms Thornhill was allowed to to continue\
+      \ working at the Charlestown Road home, despite being under police investigation.\
+      \ Ms Thornhill, 48 \u2026. Community Integrated Care, the charity which runs\
+      \ the home, said it apologised for 'any distress this situation caused 'adding\
+      \ the 'more appropriate course of action would have been to suspend Ms Thornhill\
+      \ from work until the outcome of the case'. Following a four day trial in June\
+      \ last year at Manchester Crown Court Ms Thornhill, of Blackley, was sentenced\
+      \ to a 12 month community order and 150 hours community service. Mrs Johnson's\
+      \ son Ian, 59, of New Moston, told of \u2026, which took place in the early\
+      \ hours of the morning. Mr Johnson said: \"I was just devastated. I did n't\
+      \ understand how it could have happened. I was at work when the home called\
+      \ and I just felt a bit helpless.\" When I got to the home my mum was holding\
+      \ her thumbs \u2026 here In a statement Carolyn McConnell, director of Quality\
+      \ at Community Integrated Care said: \"At Community Integrated Care the safety\
+      \ and wellbeing of the people we support is paramount and as \u2026 allegation\
+      \ against Ms Thornhill, we took immediate action, notifying all relevant authorities.\"\
+      \ Ms Thornhill was dismissed from our employment following her conviction and\
+      \ the conclusion of our own disciplinary investigation. \"However, following\
+      \ an internal review of this matter, we recognise that whilst we did suspend\
+      \ Ms Thornhill from care duties during the inquiry, the more appropriate course\
+      \ of action would have been to suspend her from work until the outcome of the\
+      \ case.\" As with all investigations, there is limited information \u2026 so\
+      \ as not to impede the criminal process. \"This was relayed to Mr Johnson during\
+      \ discussions at the time and we do understand how this can be upsetting for\
+      \ family members and loved ones. We remain committed to working with Mr Johnson\
+      \ to address any concerns he has.\" Community Integrated Care apologises for\
+      \ any distress this situation has caused and we will ensure we learn all necessary\
+      \ lessons from this experience. \"Get breaking news first on the free \u2026\
+      \ app- download it here \u2026 You can also get a round-up of the biggest stories\
+      \ sent directly to your inbox every day with the MEN email newsletter- subscribe\
+      \ here. And you can follow us on Facebook here \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article presents a factual account of an incident involving a care
+      home and a support worker who was found guilty of neglecting an elderly dementia
+      patient. It includes statements from the care home, the family of the victim,
+      and details about the legal proceedings. While it does include quotes from family
+      members expressing their anger and devastation, which could be seen as subjective,
+      the overall tone of the article remains focused on reporting the events and
+      responses from the involved parties. The article does not advocate for a particular
+      viewpoint or express personal opinions, but rather presents the facts surrounding
+      the incident and the subsequent actions taken by the care home. Therefore, it
+      leans more towards being objective, though it does contain some subjective elements
+      due to the emotional responses of the family. Overall, I would classify it as
+      mostly objective.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article reports on a specific incident involving a care home, a
+      support worker, and a patient with dementia. It provides factual information
+      about the incident, including the actions taken by the care home, the legal
+      proceedings, and statements from involved parties. The article includes quotes
+      from the victim's family and the care home management, which are factual accounts
+      of their perspectives and actions. While the article does convey the emotions
+      and reactions of the victim's family, it does so by quoting them directly, which
+      is a common journalistic practice to provide a comprehensive view of the situation.
+      The article does not appear to take a stance or express opinions from the author,
+      focusing instead on reporting the facts of the case and the responses from the
+      involved parties. Therefore, the article is mostly objective, as it primarily
+      reports factual information and includes direct quotes to convey subjective
+      experiences without editorializing.
+- publisher:
+    name: metrouk
+    label: Left-Center
+    bias: Left-Center
+    factuality: Mixed
+  article:
+    title: Heart attack survivors beg people not to risk their lives as A&E visits
+      drop
+    content: "Heart attack survivors have warned sufferers not to avoid hospitals\
+      \ and A& E departments during the coronavirus pandemic as they may be putting\
+      \ their lives at risk. Alice Timmons and Kelvine Tomlinson both had heart attacks\
+      \ during the lockdown and told Metro.co.uk they would probably not be here today\
+      \ had they failed to attend hospital. It comes as data from Public Health England\
+      \ (PHE) up to April 26 shows the number of people attending A& E departments\
+      \ is 42% lower than expected at this time of year, and there has also been \u2026\
+      \ due to heart attacks. While talking to the cardiologist she actually went\
+      \ into cardiac arrest, and had to be shocked with a defibrillator to keep her\
+      \ alive. After having a stent inserted into her artery, she is now at home recovering.\
+      \ Kelvine Tomlinson, 52 and a supply chain manager from Preston, said he initially\
+      \ avoided calling 999 when he started suffering from pain down his left-hand\
+      \ side in mid-April. Visit our live blog for the latest updates: Coronavirus\
+      \ news live 'I was concerned \u2026 I'd heard and seen in the media, however\
+      \ it was all about balancing the risk of whether to go or not,' he said. 'But\
+      \ I was lying on the bed having sweats, and the pain was coming over me in waves.\
+      \ My wife kept pushing me to ring 999, I would have \u2026 , people were still\
+      \ not seeking the emergency medical help they desperately needed. 'The number\
+      \ of people phoning 999 with chest \u2026 that could be a heart attack was much\
+      \ lower than we'd expect. This is deeply concerning- heart attacks do not stop\
+      \ for a pandemic.' This reality is especially tragic as the impacts of research\
+      \ now mean that heart attacks are very treatable. While many things right now\
+      \ are uncertain, one thing that we can be certain of is that heart attacks kill,\
+      \ and if you delay seeking medical help, you are more likely to suffer serious\
+      \ heart damage and long-term complications. '\u2026 delay seeking help. If you\
+      \ are experiencing symptoms of a heart attack call 999 immediately. If your\
+      \ heart condition has worsened seek medical advice.' You are not a burden, the\
+      \ NHS remains ready to treat you and heart attacks are still a top priority.\
+      \ 'People shouldn't be unduly anxious about catching coronavirus in hospital,\
+      \ and should feel reassured that all hospitals have put measures in place to\
+      \ separate people needing treatment for Covid-19 from those that need treatment\
+      \ for other urgent conditions like \u2026 an online coronavirus support hub\
+      \ to provide information for people living with heart and circulatory diseases\
+      \ during the pandemic. Get in touch with our news team by emailing us at webnews@\
+      \ metro.co.uk. For more stories like this, check our news page \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on the experiences of heart attack survivors
+      and the concerning trend of reduced A&E visits during the pandemic. It includes
+      factual data from Public Health England and quotes from individuals who experienced
+      heart attacks, emphasizing the importance of seeking medical help. While it
+      does convey a sense of urgency and includes personal anecdotes, the overall
+      tone remains focused on factual reporting and public health advice rather than
+      expressing personal opinions or biases. Therefore, it leans towards being objective,
+      though the inclusion of survivor testimonies adds a slight subjective element.
+      However, the core message is rooted in factual information and public health
+      guidance.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article presents factual information about the decrease in A&E
+      visits during the coronavirus pandemic and includes statements from heart attack
+      survivors and medical professionals urging people not to avoid seeking medical
+      help. It cites data from Public Health England and provides specific examples
+      of individuals who experienced heart attacks. The article's primary focus is
+      on conveying the importance of seeking medical attention for heart attacks despite
+      the pandemic, which is a factual and neutral stance. While it includes personal
+      stories and quotes, these are used to support the factual message rather than
+      to express opinions. Therefore, the article is mostly objective, as it reports
+      on a factual issue with supporting evidence and expert opinions, without taking
+      a subjective stance.
+- publisher:
+    name: smh
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: All 220 Tigerair pilots will be made redundant as part of Virgin Australia's
+      layoffs
+    content: "Virgin Australia will make all pilots at its budget arm Tigerair redundant\
+      \ as part of a round of layoffs that will see more than 1000 workers lose their\
+      \ jobs in the wake of the coronavirus pandemic. The airline on Wednesday stood\
+      \ down 8000 of its 10,000 workers as it slashed domestic flight capacity by\
+      \ 90 per cent. On Thursday, chief executive Paul Scurrah said more than 1000\
+      \ of those workers would lose their jobs permanently. The Australian Federation\
+      \ of Air Pilots said all 220 pilots at Tigerair had been told they would lose\
+      \ their jobs at \u2026 is disappointing that while Virgin is trying to reassure\
+      \ the travelling public that it will maintain a low-cost carrier, it is dismissing\
+      \ all of Tigerair's pilots at the same time, \"AFAP industrial officer James\
+      \ Lauchland said. Virgin insists its low-cost subsidiary will continue to operate\
+      \ after the COVID-19 crisis passes, with plans to use a single workforce of\
+      \ pilots across both Virgin and Tigerair. The redundancies are likely to include\
+      \ about 500 pilot and cabin crew roles at Virgin's New Zealand base, \u2026\"\
+      \ The COVID-19 pandemic has required the group to evaluate its operating model\
+      \ for its Boeing 737 flying, to ensure we are operating as efficiently as possible\
+      \ once the crisis is over, \"a Virgin spokeswoman said.\" We are consulting\
+      \ with the unions on a proposal to have all future domestic and short haul flying\
+      \ operated by Virgin Australia \u2026 down 20,000 of its 30,000 employees. The\
+      \ 1000 redundancies are in addition to 750 layoffs announced late last year\
+      \ \u2026 lift Virgin's poor financial performance. The unions representing Qantas\
+      \ and Virgin pilots and engineers wrote to federal Transport Minister Michael\
+      \ McCormack on Wednesday, calling for support for workers to be included in\
+      \ any further industry assistance. A$ 715 million industry assistance package\
+      \ announced last week had not been passed on to workers, the unions said, with\
+      \ stood-down employees either having to use annual leave or unpaid leave. \"\
+      Other countries have already announced support that directly covers aviation\
+      \ industry employees,\" the letter \u2026 government support to ensure it survives\
+      \ this downturn, \"the unions said.\" What we are asking is that when further\
+      \ aviation support packages are considered, ongoing wage relief be a key element.\
+      \ Australia can not afford to lose qualified aviation professionals who will\
+      \ play a vital role in relaunching the industry when the COVID-19 downturn ends.\
+      \ \"The Transport Workers Union, which represents baggage handlers and ground\
+      \ crew, said the government should step in to pay up to 80 per cent of the wages\
+      \ of stood \u2026 has launched a similar policy. The TWU criticised Virgin for\
+      \ standing down staff but noted that unlike Qantas, it had agreed to discuss\
+      \ compensation when the crisis passed. This story originally appeared in the\
+      \ Sydney Morning Herald. Read the original story here \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on the layoffs at Virgin Australia and
+      the impact on Tigerair pilots, providing factual information about the number
+      of layoffs, the reasons behind them, and statements from various stakeholders
+      including the airline and unions. While it includes quotes from union representatives
+      expressing disappointment and calls for government support, these quotes are
+      presented as part of the reporting rather than as the author's opinion. The
+      article does not advocate for a particular viewpoint or express subjective opinions,
+      focusing instead on the facts surrounding the layoffs and the context of the
+      COVID-19 pandemic's impact on the airline industry. Therefore, the article can
+      be classified as mostly objective, as it presents factual information with minimal
+      subjective interpretation.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on the factual events surrounding the
+      layoffs at Virgin Australia and its budget arm Tigerair. It provides specific
+      details about the number of employees affected, statements from company representatives,
+      and reactions from unions. The article includes quotes from various stakeholders,
+      such as the Australian Federation of Air Pilots and the Transport Workers Union,
+      which provide their perspectives on the situation. However, these quotes are
+      presented as part of the factual reporting on the responses to the layoffs,
+      rather than as the article's own opinion. The article does not take a stance
+      on whether the layoffs are justified or not; it simply reports on the events
+      and the reactions to them. Therefore, the article maintains a neutral tone and
+      focuses on reporting factual news, making it mostly objective.
+- publisher:
+    name: thetennesseestar
+    label: Questionable Source
+    bias: Right
+    factuality: Mixed
+  article:
+    title: Keith Ellison Asked Trump Admin to End Ban on Using Aborted Fetal Tissue
+      for Research
+    content: "Attorney General Keith Ellison said a federal ban on using aborted fetal\
+      \ tissue for research is \"hampering\" the nation's ability to respond to COVID-19\
+      \ in a letter sent to the Trump administration. The letter, which was sent in\
+      \ late March, was signed by the attorneys general of 15 states, a coalition\
+      \ led by California Attorney General Xavier Becerra. \"We write to you out of\
+      \ concern that the current Fetal Tissue Ban that took effect in June 2019 is\
+      \ hampering our Nation's ability to address COVID-19,\" states \u2026 National\
+      \ Institutes of Health working on potential therapies for COVID-19 have been\
+      \ appealing to this administration for permission to work with fetal tissue,\
+      \ arguing that this pandemic warrants an exemption to your Ban. We urge you\
+      \ to grant their request and end the Ban. \"U.S. Health and Human Services Secretary\
+      \ Alex Azar announced in June 2019 that scientists at the National Institutes\
+      \ of Health (NIH) would no longer be allowed to conduct research\" involving\
+      \ the use of human fetal tissue from elective abortions. \"\" Intramural research\
+      \ \u2026 from elective abortions will not be conducted, \"HHS said. The U.S.\
+      \ House voted a week later to overturn the ban, but the proposal was dead-on-arrival\
+      \ in the Republican-controlled U.S. Senate. According to Ellison and his cosigners,\
+      \ allowing the country's scientists to use aborted fetal tissue\" can help accelerate\
+      \ vaccine development to combat COVID-19 \u2026 measles, and rabies. Fetal tissue\
+      \ has also \u2026 towards finding treatments and cures for some of the most\
+      \ debilitating diseases, including HIV/ AIDS and Alzheimer's, \"the letter continues.\
+      \ A group of House Democrats sent a similar letter to the Trump administration\
+      \ earlier this month and urged Secretary Azar to\" prioritize science. \"\"\
+      \ Because of your restrictions, NIH is unable to utilize human fetal tissue\
+      \ to develop animal models of COVID-19 that can test potential vaccines and\
+      \ treatments to decelerate or even end this global health crisis, \"that letter\
+      \ elaborated. In \u2026 the Trump administration stressed the importance of\"\
+      \ promoting the dignity of human life from conception to natural death \"and\
+      \ called the pro-life cause one of the president's\" very top priorities. \"\
+      Ellison and his 14 colleagues, however, think Trump needs to\" permit research\
+      \ on all fronts. \"\" The present moment is not a time for politics, \"the letter\
+      \ concludes.\" Science-based decision making should be at the forefront when\
+      \ addressing this issue and the scientists' position on this issue has \u2026\
+      \ no alternatives to human fetal tissue that have been shown to be as powerful\
+      \ in conducting these important studies across a broad range of research topics.\
+      \ \"Anthony Gockowski is managing editor of The Minnesota Sun and The Ohio Star.\
+      \ Follow Anthony on Twitter. Email tips to[ email protected] \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article presents a factual account of Attorney General Keith Ellison's
+      request to the Trump administration regarding the ban on using aborted fetal
+      tissue for research. It includes direct quotes from Ellison and mentions the
+      context of the ban, the coalition of attorneys general, and the implications
+      for COVID-19 research. While it does report on a contentious issue, the language
+      used is primarily factual, focusing on the actions taken and the arguments made
+      by Ellison and his colleagues. There is no overt opinion or bias expressed in
+      the reporting, and it does not advocate for or against the ban but rather presents
+      the perspectives of those involved. Therefore, the article can be classified
+      as mostly objective, as it maintains a neutral tone while discussing a controversial
+      topic.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article reports on a letter sent by Attorney General Keith Ellison
+      and other attorneys general to the Trump administration, urging them to lift
+      a ban on using aborted fetal tissue for research, particularly in the context
+      of COVID-19. The article presents factual information about the letter, the
+      positions of the involved parties, and the context of the ban. It includes quotes
+      from the letter and mentions the stance of the Trump administration on the issue.
+      While the article does report on a contentious issue, it primarily focuses on
+      presenting the facts of the situation, the arguments made by Ellison and his
+      colleagues, and the response from the administration. There is no overt opinion
+      or editorializing by the author, and the article does not take a stance on the
+      issue itself. Therefore, the article is mostly objective, as it reports on the
+      facts and positions of the involved parties without inserting the author's own
+      opinion.
+- publisher:
+    name: birminghammail
+    label: Left-Center
+    bias: Right-Center
+    factuality: Mostly Factual
+  article:
+    title: Man buys jumper online - and gets sent load of wool to knit his own
+    content: "Storm Brendan is battering Birmingham - and as the weather turns, one\
+      \ man has learned that wrapping yourself up warm comes at a price.\nThe shopper,\
+      \ from the UK, took to Twitter to reveal how he tried to stay warm AND save\
+      \ money through the post-festive period.\nHe bought what he thought was a'very\
+      \ affordable sweater 'from a Norwegian website, he told social media followers.\n\
+      But when Dan's delivery arrived, he realised he'd actually ordered a load of\
+      \ wool so he could knit the jumper himself, reports \u2026 his new wool collection,\
+      \ Dan wrote: \"Losing my mind because i ordered what I thought was a very affordable\
+      \ wool sweater (like Chris Evans in Knives Out obviously) from a Norwegian website\
+      \ and what I got was the raw materials necessary to create said sweater myself.\"\
+      \nDan went on to say: \"100% my fault, the wool is very nice and I will be gifting\
+      \ it to friends who knit for years to come.\n\"An extra wrinkle on this whole\
+      \ thing \u2026 I worked at briefly in 2016 so some of these sheep are my friends.\"\
+      \nHe then shared a photo of the sheep, which was supposedly taken at said farm,\
+      \ writing: \"Can not let this hero be shaved for no reason.\"\nDan says he ordered\
+      \ the jumper from ethical Norwegian website Leine Merino - which stocks '100%\
+      \ fine Norwegian merino wool that does not itch. '\nDan has been urged to get\
+      \ to work on knitting the sweater, but with the instructions being \u2026 's\
+      \ unable to understand the language, it could be quite a challenge."
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: "The article presents a humorous and light-hearted story about a man's\
+      \ experience with an online purchase that went awry. It includes direct quotes\
+      \ from the individual involved, which adds a personal touch and subjective perspective\
+      \ to the narrative. However, the article primarily focuses on reporting the\
+      \ facts of the situation\u2014what happened, the man's reaction, and the context\
+      \ of the purchase. While there are elements of personal opinion and humor, the\
+      \ core of the article remains factual and centered on the event itself. Therefore,\
+      \ it leans more towards being objective, but the inclusion of personal quotes\
+      \ and the humorous tone introduces some subjectivity. Overall, it can be classified\
+      \ as mostly objective due to its focus on factual reporting with some subjective\
+      \ elements."
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article is written in a light-hearted and humorous tone, focusing
+      on a man's amusing experience of accidentally ordering wool instead of a sweater.
+      It includes quotes from the man, Dan, and describes his reaction to the situation.
+      The article does not take a stance on any controversial issue or provide opinions
+      on broader topics. It simply reports on a quirky incident, which is factual
+      in nature. However, the tone and style of writing are more narrative and entertaining
+      rather than strictly factual reporting. This makes the article mostly objective,
+      as it is based on a real event but presented in a subjective, humorous manner.
+- publisher:
+    name: getholistichealth
+    label: Conspiracy-Pseudoscience
+    bias: null
+    factuality: Low
+  article:
+    title: Tips on How to Pick the Best Running Race for You
+    content: "Putting a race on your schedule is an excellent motivator no matter\
+      \ if you 're a novice or experienced runner. However, there are a number of\
+      \ important factors you need to consider before signing up for the event. To\
+      \ avoid wasting your time or money, it's important that you choose your race\
+      \ carefully. But no matter what you choose, training and choosing the right\
+      \ exercises is an important part of the process. As you run, you need to learn\
+      \ how to position your core to ensure long-term success. \u2026 using the best\
+      \ dumbbell shoulder exercises or best types of squats. With that in mind, the\
+      \ following tips can help you pick the best running race. If your New Year's\
+      \ resolution is to exercise more and lose weight, running can get you into shape.\
+      \ It's also a sport that is highly addictive because it's fun, and you don't\
+      \ need a lot of equipment to take up the sport. As you progress, you 'll be\
+      \ ready to \u2026. However, selecting the right distance is dependent on your\
+      \ fitness level. You may also want to consider future goals. If you 're at a\
+      \ 5K level, and you want to run a marathon, you want to get some race experience\
+      \ and a solid training program in place. If you 're a beginner, you can start\
+      \ with shorter distances such as \u2026 training schedule such as a 5K, 10K,\
+      \ half marathon and marathon. When it comes to running races, the world is your\
+      \ oyster. You 'll find everything from Disneyland and running through the winery\
+      \ of Napa Valley to Honolulu and Europe, so you need to take your pick. Before\
+      \ you select, \u2026 such as jet lag issues, language barriers, sleeping in\
+      \ another bed and eating foods that you may not be familiar with. If you like\
+      \ a predictable routine when running, choosing something local may be better\
+      \ suited for you. This allows you to forego any pre-race travel jitters. You\
+      \ can do your own research to determine the reviews and what other runners have\
+      \ to say about the particular race you would like to participate in. How is\
+      \ the Terrain? The course of a race is especially \u2026 about running a race.\
+      \ While choosing something scenic can be nice, you have to consider if you 're\
+      \ willing to put up with some hills. If you 're not very interested in the beauty,\
+      \ but you 're looking to run your fastest race, you 'll want to look for flat\
+      \ terrain. Dependent on your goals and achievements, you 'll want to check the\
+      \ course's terrain before you sign up for the race. Most websites will have\
+      \ a view \u2026 difficulty. You can also go in search of the course elevation\
+      \ and description \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article provides tips and advice on how to choose a running race,
+      focusing on practical considerations such as fitness level, race distance, terrain,
+      and personal preferences. It emphasizes the importance of careful selection
+      to avoid wasting time or money, which is a factual approach. While it does mention
+      subjective elements like personal enjoyment and preferences (e.g., scenic routes
+      vs. flat terrain), the overall tone remains informative and advisory rather
+      than opinionated. The article does not advocate for a specific race or express
+      strong opinions, which suggests a more objective stance. However, the inclusion
+      of personal preferences and experiences introduces some subjectivity. Therefore,
+      the article can be classified as mostly objective, as it primarily focuses on
+      providing factual information and guidance while allowing for some personal
+      interpretation.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article provides advice and tips on how to choose a running race,
+      focusing on practical considerations such as fitness level, race distance, location,
+      and terrain. It does not express strong opinions or take a stance on controversial
+      issues. Instead, it offers guidance that is generally applicable to anyone interested
+      in running races. The language is neutral and informative, aiming to help readers
+      make informed decisions based on their personal circumstances and preferences.
+      Therefore, the article is mostly objective, as it focuses on providing factual
+      information and practical advice rather than subjective opinions.
+- publisher:
+    name: scienceblogs
+    label: Pro-Science
+    bias: null
+    factuality: High
+  article:
+    title: 'NVX-CoV2373: Here''s How The Coronavirus Vaccine Based On A Flu Shot Works'
+    content: "A new trial has begun in Victoria this week to evaluate a potential\
+      \ vaccine against COVID-19. The vaccine is called NVX-CoV2373 and is from a\
+      \ US biotech company, Novavax. The trial will be carried out across Melbourne\
+      \ and Brisbane, and is the first human trial of a vaccine specifically for COVID-19\
+      \ to take place in Australia. This vaccine is actually based on a vaccine that\
+      \ was already in development for influenza. But how might it work against SARS-CoV-2,\
+      \ the coronavirus that causes COVID-19? Vaccines trigger an immune response\
+      \ by introducing the cells \u2026 in a safe way, without any exposure to the\
+      \ pathogen itself. All vaccines have to do two things. The first is make our\
+      \ immune cells bind to and \"eat up\" the vaccine. The second is to activate\
+      \ these immune cells so they 're prepared to fight the current and any subsequent\
+      \ threats from the virus in question. We often add molecules called adjuvants\
+      \ to vaccines to deliver a danger signal to the immune system, activate immune\
+      \ cells and trigger a strong immune response. \u2026 a \"subunit\" vaccine because,\
+      \ instead of delivering the whole virus, it delivers only part of it. The element\
+      \ of SARS-CoV-2 in this vaccine is the spike protein, which is found on the\
+      \ surface of the virus. By targeting a particular protein, a subunit vaccine\
+      \ is a great way to focus the immune response. \u2026 (5 microgram) or a high\
+      \ (25 microgram) dose. \u2026 adjuvant but the higher dose will also be tested\
+      \ without Matrix-M. All groups will receive two shots of the vaccine 21 days\
+      \ apart, except one group that will just get one shot. This design enables researchers\
+      \ to ask four important questions: \u2022 can the vaccine induce an immune response?\
+      \ \u2022 if so, what dose of nanoparticle is best? \u2022 do you need adjuvant\
+      \ or are nanoparticles enough? \u2022 do you need two shots or is one enough?\
+      \ While it's not yet clear how \u2026 Novavax has reported it generated strong\
+      \ immune responses in animals. And we know NanoFlu performed well and had a\
+      \ good safety profile for influenza. NanoFlu also seemed to work well in older\
+      \ adults, which would be essential for a vaccine for COVID-19. We eagerly await\
+      \ the first set of results, expected in a couple of months- an impressive turnaround\
+      \ time for a clinical trial. If this initial study is successful, the phase\
+      \ II portion of the trial will begin, with more participants. The \u2026 vaccine\
+      \ candidates for SARS-CoV-2 currently in clinical testing around the world.\
+      \ By Kylie Quinn, Vice-Chancellor's Research Fellow, \u2026, RMIT University\
+      \ and Kirsty Wilson, Postdoctoral Research Fellow, RMIT University. This article\
+      \ is republished from The Conversation under a Creative Commons license. Read\
+      \ the original article \u2026"
+  GPT4o-mini:
+    Final Answer: entirely objective
+    Reasoning: The article primarily presents factual information about the NVX-CoV2373
+      vaccine trial, detailing its purpose, methodology, and the scientific principles
+      behind how vaccines work. It avoids expressing personal opinions or taking a
+      stance on the vaccine's effectiveness or the broader implications of the trial.
+      The language used is technical and informative, focusing on the process and
+      expected outcomes of the trial rather than subjective interpretations or emotional
+      appeals. While it does mention the anticipation of results, this is framed in
+      a neutral manner, consistent with reporting on scientific research. Therefore,
+      the article can be classified as 'entirely objective.'
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article provides factual information about a new COVID-19 vaccine
+      trial, explaining how the vaccine works, the trial's design, and the scientific
+      principles behind it. It does not express opinions or take a stance on the vaccine's
+      efficacy or safety beyond reporting what is known from the trial and previous
+      studies. The language is neutral and focuses on delivering information about
+      the vaccine's mechanism and the trial process. The authors are researchers,
+      which suggests a focus on scientific accuracy. Therefore, the article is mostly
+      objective, as it sticks to factual reporting without delving into subjective
+      opinions.
+- publisher:
+    name: usatoday
+    label: Left-Center
+    bias: Left-Center
+    factuality: Mostly Factual
+  article:
+    title: 'The middleman: How Lev Parnas joined Team Trump and became Rudy Giuliani''s
+      fixer in Ukraine'
+    content: "The state funeral for former President George H.W. Bush in 2018 featured\
+      \ a who's who of U.S. political heavyweights. The nation's four living former\
+      \ presidents and their wives were in the first row of the National Cathedral\
+      \ in Washington, D.C. Alongside were President Donald Trump and his wife. Bush's\
+      \ eldest son, former president George W. Bush, sat nearby with his wife and\
+      \ extended family. Among the mourners was the man once known to millions as\
+      \ America's Mayor and now Trump's personal lawyer: Rudy Giuliani. He was \u2026\
+      \ man in the dark suit was Lev Parnas, a Soviet-born businessman known to few\
+      \ at the time. Now, the 47-year-old Florida resident is famed as Giuliani's\
+      \ associate in pressing for an investigation that could discredit former Vice\
+      \ President Joe Biden, a Trump rival in the 2020 presidential race, by digging\
+      \ up dirt in Parnas' native Ukraine. Parnas 'relationship with Giuliani was\
+      \ n't all business. He'd honored Giuliani by naming him godfather of his young\
+      \ son. Just a few weeks before the \u2026 president, Giuliani invited Parnas\
+      \ to join him at Shelly's Back Room, a clubby Washington retreat for cigar and\
+      \ whiskey aficionados. \"Sounds good I 'll meet you there,\" Parnas answered\
+      \ via text. He said he'd bring Rep. Pete Sessions, a Texas Republican and longtime\
+      \ Giuliani ally who had just lost his seat in \u2026 unidentified Ukrainian\
+      \ government official and funding from a Russian national, was aimed at buying\
+      \ \"potential influence with candidates, campaigns, and the candidates \u2026\
+      \ and two co-defendants pleaded not guilty. Then Giuliani learned that federal\
+      \ prosecutors in the Southern District of New York, the office he once led and\
+      \ the one that charged Parnas and Fruman, were investigating his business dealings.\
+      \ Giuliani said he had done nothing improper. The day after Parnas and Fruman\
+      \ were arrested, House impeachment investigators issued subpoenas. The two initially\
+      \ said they would not cooperate. At the time, their attorney was John Dowd,\
+      \ a longtime Giuliani ally and former lawyer for Trump. \u2026 cooperate. His\
+      \ disclosures to House investigators torpedoed his relationship with Giuliani.\
+      \ Giuliani declared Tuesday he was\" heartbroken \"over the rupture. He told\
+      \ Fox News 'Laura Ingraham he would n't respond to all of Parnas' accusations\
+      \ about their dealings, saying,\" He in very large part did not tell the truth.\
+      \ \"Trump repeated an earlier denial that he did not know Parnas. In response,\
+      \ Bondy tweeted a video showing Parnas with his arm on Trump's shoulder during\
+      \ a Mar-a-Lago event \u2026 's commander-in-chief to a Ukrainian government\
+      \ official. No recent selfies of Parnas and GOP heavyweights have surfaced.\
+      \ Instead, his lawyer has posted photos of Parnas smiling with the TV journalists\
+      \ who interviewed him about his exploits \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article provides a detailed account of Lev Parnas's connections
+      with Rudy Giuliani and Donald Trump, focusing on factual events and relationships.
+      It describes specific incidents, such as Parnas's attendance at the state funeral
+      of George H.W. Bush and his involvement in investigations related to Joe Biden.
+      While it includes quotes and statements from various individuals, the overall
+      tone remains focused on reporting events rather than expressing personal opinions
+      or taking a stance. Therefore, the article leans towards being objective, as
+      it primarily presents factual information without overt bias or subjective interpretation.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article provides a detailed account of Lev Parnas's involvement
+      with Rudy Giuliani and the Trump administration, focusing on factual events
+      such as meetings, legal proceedings, and public statements. It mentions specific
+      events, such as the state funeral for George H.W. Bush, and provides quotes
+      from involved parties like Giuliani and Trump. While the article does describe
+      relationships and actions that could be seen as controversial, it does so by
+      reporting on events and statements rather than providing the author's opinion
+      or analysis. The language used is primarily descriptive and factual, focusing
+      on who did what and when, rather than making subjective judgments or taking
+      a stance on the events described. Therefore, the article leans towards being
+      objective, though it covers a topic that is inherently political and could be
+      interpreted subjectively by readers.
+- publisher:
+    name: fivethirtyeight
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: Is The Electoral Map Changing?
+    content: "From one presidential election to the next, the battleground states\
+      \ that make- or break- the election remain largely the same. But that doesn't\
+      \ mean there aren't gradual (and sometimes, not so gradual) shifts underway.\
+      \ We zoomed in on how 16 battleground states have voted relative to the country\
+      \ as a whole since 2000- or how much more Republican or Democratic they are\
+      \ relative to the nation1- and we found an electoral map undergoing a series\
+      \ of changes, some steady and others abrupt. Swing states \u2026 2016 How much\
+      \ more Republican- or Democratic-leaning a state's popular vote was than the\
+      \ national popular vote in presidential elections, and how the state is forecasted\
+      \ to vote in 2020, as of Aug. 25 Take Iowa and Ohio, which went from uber-competitive\
+      \ states to near blowouts for President Trump in 2016. Or Maine and Michigan,\
+      \ which hadn't been all that competitive in 2008 or 2012, but lurched to the\
+      \ right in 2016. In other words, 2016 marked a significant departure from \u2026\
+      \ years; each state swung 7 points or more to the right, the biggest swings\
+      \ in that election. One explanation for why these four states moved so suddenly\
+      \ to the right is that they each have a large share of voters (at least 55 percent2)\
+      \ who are non-Hispanic white with less than a bachelor's degree, a bloc that\
+      \ moved \u2026 leans toward the GOP, but it also has a large Hispanic and Black\
+      \ population that leans Democratic -- with the caveat that a large share of\
+      \ its Latino vote is Cuban American, a group that has shifted toward Democrats\
+      \ over the last decade but remains far more Republican-leaning than other groups\
+      \ of Latinos. North Carolina is also a \u2026 a fairly consistent Republican\
+      \ lean. North Carolina's white college-educated population share isn't that\
+      \ much smaller than Virginia's, but it has a larger share of white voters who\
+      \ don't have a four-year degree. Additionally, North Carolina's white voters\
+      \ are somewhat more Republican-leaning, and the state tends to be more rural\
+      \ than Virginia. As things stand, the forecast model expects these states to\
+      \ vote more or less like they did in 2016- so they 'll be \u2026 all to say\
+      \ that 2020 will be a pivotal year in understanding underlying trends within\
+      \ the Electoral College. Will states like Iowa or Ohio move further to the right?\
+      \ Georgia and Texas further to the left? Or should we expect more of a reversion\
+      \ to the mean? Suffice it to say that, with Trump on the ballot this November,\
+      \ many of the forces we saw in 2016 will be prevalent again in 2020. But those\
+      \ forces may also define the parties moving forward, which means \u2026 great\
+      \ deal about how the electoral map will look beyond 2020 \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article discusses the changes in battleground states in the context
+      of U.S. presidential elections, particularly focusing on the shifts observed
+      from 2000 to 2016 and predictions for 2020. It presents factual data about voting
+      patterns and demographic influences on these patterns. While it does include
+      some interpretations and forecasts about future elections, the primary focus
+      remains on reporting historical voting trends and demographic data. The language
+      used is analytical rather than opinionated, and it does not advocate for a particular
+      political stance. Therefore, the article is primarily objective, as it emphasizes
+      factual reporting over subjective opinion.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: The article primarily focuses on analyzing historical voting patterns
+      and demographic trends in various states, providing data and forecasts about
+      how these states might vote in future elections. It discusses shifts in voting
+      behavior based on demographic changes and past election results, which are factual
+      elements. The article does not seem to take a stance or express opinions about
+      these changes; rather, it reports on them and provides analysis based on data.
+      This suggests that the article is mostly objective, as it focuses on factual
+      reporting and analysis rather than opinion.
+- publisher:
+    name: theantimedia
+    label: Conspiracy-Pseudoscience
+    bias: null
+    factuality: Mixed
+  article:
+    title: Israel Bombs Gaza Strip in Response to Incendiary Balloons
+    content: "(MEE) - The Israeli military said an attack helicopter struck a Hamas\
+      \ target in the northern Gaza Strip late Thursday in response to the launch\
+      \ of incendiary balloons into Israeli territory earlier in the day, the Associated\
+      \ Press reported.\n\"A short while ago, an attack helicopter struck infrastructure\
+      \ used for underground activities\" of Hamas in the northern Gaza Strip, an\
+      \ army statement said, according to AFP.\nIt said the strike was in response\
+      \ to balloons with attached explosive devices that were floated across the separation\
+      \ fence during the day.\n\u2026 and start fires in the Israeli farmlands and\
+      \ neighbourhoods near the border.\nIsraeli police said the balloons touched\
+      \ down in southern Israel and a bomb squad was dispatched.\nPolice said there\
+      \ was an explosion, but there were no injuries, AP reported.\nA security source\
+      \ in the Palestinian enclave confirmed the strike had hit a base belonging to\
+      \ the military wing of Hamas, with no injuries reported.\nOn Wednesday evening,\
+      \ Israeli forces had also struck Hamas targets in Gaza in retaliation for four\
+      \ rockets fired from \u2026 rockets at Israel was about three weeks ago, when\
+      \ Prime Minister Benjamin Netanyahu was attending a campaign event in the southern\
+      \ port city of Ashkelon, Haaretz said.\nThe rocket fire forced Netanyahu to\
+      \ leave the stage mid-speech and seek shelter.\nIsrael has fought three wars\
+      \ with Hamas and allied groups since 2008.\nThis article was chosen for republication\
+      \ based on the interest of our readers.\nAnti-Media republishes stories from\
+      \ a number of other independent news sources.\nThe views expressed in this article\
+      \ are the author '\u2026 editorial policy.\nSince you're here... ...We have\
+      \ a small favor to ask.\nFewer and fewer people are seeing Anti-Media articles\
+      \ as social media sites crack down on us, and advertising revenues across the\
+      \ board are quickly declining.\nHowever, unlike many news organizations, we\
+      \ haven't put up a paywall because we value open and accessible journalism over\
+      \ profit - but at this point, we're barely even breaking even.\nHopefully, you\
+      \ can see why we need to ask for your \u2026 and analysis takes substantial\
+      \ time, resources, and effort to produce, but we do it because we believe in\
+      \ our message and hope you do, too.\nIf everyone who reads our reporting and\
+      \ finds value in it helps fund it, our future can be much more secure.\nFor\
+      \ as little as $1 and a minute of your time, you can support \u2026 .\nThank\
+      \ you.\nClick here to support us"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on a specific military action taken by
+      Israel in response to incendiary balloons launched from Gaza. It includes statements
+      from both the Israeli military and a security source in Gaza, providing factual
+      information about the events that occurred. The language used is straightforward
+      and focuses on reporting the actions and reactions of the involved parties without
+      expressing personal opinions or biases. However, the article does include a
+      note about the publication's financial struggles and a call for support, which
+      introduces a subjective element regarding the publication's perspective on journalism
+      and funding. Overall, the main content remains factual and neutral, but the
+      additional commentary at the end slightly detracts from its objectivity. Therefore,
+      I would classify this article as mostly objective, as the core reporting is
+      factual and neutral, but it does contain some subjective elements in the context
+      of the publication's situation.
+  GPT4o:
+    Final Answer: mostly objective
+    Reasoning: 'The article primarily reports on a specific event: the Israeli military''s
+      response to incendiary balloons launched from Gaza. It provides factual details
+      about the military actions taken by Israel and the context of the ongoing conflict
+      between Israel and Hamas. The article cites sources such as the Israeli military,
+      the Associated Press, and AFP, which are reputable news agencies. The language
+      used in the article is mostly neutral and focuses on reporting the events as
+      they happened, without expressing opinions or taking a stance on the conflict.
+      However, the latter part of the article shifts focus to a message from Anti-Media,
+      discussing their financial situation and asking for reader support. This section
+      is more subjective as it expresses the organization''s views and appeals to
+      the readers'' emotions. Despite this, the core reporting on the military actions
+      remains factual and objective. Therefore, the article can be classified as mostly
+      objective, as the main content is factual reporting, but it includes a subjective
+      appeal at the end.'

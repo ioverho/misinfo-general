@@ -1,0 +1,921 @@
+- publisher:
+    name: realfarmacy
+    label: Conspiracy-Pseudoscience
+    bias: null
+    factuality: Low
+  article:
+    title: TikTok Coronavirus Prankster Arrested on Terror Charges After Licking Grocery
+      Store Items on Video
+    content: "Warrenton, Virginia Police arrested a 26-year-old man after a video\
+      \ clip (below) was shared online of him saying \"who is scared of coronavirus.\n\
+      \"The viral video led to calls from one of Britain's morning show hosts for\
+      \ him to be arrested.\nCody Pfister, 26, has been charged with making a terrorist\
+      \ threat following the \"disgusting\" act at a Walmart.\nViewers as far away\
+      \ as the UK and Netherlands are said to have made reports to the police.\nPolice\
+      \ said in a statement: \"We take \u2026 to thank all of those who reported the\
+      \ video so the issue could be addressed.\n\"Piers Morgan, one of the hosts of\
+      \ Good Morning Britain, aired the clip on Monday as he blasted the gross behavior.\n\
+      He showed the video in the hope people in the UK don't get the same idea.\n\
+      Piers led calls for his arrest and said he should be denied healthcare if he\
+      \ comes down with the killer bug.\nHe furiously said: \"This is of somebody\
+      \ in America, \u2026 coronavirus is attacking everyone in the United States\
+      \ and he did this and posted it online.\n\"What I would like to happen to him\
+      \ is I'd like him found, and I am sure they will get him.\n\"I would like him\
+      \ put in prison, immediately.\nAnd then I would like him deprived of any healthcare\
+      \ should he then get the virus having tried to deliberately give it to potentially\
+      \ lots of other people.\n\"That might concentrate the minds of these morons\
+      \ and \u2026 morons we have here.\n\"It was originally thought the video was\
+      \ filmed in Missouri, which is were Pfister is from.\nPiers also tweeted: \"\
+      Find him, arrest him, imprison him, and deny him any healthcare if he gets the\
+      \ virus."
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on the arrest of Cody Pfister for making
+      a terrorist threat related to a prank involving licking grocery store items
+      during the coronavirus pandemic. It includes factual information about the incident,
+      the charges, and the reactions from the public and media, particularly focusing
+      on Piers Morgan's comments. While it does include quotes from Piers Morgan that
+      express strong opinions about the situation, the overall structure of the article
+      is centered around reporting the event and the subsequent legal actions taken.
+      Therefore, while there are subjective elements (the opinions of Piers Morgan),
+      the article maintains a factual basis and does not advocate for a particular
+      viewpoint. This leads to the classification of the article as mostly objective,
+      as it presents the facts while including some subjective commentary without
+      allowing it to dominate the narrative.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article reports on an incident where a man was arrested for a prank
+      related to the coronavirus. It includes factual information about the arrest,
+      the charges, and the reactions from the public and media personalities. However,
+      the article also heavily features the opinions and emotional reactions of Piers
+      Morgan, a media personality, who expresses strong opinions about the man's actions
+      and what should happen to him. This inclusion of opinion and emotional language
+      from Piers Morgan makes the article less objective, as it does not solely focus
+      on the factual reporting of the incident but also highlights subjective viewpoints.
+- publisher:
+    name: theindependent
+    label: Left-Center
+    bias: Left-Center
+    factuality: Mixed
+  article:
+    title: '&apos;I could not touch what was not mine&apos;: How the DeafBlind are
+      coping with social distancing'
+    content: "If you could have peeked into a building on Gallaudet University's campus\
+      \ in Washington DC on a recent day, you would have seen a 6ft3 man crawling\
+      \ on the floor. He was not hurt. He was not sick. He was trying to find his\
+      \ name on a case of water. During another time, the task would have been easy\
+      \ enough for James Groff, a graduate student. The case had been left for him\
+      \ in a building not far from his dorm. The problem was that his case was not\
+      \ \u2026 he had to locate the one bearing his name, and he had to do that with\
+      \ limited use of three of his senses. Groff is deaf and blind and, because of\
+      \ social distancing expectations, he often can't rely on touch. He couldn't\
+      \ run his hand across the cases to feel if they held tags with student ID numbers\
+      \ or names. He couldn't pick them up and bring them close enough to his face\
+      \ to use what little vision he has to \u2026. \"I had to get on my hands and\
+      \ knees to be able to read each one without touching it,\" Groff says. \"I am\
+      \ a grown man and can provide for myself and find or make ways. But this was\
+      \ hard for me to do since I could not touch what was not mine, yet I had to\
+      \ \u2026 public administration. From there, he wants to go to law school. \u2026\
+      , Groff says he expects to \"persevere\" because he has seven years at the school\
+      \ behind him and a lifetime of plucking \"backup plans out of thin air\". He\
+      \ worries more about those DeafBlind students who just started at the university.\
+      \ One of those students is Ali Goldberg. The freshman is majoring in education\
+      \ and uses tactile sign language to communicate. \"I feel so isolated, and I\
+      \ feel really alone,\" he writes. \"As a DeafBlind individual, we can \u2026\
+      \ s going on around us. We tend to feel more isolated as it is, and when you\
+      \ put us in an environment in which we have to be completely isolated, it makes\
+      \ us feel even more cut off from the world. It's very depressing.\" In an email,\
+      \ he describes feeling \"afraid for the future\". He also expressed an appreciation\
+      \ for being able to talk about how social distancing is affecting him and a\
+      \ hope that it would help more people understand what \u2026 now. The experiences\
+      \ of the DeafBlind community may be unique, but their concerns shouldn't be\
+      \ theirs alone. \"As a DeafBlind individual like myself, we are left out of\
+      \ everything going on around us,\" he writes. \"Let's get through this together.\
+      \ \u2026"
+  GPT4o-mini:
+    Final Answer: mixed
+    Reasoning: The article presents the experiences of DeafBlind individuals during
+      social distancing, focusing on their challenges and feelings of isolation. It
+      includes direct quotes from individuals affected by these circumstances, which
+      adds a personal and emotional dimension to the reporting. While it does provide
+      factual information about the situation faced by the DeafBlind community, the
+      heavy reliance on personal anecdotes and emotional expressions indicates a subjective
+      perspective. The article does not present multiple viewpoints or a balanced
+      analysis of the situation, which further leans it towards subjectivity. Therefore,
+      it is not entirely objective, as it emphasizes personal experiences and feelings
+      rather than solely reporting facts. However, it does contain factual elements
+      about the challenges faced by DeafBlind individuals, making it not entirely
+      subjective either. Thus, it can be classified as 'mixed'.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article provides a narrative about the experiences of DeafBlind
+      individuals during the COVID-19 pandemic, particularly focusing on how social
+      distancing measures have impacted their daily lives. It includes direct quotes
+      from individuals like James Groff and Ali Goldberg, which express their personal
+      feelings and challenges. The article does not take a stance on a broader issue
+      but rather reports on the personal experiences and emotions of these individuals.
+      While it does include subjective elements, such as personal feelings and opinions,
+      it does so in the context of reporting on their experiences, which is a factual
+      account of their situation. Therefore, the article is not entirely objective,
+      as it includes subjective experiences, but it is not entirely subjective either,
+      as it does not advocate for a particular stance or opinion. It is best classified
+      as 'mixed' because it combines factual reporting with subjective personal experiences.
+- publisher:
+    name: asiapacificresearch
+    label: Conspiracy-Pseudoscience
+    bias: null
+    factuality: Mixed
+  article:
+    title: China and India Increase Mutual Violence
+    content: "Tensions have risen sharply on the China-India border. The two countries-\
+      \ which have the largest populations and the largest armies in the world, as\
+      \ well as nuclear weapons- started a recent conflict in the Himalayas, causing\
+      \ the death of dozens of people, recovering the scene of violence experienced\
+      \ in the early 1960s when both entered a war for the same reason, from which\
+      \ China emerged victorious. In early May, tensions in the region increased after\
+      \ the Indian press said Chinese forces had set up tents, dug trenches and transported\
+      \ heavy \u2026 its territory. The move came after India built hundreds of kilometers\
+      \ 'road into access to a high-altitude air base. India blamed China for the\
+      \ situation. The case worsened after approximately 250 soldiers from both nations\
+      \ clashed on the night of May 5, in the Pangong lake area, leaving more than\
+      \ 100 wounded on both sides. The confrontation only ended after a meeting between\
+      \ local leaders. \"During the ongoing process in the Galwan valley, a violent\
+      \ confrontation occurred (...) with victims on \u2026 statement from the Indian\
+      \ Army. China, meanwhile, asked India\" not to take unilateral action or create\
+      \ problems \", and China's Foreign Ministry spokesman, Zhao Lijian, said it\
+      \ was India, not China, that crossed over the border,\" provoking and attacking\
+      \ the Chinese people, resulting in serious physical confrontation between border\
+      \ \u2026 : \"We have informed both India and China that the United States is\
+      \ ready, willing and able to mediate or arbitrate their now raging border dispute.\
+      \ Thank you!\". Trump's readiness to guarantee peace in Asia is curious when\
+      \ the same president vehemently accuses China of creating the new coronavirus,\
+      \ which leads us to the question: \u2026 United States wants to negotiate in\
+      \ Kashmir? A war between China and India would benefit the West, destabilizing\
+      \ two great emerging powers with great growth potential, delaying the multipolar\
+      \ agenda. However, both countries are demonstrating their sovereignty and their\
+      \ ability to reach peace agreements without any outside interference. After\
+      \ a long meeting, the chancellors of China and India agreed to reduce the violence\
+      \ immediately, not going ahead with the possibility of war. Although tensions\
+      \ are far from over and the border remains occupied by \u2026 a willingness\
+      \ to negotiate peace and, even more, a true sovereign attitude, dispensing with\
+      \ US mediation and arbitration and initiating independent talks, in which the\
+      \ chances of reaching an agreement are higher than with Washington trying to\
+      \ impose its agenda. Note to readers: please click the share buttons above or\
+      \ below. Forward this article to your email lists. Crosspost on your blog site,\
+      \ internet forums. etc. This article was originally published on InfoBrics.\
+      \ Lucas Leiroz is a research fellow in international \u2026 de Janeiro \u2026"
+  GPT4o-mini:
+    Final Answer: mixed
+    Reasoning: The article discusses the rising tensions between China and India,
+      providing factual information about the conflict, including details about the
+      border clashes, the historical context, and statements from both countries.
+      However, it also includes subjective interpretations, particularly regarding
+      the implications of U.S. involvement and the potential benefits of a conflict
+      for Western powers. The article's tone suggests a critical view of U.S. mediation
+      and emphasizes the sovereignty of China and India, which introduces a subjective
+      perspective. Therefore, while it contains factual reporting, the presence of
+      opinionated analysis and implications makes it less than entirely objective.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article provides a factual account of the tensions between China
+      and India, mentioning specific events such as the clash on May 5 and the statements
+      from both countries. However, it also includes subjective elements, such as
+      questioning the motives of the United States and suggesting that a war would
+      benefit the West. The article also implies a stance by praising the sovereignty
+      of China and India in handling the situation without US interference. These
+      elements introduce opinion and speculation, making the article not entirely
+      objective.
+- publisher:
+    name: naturalnews
+    label: Conspiracy-Pseudoscience
+    bias: Extreme Right
+    factuality: Very Low
+  article:
+    title: The vast majority of our pharmaceuticals, vitamins and supplements are
+      made in China - is coronavirus the black swan event that will collapse it all?
+    content: "(\u2026) As Americans watch, mostly from the comfort of their own homes,\
+      \ the nation of China is descending into medical martial law, and the thing\
+      \ that most of us aren't fully comprehending at this point is how the Wuhan\
+      \ coronavirus threatens to cut off the supply of critical goods to the United\
+      \ States. Even if it never becomes a full-blown pandemic here on our soil, the\
+      \ novel coronavirus is right now interfering with the production of all sorts\
+      \ of things that most of us take for granted every single day \u2026, and car\
+      \ parts to kitchen appliances, are all mostly made in China these days- which\
+      \ means if they 're not making them, we 're not getting them. Since hundreds\
+      \ of millions of Chinese people aren't being allowed to go back to work due\
+      \ to mandatory quarantines, and the factories they work at aren't opening as\
+      \ planned post-Chinese Lunar New Year, then it's only a matter of time before\
+      \ we start to see the horrific impact of this in \u2026 big box stores and no\
+      \ more vitamins at the health food shops. China itself is already facing an\
+      \ economic crisis that some reports are tabulating to the tune of about$ 60\
+      \ billion. And if the outbreak isn't very soon contained, this number could\
+      \ rapidly balloon to about$ 6 trillion, completely collapsing the Chinese economy\
+      \ and all other economies to which it \u2026 , computers \u2026, broadcast equipment,\
+      \ tractors, concrete mixers, and practically anything else you can think of\
+      \ that keeps the system going directly from China. Even natural medicine like\
+      \ coenzyme Q10, B vitamins, and vitamin C often come from China, which means\
+      \ no more of these on store shelves, either. This is why self-reliance is so\
+      \ important: because there's no telling just how bad this whole thing gets before\
+      \ it starts to get any better- if it ever even gets better at all \u2026 s also\
+      \ our own economy to worry about which, apart from China, isn't exactly thriving.\
+      \ \"As we monitor reports of farmers going bankrupt, shopping malls going dark,\
+      \ homeless encampments growing (despite local governments trying to destroy\
+      \ them), stock markets sagging, real estate markets hesitating, and the 'Everything\
+      \ Bubble 'created by Federal Reserve funny money leaking air, it's worth remembering\
+      \ that in 1930 some 30% of the population still lived on farms and knew how\
+      \ \u2026 at The Organic Prepper.\"... in contrast to today as that percentage\
+      \ on farms has dropped to around 1-2%. \"To keep up with the latest about how\
+      \ novel coronavirus is impacting the global economy, be sure to check out \u2026\
+      . There's also a wealth of additional coronavirus coverage in video format available\
+      \ at the official Health Ranger Report Brighteon channel \u2026"
+  GPT4o-mini:
+    Final Answer: mostly subjective
+    Reasoning: The article presents a narrative that is heavily focused on the potential
+      negative impacts of the coronavirus on the economy, particularly regarding the
+      supply chain from China. It uses alarmist language, such as 'horrific impact'
+      and 'collapse,' which indicates a subjective viewpoint rather than a neutral
+      reporting of facts. The article also includes opinions about self-reliance and
+      critiques of the current economic situation, which further emphasizes its subjective
+      nature. While it does mention factual elements, such as the reliance on Chinese
+      manufacturing, the overall tone and framing suggest a strong opinion rather
+      than an objective analysis. Therefore, the article leans towards being mostly
+      subjective.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article presents a mix of factual information and speculative opinions.
+      It discusses the potential impact of the coronavirus on the supply chain, particularly
+      focusing on pharmaceuticals and other goods produced in China. While it mentions
+      factual elements, such as the production of goods in China and the impact of
+      quarantines, it also includes speculative language about the potential collapse
+      of economies and the need for self-reliance. The tone is somewhat alarmist,
+      suggesting a subjective stance. The article does not maintain a neutral tone
+      throughout and includes opinions and predictions that are not purely factual.
+- publisher:
+    name: viralnewsnetwork
+    label: Conspiracy-Pseudoscience
+    bias: null
+    factuality: Low
+  article:
+    title: masks from dandruff
+    content: "Healthy and well-groomed hair is an everyone's dream, since at all times\
+      \ it is considered as the main indicator of beauty and health.\nThe negative\
+      \ impact of the external environment, constant stress, overfatigue badly affect\
+      \ the the hair appearance, it becomes lifeless, loses its natural attractiveness.\n\
+      In addition, most women and men face dandruff.\nThe so-called \"white snow\"\
+      \ on the shoulders causes a lot of trouble.\nThis is not only an unkempt look,\
+      \ a spoiled mood, but also a painful itching of the scalp \u2026 remedies can\
+      \ get rid of dry dandruff: First of all, these are masks: - Warm the cup well,\
+      \ pour 4-6 tbsp.\nof olive oil (castor oil can be used as well) and the juice\
+      \ of half a lemon.\nThe mixture is rubbed into the skin a few hours before washing\
+      \ the hair and wrap with celloline and a towel.\nAfter 2-3 hours, wash your\
+      \ hair with shampoo; - Mix 2 yolks and the juice of half a lemon.\nInto the\
+      \ mixture \u2026 added (you can use olive or castor oil).\nThe mask is apllied\
+      \ to the roots of curls, after 40-45 minutes rinse with warm water; - Mix 2\
+      \ tbsp.\nof yeast (dry) and 4 tbsp.\nof dairy cream, add a teaspoon of liquid\
+      \ honey and insist for half an hour.\nThen castor oil is added into the mixture\
+      \ (1 tbsp.)\n.\nThe scalp is treated with a mask and washed off with warm water\
+      \ after 45 minutes.\nIt is important \u2026 a week.\nThe simplest mask is kefir\
+      \ or natural yogurt.\nThe dairy product is applied over the entire length of\
+      \ the hair and scalp in Manhattan, washed off after a quarter of an hour.\n\
+      If you have dandruff, it is also better to consult a trichologist.\nIn this\
+      \ case, the result will be as effective as possible."
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily focuses on providing information about hair care
+      and remedies for dandruff, including specific recipes for hair masks. It does
+      not express personal opinions or take a stance on the topic; instead, it presents
+      factual information and advice. The tone is instructional and informative, which
+      aligns with the characteristics of an objective article. However, there is a
+      slight subjective element in the way it describes the impact of dandruff on
+      mood and appearance, but this does not dominate the content. Overall, the article
+      maintains a mostly objective stance, as it is primarily focused on factual reporting
+      and practical advice.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article primarily provides information on how to treat dandruff
+      using various homemade remedies. It describes the process of making and applying
+      different types of hair masks. The language used is instructional and focuses
+      on practical advice, which is factual in nature. However, the article also contains
+      subjective elements, such as the assertion that healthy hair is everyone's dream
+      and that dandruff causes a lot of trouble, which are opinion-based statements.
+      Overall, the article is a mix of factual instructions and subjective opinions
+      about the importance of hair care and the impact of dandruff.
+- publisher:
+    name: marketwatch
+    label: Right-Center
+    bias: Right-Center
+    factuality: High
+  article:
+    title: No, America's Billionaires Have Not Gotten Richer During Pandemic
+    content: "Americans for Tax Fairness and the Institute for Policy Studies released\
+      \ a report showing a startling statistic: America's billionaires got $434 billion\
+      \ richer amid the pandemic.\n\"The surge in billionaire wealth during a global\
+      \ pandemic underscores the grotesque nature of unequal sacrifice,\" said Chuck\
+      \ Collins, one of the study's co-authors.\nBillionaire wealth may well be grotesque,\
+      \ but a sensible way of looking at the underlying data would lead to the conclusion\
+      \ that America's richest individuals lost wealth during the crisis, not gained\
+      \ it.\n\u2026 outlets including CNBC and Forbes, examines billionaires' wealth\
+      \ between March 18 - the rough start date of the pandemic shutdown, when most\
+      \ federal and state economic restrictions were in place - and May 19.\nIt relied\
+      \ on the Forbes' billionaire list, which itself is built around stock-market\
+      \ performance.\nThink about that in the market context.\nThe pandemic did not\
+      \ start March 18 (nor, of course, had it ended on May 19), and certainly market\
+      \ concerns about the pandemic did not \u2026 .\nA more logical way to think\
+      \ about whether billionaires got richer, or not, is to think about the performance\
+      \ from the Feb. 19 peak in the market, after which more investors began to get\
+      \ concerned by the novel virus.\nYou then get to see who got richer even in\
+      \ the face of the crippling economic blow.\nThe real answer is, not many have.\n\
+      \u2026 ran the numbers from the peak and, in the interest of time, only used\
+      \ the top 50 billionaires.\n\u2026 the S & P 500 SPX, for billionaires with\
+      \ private interests rather than Forbes'more complex method.\n(Also, \u2026 didn't\
+      \ look at stock purchases during the month.)\nCumulatively, the top 50 billionaires\
+      \ lost $232 billion between the market's peak and this Tuesday.\nIf the remaining\
+      \ billionaires on the Forbes list lost wealth at the same roughly 12.5% rate\
+      \ that the top 50 experienced, that's another $200 billion-plus wiped out.\n\
+      Jeff Bezos of \u2026 $13.5 billion.\nBezos and Amazon have been big winners\
+      \ as people across the world rely on the service for an ever-increasing percentage\
+      \ of their consumption.\nThe Walton family, with their stakes in retail behemoth\
+      \ Walmart WMT,, also were winners.\nJim, Alice and Rob Walton each made about\
+      \ $3 billion during the Feb. 19-to-May 19 span.\nTesla's TSLA, Elon Musk heads\
+      \ the losers list at $26 billion, and Microsoft MSFT, co-founder Bill Gates\
+      \ saw his fortune sour by \u2026 "
+  GPT4o-mini:
+    Final Answer: mixed
+    Reasoning: The article presents a discussion on the wealth of America's billionaires
+      during the pandemic, referencing a report and providing statistics. It begins
+      by stating a claim made by a report that billionaires got richer, but then it
+      challenges this claim by presenting an alternative perspective and data analysis.
+      The article includes quotes from a co-author of the report, which adds a subjective
+      element, but it also attempts to provide a factual basis by discussing market
+      performance and wealth changes. The tone is somewhat critical of the initial
+      claim, suggesting a bias against the idea that billionaires have benefited during
+      the pandemic. Overall, while it includes factual reporting, the article leans
+      towards a subjective interpretation of the data and includes opinions on the
+      implications of billionaire wealth. Therefore, it is not entirely objective,
+      but it does contain factual elements. The presence of opinionated language and
+      the challenge to the initial claim indicates a mixed approach.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article presents a counter-argument to a report claiming that America's
+      billionaires got richer during the pandemic. It provides data and analysis to
+      support the claim that billionaires actually lost wealth during the crisis.
+      The article uses factual data, such as stock market performance and specific
+      figures related to billionaire wealth changes, to argue its point. However,
+      it also includes subjective language, such as describing billionaire wealth
+      as 'grotesque' and discussing the 'unequal sacrifice.' The article seems to
+      take a stance against the initial report's findings, suggesting a bias in its
+      interpretation of the data. While it is based on factual information, the article's
+      tone and choice of language indicate a mix of objective reporting and subjective
+      interpretation.
+- publisher:
+    name: inews
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: 'UK Black Lives Matter protests: Thousands join march through Birmingham
+      to show solidarity and demand change in UK'
+    content: "UK Black Lives Matter protests: Thousands join march through Birmingham\
+      \ to show solidarity and demand change in UK Organisers urged attendees to abide\
+      \ by social-distancing guidelines by keeping two metres apart from each other\
+      \ More than 2,000 people gathered in Birmingham as British protesters showed\
+      \ solidarity with the wider movement in the US in reaction to the killing of\
+      \ George Floyd, while also demanding change in the UK. The UK Isn't Innocent\
+      \ Group, which organised the Black Lives Matter demonstration in the city, said\
+      \ that it wanted to \"not only show solidarity \u2026 also to shed light on\
+      \ the racist systems that still operate in the UK today\". Organisers urged\
+      \ attendees to abide by social-distancing guidelines by keeping two metres apart\
+      \ from each other and wearing face masks in order to \"keep everyone safe\"\
+      . \"We are tired and we have been tired for too long,\" said the lead organiser\
+      \ Hannah Ringane. \"We have been taught that we won't be treated the same as\
+      \ everyone else, that we will be viewed as aggressors.\" \u2026 guidelines by\
+      \ keeping two metres apart from each other and wearing face masks (Photo: Christopher\
+      \ Furlong/ Getty) Traffic came to a standstill as the crowd moved around the\
+      \ city, though there was very little police presence observed. Though the demonstrators\
+      \ had first planned to congregate at the pedestrianised Victoria Square, so\
+      \ many people attended that \u2026 chanted their support for Mr Floyd \u2026\
+      \ \"I can't breathe\", which were among Mr Floyd's final words. In a video posted\
+      \ to Facebook, one of the organisers, Tyreece Ogbeide, said: \"There are too\
+      \ many coming and there's not going to be enough space to maintain social distancing\
+      \ so we have decided to move.\" They added: \"We urge you, do not attend if\
+      \ you have any symptoms of coronavirus or are a high-risk[ individual].\" We\
+      \ want to respect \u2026. Be aware of others and your surroundings and ensure\
+      \ you keep two metres[ away from others]. \"Aston Villa defender Tyrone Mings,\
+      \ who was among those expected to turn up, told his 109,000 Twitter followers:\"\
+      \ Do n't be afraid to speak your truth. Stand for what's right. \"\" The city\
+      \ of Birmingham has a long and proud history of standing up to racism and to\
+      \ prejudice, and that is why today we stand in solidarity with the Black Lives\
+      \ Matter \u2026 Carol Smith, who was among the demonstrators, said: \"My grandchildren\
+      \ were born here, they have to have a different world to the world I have. They\
+      \ have to realise they have a right to be here, and they have a right to equality,\
+      \ just like everyone else who don't look like them \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on a specific event, the Black Lives
+      Matter protest in Birmingham, detailing the number of attendees, the organizers'
+      messages, and quotes from participants. It presents factual information about
+      the protest, including the call for social distancing and the historical context
+      of the movement. However, it also includes subjective quotes from organizers
+      and participants expressing their feelings and opinions about racism and equality.
+      While the article maintains a focus on reporting the event, the inclusion of
+      personal statements and emotional appeals introduces a subjective element. Therefore,
+      the article is not entirely objective but leans more towards being mostly objective
+      due to its factual reporting mixed with some subjective opinions.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article reports on a Black Lives Matter protest in Birmingham,
+      UK, providing factual information about the event, such as the number of attendees,
+      the organizers' instructions regarding social distancing, and quotes from participants
+      and organizers. However, it also includes subjective elements, such as the quotes
+      from organizers and participants expressing their personal views and emotions
+      about racism and the need for change. These quotes reflect opinions and personal
+      experiences, which are inherently subjective. The article does not take a stance
+      itself but reports on the stances and opinions of those involved in the protest.
+      Therefore, the article contains both objective reporting of facts and subjective
+      content in the form of quotes and opinions from individuals involved in the
+      protest.
+- publisher:
+    name: noqreport
+    label: Questionable Source
+    bias: Extreme Right
+    factuality: Low
+  article:
+    title: 'Vintage: Joe Biden asked by Tom Brokaw about corruption as #BidenIsCorrupt
+      trends'
+    content: "A group associated with Senator Bernie Sanders' presidential campaign\
+      \ released a video of NBC's Tom Brokaw asking former Vice President Joe Biden\
+      \ about his involvement with helping a company that employed his son, Hunter.\n\
+      This isn't about Burisma, the company at the heart of the current impeachment\
+      \ trial.\nThis is ANOTHER company for which Biden allegedly used his influence\
+      \ to benefit them.\nWhen Biden was still in the Senate and his son was coming\
+      \ out of law school, his influence in Delaware allegedly helped Hunter get a\
+      \ job at \u2026 he started earning around $100,000 a year.\nJoe Biden himself\
+      \ received $214,000 in campaign contributions from the company and its employees.\n\
+      \"At the same time, you were fighting for a bankruptcy bill that NBNA really\
+      \ wanted to get passed through the Senate, making it much tougher for everyone\
+      \ else to file for bankruptcy,\" Brokaw said.\nHe continued to list off apparent\
+      \ allegations of corruption in which Biden worked on behalf of the company.\n\
+      Biden and Sanders supporters are taking to Twitter to \u2026 # BidenIsCorrupt\
+      \ hashtag.\nConservatives are also weighing in on the exchange.\nJoe Biden is\
+      \ corrupt.\nThere really isn't a valid argument against it considering his decades-long\
+      \ track record in Washington DC.\nBut one has to wonder if Hunter Biden was\
+      \ really so impotent he needed his dad to step in throughout his adult life.\n\
+      Join fellow patriots as we form a grassroots movement to advance the cause of\
+      \ conservatism.\nWe have two priorities until election day: Stopping Democrats\
+      \ and supporting strong conservative candidates.\n\u2026 in a very short time.\n\
+      If you are interested, please join us to receive updates."
+  GPT4o-mini:
+    Final Answer: mostly subjective
+    Reasoning: The article presents a mix of factual reporting and subjective opinions.
+      It starts by reporting on a video of Tom Brokaw questioning Joe Biden about
+      alleged corruption, which is a factual event. However, it quickly shifts to
+      subjective language, particularly in phrases like "Joe Biden is corrupt" and
+      the assertion that there isn't a valid argument against it. The article also
+      includes a call to action for conservatives, which indicates a clear bias and
+      subjective stance. Overall, while there are factual elements, the presence of
+      strong opinions and a clear bias towards a negative portrayal of Biden suggests
+      that the article is not objective. Therefore, it can be classified as mostly
+      subjective due to the significant presence of opinion and bias throughout the
+      text.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article presents a mix of factual reporting and subjective opinion.
+      It starts by reporting on a video released by a group associated with Bernie
+      Sanders' campaign, which shows Tom Brokaw questioning Joe Biden about alleged
+      corruption. This part of the article is more objective as it reports on an event
+      and the content of the video. However, the article quickly shifts to subjective
+      language, particularly in the latter part where it states, "Joe Biden is corrupt.
+      There really isn't a valid argument against it," which is a clear opinion rather
+      than a fact. Additionally, the article includes a call to action for conservatives,
+      which further indicates a subjective stance. The presence of both factual reporting
+      and strong opinions makes the article mixed in terms of objectivity.
+- publisher:
+    name: charlotteobserver
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: 'The bully pulpit: Trump pushes Washington, but virus resists'
+    content: "His face framed by the golden Oval Office curtains behind him, President\
+      \ Donald Trump stared straight into the camera aimed at the Resolute Desk. It\
+      \ was the night of March 11, 2020. And Trump's presidency would be forever changed.\
+      \ Trump, whose improbable election ripped up the rules of American politics,\
+      \ had spent three-plus years defying history and orthodoxy in a chaotic spectacle\
+      \ that dominated the national discourse and fervently engaged both sides of\
+      \ a bitterly divided country. And now, essentially for the first time, he was\
+      \ confronted by \u2026 own making. It was the kind of test presidents inevitably\
+      \ must face, and Trump responded with trademark certitude. \"The virus will\
+      \ not have a chance against us,\" Trump told Americans that night. Five months\
+      \ later, the coronavirus has killed more than 175,000 Americans and left tens\
+      \ of millions unemployed. And now, as Trump prepares to again accept the Republican\
+      \ presidential nomination on Thursday in a ceremony at the White House, he must\
+      \ convince an electorate that has largely disapproved of his handling \u2026\
+      \ to blame, deserves another term and that all the chaos has been worth it.\
+      \ \"The future of our country and indeed our civilization is at stake on Nov.\
+      \ 3,\" Trump said Friday. Trump has spent his presidency bending Washington\
+      \ to his will. He has transformed a public health crisis into a political litmus\
+      \ test. \u2026 the worst fall, from a public health perspective, \u2026 Americans\
+      \ don't step up mitigation efforts, such as wearing masks. \"I think that we\
+      \ 're doing very well,\" Trump said. \"We 're on our way.\" That's the bravado\
+      \ that Trump has projected throughout his presidency. He frequently proclaims\
+      \ that no president, with the possible exception of Abraham Lincoln, has accomplished\
+      \ as much as he has. He's moved the federal judicial system far to the right\
+      \ with the appointment of two conservative justices to \u2026 200 federal judges\
+      \ to lower courts. And he's built more than 200 miles of his planned U.S.-Mexico\
+      \ wall, a centerpiece of his 2016 campaign promise to slow illegal immigration.\
+      \ But in the end, Trump has often ended up his own worst enemy, unwilling or\
+      \ unable to check his impulses. The campaign he now faces is less a choice between\
+      \ candidates than a referendum on himself, a weighting he will try to reverse\
+      \ before November. And his most lasting legacy might be undermining Americans\
+      \ \u2026 Ott, who heads the communication department at Missouri State University\
+      \ and has done extensive research on the president's social media rhetoric.\
+      \ \"He has waged war on science, fact and truth,\" Ott said. \"He has, in short,\
+      \ debased the office he holds and the entire nation with his endless lying.\
+      \ \u2026"
+  GPT4o-mini:
+    Final Answer: mostly subjective
+    Reasoning: The article presents a narrative about President Trump's presidency,
+      particularly focusing on his handling of the coronavirus pandemic and the political
+      implications of his actions. It includes factual elements, such as the timeline
+      of events and statistics regarding the pandemic's impact. However, it also contains
+      subjective interpretations and opinions, particularly in the descriptions of
+      Trump's character and actions, such as calling him 'his own worst enemy' and
+      stating that he has 'waged war on science, fact and truth.' These phrases reflect
+      a clear opinion about Trump's presidency rather than a neutral reporting of
+      facts. Therefore, while the article does include factual information, it leans
+      towards a subjective interpretation of events and Trump's actions, making it
+      not entirely objective.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article presents a mix of factual reporting and subjective commentary.
+      It describes events such as Trump's presidency, his handling of the coronavirus
+      pandemic, and his political actions, which are factual elements. However, it
+      also includes subjective language and opinions, such as describing Trump's presidency
+      as a 'chaotic spectacle' and stating that he has 'waged war on science, fact
+      and truth.' These statements reflect the author's opinion and are not purely
+      factual. Additionally, the article includes quotes from individuals who express
+      strong opinions about Trump, further adding to the subjective nature of the
+      piece. Therefore, the article cannot be classified as entirely objective or
+      entirely subjective, as it contains elements of both.
+- publisher:
+    name: iowaclimatescienceeducation
+    label: Conspiracy-Pseudoscience
+    bias: Right
+    factuality: Low
+  article:
+    title: "UK Government pledges \xA3800M carbon capture and storage fund"
+    content: "National energy supplies will be manipulated by the government long\
+      \ into the future, under the dubious banner of climate concerns.\nProviders\
+      \ will have to go along with whatever the latest prescriptive policies are,\
+      \ including forcing up the price of gas.\nForget market forces and open competition.\n\
+      What could possibly go wrong?\nIn his Budget announcement [this week], chancellor\
+      \ Rishi Sunak said the CCS Infrastructure Fund would be worth \"at least \xA3\
+      800M\", with the first site to be established by the mid-2020s, reports New\
+      \ Civil Engineer.\nThe \u2026 in Teesside, Humberside, Merseyside and St Fergus\
+      \ in Scotland - in a move described by Sunak as \"levelling up in action\".\n\
+      CCS can provide flexible low carbon power and decarbonise many industrial processes.\n\
+      It is important for the UK since other key sources of low carbon electricity\
+      \ - such as offshore and onshore wind and solar - are weather dependent.\nDrax\
+      \ Group is currently running a bioenergy with carbon capture and storage (Beccs)\
+      \ pilot at its North Yorkshire power station.\nDrax chief executive \u2026 for\
+      \ the development of the CCS clusters \"demonstrates the government's commitment\
+      \ to communities and businesses in the North\".\nHe added: \"By accelerating\
+      \ the development of vital negative emissions technologies like Beccs, which\
+      \ is being pioneered by Drax, we can permanently remove millions of tonnes of\
+      \ CO2 each year from the atmosphere.\n\"The chancellor also said he would remove\
+      \ incentives to choose gas over the cleaner option of electricity.\nFrom April\
+      \ 2022, it will raise gas prices and freeze electricity charges.\n\u2026 Paul\
+      \ Steen said this would be \"a commercial incentive for businesses to make positive\
+      \ decisions on decarbonisation and move away from natural gas fuels to low carbon\
+      \ sources\".\nMeanwhile, an additional \xA3900M investment in high-potential\
+      \ technologies was also announced.\nThis will involve commercialising nuclear\
+      \ fusion technology, offering potentially limitless clean energy, and supporting\
+      \ the government's National Space Strategy and space innovation fund.\nA portion\
+      \ of this funding contributes to a wider investment of up to \xA31bn to develop\
+      \ UK supply chains for the \u2026 announced in September.\nElectric vehicle\
+      \ charging infrastructure will ensure that motorists are never more than 50km\
+      \ from a rapid charging station.\nAccording to Steen, this is \"positive news\
+      \ for the industry and for the decarbonisation of transport as a whole\"."
+  GPT4o-mini:
+    Final Answer: mixed
+    Reasoning: The article presents a mix of factual reporting and subjective commentary.
+      It begins with a factual statement about the UK government's pledge for a carbon
+      capture and storage fund, including specific figures and quotes from officials.
+      However, it quickly shifts to a more subjective tone, using phrases like "dubious
+      banner of climate concerns" and questioning the effectiveness of government
+      intervention with rhetorical questions such as "What could possibly go wrong?"
+      This indicates a clear opinion against the government's approach. The article
+      also includes positive statements from industry leaders about the government's
+      initiatives, which adds to the mixed nature of the content. Overall, while there
+      are factual elements, the presence of opinionated language and skepticism suggests
+      that the article is not entirely objective.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article begins with a subjective tone, using phrases like "manipulated
+      by the government" and "under the dubious banner of climate concerns," which
+      suggest a critical stance towards the government's actions. It also uses rhetorical
+      questions like "What could possibly go wrong?" to imply skepticism. These elements
+      indicate a subjective perspective. However, the article also includes factual
+      information about the UK government's budget announcement, the amount of funding,
+      and specific projects and technologies involved in carbon capture and storage.
+      It reports on statements from officials and industry leaders, which are factual
+      elements. The mix of subjective language and factual reporting suggests that
+      the article is not entirely objective or subjective, but rather a mix of both.
+- publisher:
+    name: toddstarnesscom
+    label: Questionable Source
+    bias: Extreme Right
+    factuality: Mixed
+  article:
+    title: . . . Atlanta Police Chief Resigns After Suspect Killed
+    content: "The Atlanta police chief resigned today and the mayor called for a police\
+      \ officer to be fired after a suspect was killed Friday night during a fight\
+      \ with officers.\nThe Georgia Bureau of Investigation says Rayshard Brooks,\
+      \ 27, was found asleep in a car in the drive-thru lane of a Wendy's restaurant.\n\
+      Officers conducted a field sobriety test on the suspect, which he failed.\n\
+      Instead of being taken into custody, Brooks resisted arrest and fought with\
+      \ police.\n\"During the arrest, the male subject resisted and a struggle ensued\
+      \ \u2026 The officer deployed a Taser.\n\"EDITOR'S NOTE: Social media is cracking\
+      \ down on Conservative content.\nMany of you have complained that you never\
+      \ see our content in your news feeds.\nThere's only one way to fight back -\
+      \ and that's by subscribing to my FREE weekly newsletter.\nClick here.\nEyewitnesses\
+      \ report that during the struggle the suspect grabbed the other officer's Taser\
+      \ and was able to escape.\nVideo shows the officers pursuing the suspect through\
+      \ the parking lot \u2026 turned around and pointed the Taser at one of the officers.\n\
+      That officer opened fire - hitting Brooks.\nHe died at a nearby hospital.\n\
+      Surveillance video of the chase is posted below.\nThe entire incident happened\
+      \ within a span of three seconds.\nThe NAACP called on Atlanta Police Chief\
+      \ Erika Shields to step down - which she did on Saturday.\n\"This was her decision\
+      \ to step aside as police chief,\" Mayor Keisha Lance Bottoms said at a press\
+      \ conference.\nBottoms also announced that \u2026 be fired.\n\"I do not believe\
+      \ this was a justified use of deadly force,\" the mayor said.\nNow, that's puzzling\
+      \ because the incident is under investigation and video clearly shows the suspect\
+      \ pointing a weapon at the officer.\nDoesn't the officer have a right to defend\
+      \ himself?\nThe mayor seems to believe that police officers don't have a right\
+      \ to defend themselves when they are attacked by suspects.\nOur prayers are\
+      \ with the police officers and their families \u2026 .\nThe reality is that\
+      \ if the suspect had followed the instructions of the officers he would still\
+      \ be alive."
+  GPT4o-mini:
+    Final Answer: mixed
+    Reasoning: The article presents a mix of factual reporting and subjective commentary.
+      It starts with a straightforward account of the resignation of the Atlanta police
+      chief and the circumstances surrounding the death of Rayshard Brooks, which
+      is factual in nature. However, as the article progresses, it includes opinions
+      and interpretations, particularly in the statements attributed to the mayor
+      and the author's own commentary questioning the mayor's stance on police use
+      of force. The phrase 'the reality is that if the suspect had followed the instructions
+      of the officers he would still be alive' introduces a subjective viewpoint,
+      suggesting blame on the suspect rather than maintaining a neutral tone. Therefore,
+      while there are objective elements, the presence of subjective opinions and
+      interpretations makes the article mixed in its objectivity.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: 'The article begins by reporting factual events: the resignation of
+      the Atlanta police chief, the incident involving Rayshard Brooks, and the response
+      from the mayor and the NAACP. These parts of the article are objective as they
+      focus on reporting events and statements from officials. However, the article
+      then includes an editorial note about social media and conservative content,
+      which is not related to the news event and introduces a subjective opinion.
+      Furthermore, the article questions the mayor''s stance and suggests that the
+      officer had a right to defend himself, which is an opinion rather than a fact.
+      The article also includes a statement about the reality of the situation, implying
+      that the suspect''s actions led to his death, which is a subjective interpretation.
+      These elements introduce bias and opinion into the article, making it less objective.
+      Therefore, the article contains a mix of factual reporting and subjective opinion.'
+- publisher:
+    name: newamericannews
+    label: Conspiracy-Pseudoscience
+    bias: Right
+    factuality: Low
+  article:
+    title: Mom Campaigning To Stop 'Abusive Ex' From Vaccinating Their Kids....
+    content: "\u2022 Couple was together nine years, both supported antivaccination\
+      \ \u2022 She's started a GoFundMe to support her legal case to save children\
+      \ from Vaccination An anti-vaccination mom has started a GoFundMe Campaign in\
+      \ an effort to raise enough money to hire an attorney to fight her former partner\
+      \ from vaccinating her children.\nAnna Patel, from Caboolture in Queensland,\
+      \ has a 7 and 3-year-old.\nThe two children have never been vaccinated before,\
+      \ however now, her former partner, Anil Patel, has decided they should be vaccinated.\n\
+      According to the Herald \u2026 \"rising incidents\" of ailments.\nAnna and Anil\
+      \ had a nine-year relationship during which Anil knowingly went along with the\
+      \ anti-vaccination plan.\nFor Anna to make a legal case, she needs roughly $10,000\
+      \ just to get started, hence her GoFundMe campaign.\nShe wrote: \"Both our children,\
+      \ now 7 and 3, have never been vaccinated and he knows that the issue is very\
+      \ important to me.\n\"He is now trying to force me through court to get the\
+      \ children vaccinated Anna \u2026 claims she endured domestic violence throughout\
+      \ the relationship.\nDue to ongoing domestic violence issue and harrasement\
+      \ and being left in $20,000 debt, I have no way to pay for a Solicitor.\nWe\
+      \ have received no child support in that two years, even though Centrelink reduces\
+      \ your payments as they are meant to be paying Child Support.\nI have applied\
+      \ to Legal Aid and been denied - as they say there is no dispute as I currently\
+      \ have the Children.\nI have lodged a complaint with the \u2026 choice but to\
+      \ self represent which is very stressful and takes a huge amount of time, that\
+      \ I do not have as I am raising my two young Children by myself.\nIt is difficult\
+      \ to believe that someone could be in a nine-year relationship and support the\
+      \ same parenting plan the entire time and just so happen to have a change of\
+      \ heart after a separation.\nIt seems suspect, to say the least.\nBut the real\
+      \ issue is parental divisions (divorced, separated, or even married \u2026 There\
+      \ are no clear governing laws.\nOne parent could take a child to get vaccines\
+      \ without the consent of the other parent.\nThis could happen while the parents\
+      \ are happily married just as easily as when a mom or dad has weekend visitation\
+      \ rights.\nIt is a sad situation and it happens more often than we think.\n\
+      The fact is, her partner is likely using the vaccine play as a way to get back\
+      \ at Anna.\nThis isn't exactly uncommon; we see emails regarding \u2026 is located\
+      \ here."
+  GPT4o-mini:
+    Final Answer: mixed
+    Reasoning: The article presents a situation involving a mother's campaign against
+      her ex-partner regarding the vaccination of their children. While it includes
+      factual elements, such as the mother's GoFundMe campaign and her claims of domestic
+      violence, it also contains subjective interpretations and opinions about the
+      motivations of the father and the nature of their relationship. Phrases like
+      "It seems suspect, to say the least" and the assertion that the father is using
+      the vaccination issue as a way to get back at the mother indicate a subjective
+      viewpoint. The article does not maintain a neutral tone throughout, as it leans
+      towards the mother's perspective and includes her emotional experiences and
+      opinions. Therefore, the article is not entirely objective, as it mixes factual
+      reporting with subjective commentary.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article presents a story about a mother campaigning against her
+      ex-partner's decision to vaccinate their children. The article includes factual
+      elements, such as the existence of a GoFundMe campaign and the legal dispute
+      over vaccination. However, it also contains subjective elements, such as the
+      mother's claims of domestic violence and the suggestion that the ex-partner's
+      decision to vaccinate is a form of retaliation. The language used in the article,
+      such as 'It seems suspect, to say the least' and 'The fact is, her partner is
+      likely using the vaccine play as a way to get back at Anna,' indicates a subjective
+      stance. These statements are opinion-based and not verifiable facts. The article
+      also discusses broader issues of parental rights and vaccination without providing
+      a neutral or balanced perspective. Overall, the article mixes factual reporting
+      with subjective opinions and interpretations, making it a 'mixed' article in
+      terms of objectivity.
+- publisher:
+    name: birminghammail
+    label: Left-Center
+    bias: Right-Center
+    factuality: Mostly Factual
+  article:
+    title: Birmingham City fans will love these photos and four-word message
+    content: "Paul Devlin has proved'dreams can come true 'with the former Birmingham\
+      \ City star reaching into the archive to share a couple of brilliant photos.\n\
+      Devlin made over 130 appearances for Blues across two spells having first been\
+      \ snapped up by Barry Fry in 1996.\nBorn and raised in Erdington, the move from\
+      \ Notts County fulfiled a life-long ambition and Devlin finished as top scorer\
+      \ in his first season at St Andrew's.\nHe left in controversial circumstances\
+      \ two years later after a fall-out with the legendary Trevor Francis, Fry's\
+      \ replacement as manager \u2026 to return and after telling the press he would\
+      \ \"would walk over broken glass to come back\", Devlin did so initially on\
+      \ loan in February 2002 and helped Blues to promotion under Steve Bruce.\nFast\
+      \ forward almost two decades and a trip into the loft produced two wonderful\
+      \ snaps of the 48-year-old dressed in a full Blues kit as a boy.\nHe wrote:\
+      \ \"In the loft and found these, dreams can come true\".\nDevlin went on to\
+      \ play a key role in keeping \u2026 during this period he won the first of his\
+      \ ten Scotland caps - at the relatively advanced age of 30.\nHe moved on, more\
+      \ happily, in 2004 and played for Watford and Walsall and several non-league\
+      \ teams.\nHe remains a devoted Bluenose and told \u2026 he was thrilled by the\
+      \ fact he was able to leave a legacy at the club that will stand the test of\
+      \ time with 35 goals from 137 appearances."
+  GPT4o-mini:
+    Final Answer: mostly subjective
+    Reasoning: The article primarily focuses on the personal experiences and memories
+      of Paul Devlin, a former Birmingham City player. It recounts his career, achievements,
+      and emotional connection to the club, which suggests a subjective tone. The
+      use of phrases like 'dreams can come true' and the emphasis on Devlin's feelings
+      and legacy indicate a personal narrative rather than a neutral report of facts.
+      While it does contain factual elements about his career, the overall tone leans
+      towards celebrating his personal story and connection to the club, making it
+      more subjective than objective.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article primarily focuses on recounting the career and personal
+      experiences of Paul Devlin, a former Birmingham City football player. It includes
+      factual information about his career, such as the number of appearances and
+      goals, his transfers, and his role in the team's promotion. However, the article
+      also includes subjective elements, such as the emotional tone conveyed by phrases
+      like 'dreams can come true' and 'devoted Bluenose,' which reflect personal opinions
+      and sentiments. The article is not purely factual reporting; it includes a narrative
+      that highlights Devlin's personal journey and emotional connection to the club,
+      which introduces a subjective element. Therefore, the article is a mix of factual
+      reporting and subjective storytelling.
+- publisher:
+    name: therealnews
+    label: Left
+    bias: Left
+    factuality: High
+  article:
+    title: Mississippi Prisons Claim 25 Lives in 3 Months
+    content: "This is a rush transcript and may contain errors. It will be updated.\
+      \ Kim Brown: Welcome to \u2026. I'm Kim Brown. Within the past week, five incarcerated\
+      \ people have died while in custody in Mississippi's Department of Corrections.\
+      \ Now, that's an astounding number in itself, but consider that 25 people have\
+      \ died in Mississippi state prisons since December 29th, a period of less than\
+      \ three months. Now, those who are locked up, along with their advocates on\
+      \ the outside \u2026 the human rights abuses happening there. Speaker 2: I would\
+      \ never drink the water at Parchman. I don't like to wash my hands in the bathrooms,\
+      \ because when you turn the water on it's literally the color of mud. The water\
+      \ fountains, when they work, it's the same way. The water that comes out of\
+      \ the water fountains, you 're too scared to drink. The guards will tell you\
+      \ not to drink. I 've \u2026 I didn't have any. They wouldn't let me drink the\
+      \ water, but my clients drink that water all the time. So the water varies between\
+      \ two ways. It's either too chlorinated, or it smells like sewage. And so, all\
+      \ of the pipes leak, right? So the guys tie their socks around the leaky pipes,\
+      \ and so if the \u2026 services. But when they leave us with housing, we are\
+      \ able to give them something to start with when they leave here, whether that's\
+      \ a refrigerator, a table, household items. We 're just doing a little bit of\
+      \ everything. July 1 last year, we were a part of getting house bill 1352 passed,\
+      \ which gives \u2026 eligibility to apply for TANF and food stamps, and they\
+      \ 've not had that. And you would think that would be something on the list,\
+      \ but that just went into effect in Mississippi July 1, 2019. Kim Brown: That's\
+      \ incredible. And to our audience, if you 've ever seen the show on cable television\
+      \ on the weekends, it's called Locked Up Abroad, let me tell you something,\
+      \ Parchman prison looks worse than the prisons featured on \u2026 you something.\
+      \ That's happening right here in the United States in Mississippi. And today,\
+      \ we 've been speaking with Mrs. Pauline Rogers, she is the co-founder of the\
+      \ RECH Foundation, a group that helps the formerly incarcerated to reenter society.\
+      \ And we 've been talking specifically about 25 deaths in less than three months\
+      \ in the Mississippi Department of Corrections. These people are facing inhumane\
+      \ conditions. Ms. Pauline, thank you so much for taking the time to speak with\
+      \ us \u2026 Brown: And thank you for watching \u2026 \u2026"
+  GPT4o-mini:
+    Final Answer: mixed
+    Reasoning: The article discusses the alarming number of deaths in Mississippi
+      prisons and includes quotes from individuals who describe the inhumane conditions
+      within the facilities. While it presents factual information about the deaths,
+      it also incorporates subjective opinions and personal experiences regarding
+      the conditions in the prisons. The use of phrases like "inhumane conditions"
+      and the personal anecdotes shared by the interviewee indicate a subjective perspective
+      on the situation. Therefore, the article is not entirely objective, as it blends
+      factual reporting with personal opinions and emotional appeals.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article presents a mix of factual reporting and subjective commentary.
+      It reports on the factual occurrence of 25 deaths in Mississippi prisons over
+      a three-month period, which is an objective fact. However, the article also
+      includes subjective elements, such as the personal opinions and experiences
+      of individuals like Speaker 2 and Kim Brown, who describe the conditions in
+      the prisons as inhumane and compare them to those in a TV show. These descriptions
+      and comparisons introduce a subjective perspective, as they express opinions
+      and emotional responses to the situation. The article also includes advocacy
+      elements, such as the mention of the RECH Foundation and its work, which further
+      adds to the subjective nature of the piece. Overall, the article contains both
+      objective facts and subjective opinions, making it a mixed article.
+- publisher:
+    name: tmz
+    label: Left-Center
+    bias: Left-Center
+    factuality: Mixed
+  article:
+    title: Kobe's Wife Vanessa Bryant 'Devastated' That Sheriff's Deputies Took Photos
+      of Crash Victims
+    content: "Vanessa Bryant is heartsick over revelations some L.A. County Sheriff's\
+      \ deputies took photos of the remains of Kobe Bryant and other victims at the\
+      \ crash site and wants them punished.\nVanessa's lawyer says on the day of the\
+      \ crash, Vanessa went to the Sheriff's Department and requested the crash site\
+      \ be designated a no-fly zone so photogs would be kept at bay.\nThe attorney\
+      \ says it was of \"critical importance\" to Vanessa to protect the dignity of\
+      \ all the victims.\nAs we reported, some deputies took photos at the crash \u2026\
+      \ inside and outside the department.\nLaw enforcement sources tell \u2026 a\
+      \ deputy trainee went to a bar several days after the crash and, in an attempt\
+      \ to impress a woman, he showed her the photos of remains.\nThe bartender overheard\
+      \ the conversation and was so indignant he filed an online complaint with the\
+      \ Sheriff's Dept.\nThe lawyer says, \"Mrs. Bryant is grateful to the individual\
+      \ who filed an online complaint exposing these acts of injustice.\"\nThe lawyer\
+      \ adds \"Sheriff Alex Villanueva assured \u2026 place to protect the family's\
+      \ privacy, and it is our understanding that he has worked hard to honor those\
+      \ requests.\"\nAs we reported, days after the crash top brass at the Dept.\n\
+      told deputies who took the photos to come to the substation and delete the photos,\
+      \ and if they did this no action would be taken.\nLaw enforcement sources tell\
+      \ \u2026 the Sheriff did not order an internal affairs investigation until the\
+      \ L.A. Times contacted the Dept.\nand inquired about the photos.\n\u2026 harshest\
+      \ possible discipline, and that their identities be brought to light, to ensure\
+      \ that the photos are not further disseminated. \""
+  GPT4o-mini:
+    Final Answer: mostly subjective
+    Reasoning: The article primarily reports on the emotional response of Vanessa
+      Bryant regarding the actions of L.A. County Sheriff's deputies who took unauthorized
+      photos of crash victims, including her late husband Kobe Bryant. It includes
+      direct quotes from her lawyer, which express opinions about the situation and
+      the need for accountability. While it does present factual information about
+      the events and actions taken by law enforcement, the focus on Vanessa's feelings
+      and the lawyer's statements introduces a subjective element. The article does
+      not maintain a completely neutral stance, as it emphasizes the emotional impact
+      on Vanessa and her desire for justice, which leans towards a subjective perspective.
+      Therefore, the article is not entirely objective, but it does contain factual
+      reporting alongside subjective opinions.
+  GPT4o:
+    Final Answer: mixed
+    Reasoning: The article primarily reports on the reactions and actions of Vanessa
+      Bryant and her lawyer regarding the incident of deputies taking photos of the
+      crash site. It includes factual information about the events, such as Vanessa's
+      request to the Sheriff's Department, the actions of the deputies, and the response
+      from the Sheriff's Department. However, the article also includes subjective
+      elements, such as the emotional state of Vanessa Bryant ('heartsick') and the
+      lawyer's statements about the importance of protecting the victims' dignity
+      and the acts being an 'injustice.' These elements introduce a subjective tone
+      to the article, as they reflect opinions and emotional responses rather than
+      just factual reporting. Additionally, the article includes some narrative elements
+      that could be seen as taking a stance against the deputies' actions, which adds
+      to the subjective nature. Overall, the article contains a mix of factual reporting
+      and subjective commentary.

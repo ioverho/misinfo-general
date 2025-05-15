@@ -1,0 +1,1 @@
+This folder contains various samples of articles with different levels of subjectivity, as annotated using ChatGPT4o(-mini). The articles contained can contain **toxic** and **hateful** language, and many will contain **misinformation**. The description of these articles or its publishers does *not* represent the views of the authors.

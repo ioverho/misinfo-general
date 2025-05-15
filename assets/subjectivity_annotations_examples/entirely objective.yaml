@@ -1,0 +1,830 @@
+- publisher:
+    name: greenmedinfo
+    label: Conspiracy-Pseudoscience
+    bias: null
+    factuality: Low
+  article:
+    title: Antimicrobial activity of different artemisia essential oil formulations.
+    content: "The extreme lipophilicity of essential oils (EOs) impedes the measurement\
+      \ of their biological actions in an aqueous environment.\nWe formulated oil\
+      \ in water type PickeringEO nanoemulsions (AEP) with surface-modified St\xF6\
+      ber silica nanoparticles (20 nm) as the stabilizing agent.\nThe antimicrobial\
+      \ activity of AEP and its effects on maturebiofilms were compared with those\
+      \ of Tween 80 stabilized emulsion (AET) and ethanolic solution (AEE) of theEO.\n\
+      The antimicrobial activity was evaluated by using the minimum inhibitory concentrations\
+      \ (MIC) and minimum effective concentrations (MEC) of the \u2026 cells beside\
+      \ growth inhibition, colony formation (CFU/mL), metabolic activity, viability,\
+      \ intracellular ATP/total protein (ATP/TP), along with reactive oxygen species\
+      \ (ROS) were also studied.EO nanoemulsion (AEP) showed significantly higher\
+      \ antimicrobial activity than AET and AEE.EO nanoemulsions (AEP) generated superoxide\
+      \ anion and peroxides-related oxidative stress, which might be the underlying\
+      \ mode of action of theEO.\nUnilamellar liposomes, as a cellular model, were\
+      \ used to examine the delivery efficacy of the EO of our tested formulations.\n\
+      \u2026 in the EO components'donation compared to AET and AEE.\nOur data suggest\
+      \ the superiority of the AEP formulation against microbial infections."
+  GPT4o-mini:
+    Final Answer: entirely objective
+    Reasoning: The article presents scientific findings regarding the antimicrobial
+      activity of different formulations of artemisia essential oils. It focuses on
+      reporting experimental results, methodologies, and comparisons between different
+      formulations without expressing personal opinions or biases. The language used
+      is technical and factual, typical of scientific literature, which aims to inform
+      rather than persuade. The conclusions drawn are based on data and experimental
+      results, which further supports its objectivity. Therefore, the article can
+      be classified as entirely objective.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article appears to be a scientific report on the antimicrobial
+      activity of different formulations of artemisia essential oil. It describes
+      the methods used to create the formulations, the experiments conducted to test
+      their antimicrobial activity, and the results obtained. The language used is
+      technical and focused on presenting data and findings, such as minimum inhibitory
+      concentrations and the effects on biofilms. There is no apparent opinion or
+      bias in the text; it is focused on reporting the results of scientific experiments.
+      Therefore, the article is objective in nature.
+- publisher:
+    name: sciencevibe
+    label: Conspiracy-Pseudoscience
+    bias: null
+    factuality: Mixed
+  article:
+    title: Scientists Demonstrate "Liquid Light" at Room Temperature for the First
+      Time
+    content: "Researchers from Italy and Canada have made liquid light at room temperatures\
+      \ for the first time.\nThe work paves the way for studying quantum hydrodynamics\
+      \ further and for future applications of this new type of matter in electronics\
+      \ devices.\nThanks to technological advances, scientists now have various ways\
+      \ of manipulating matter.\nOften times, these result in discovering new types\
+      \ of matter that posses unique properties - like the famous metallic hydrogen\
+      \ and the bizarre time crystal.\nThe discovery of such materials leads to a\
+      \ wide range of potential applications in electronics.\nOne of \u2026 , \"a\
+      \ strange matter which researchers from the CNR NANOTECH Institute of Nanotechnology\
+      \ in Italy and the Polytechnique Montr\xE9al in Canada recently formed at room\
+      \ temperature for the first time.\nLiquid light can be categorized as a superfluid,\
+      \ derived from the ability of particles to condense in a state known as a Bose-Einstein\
+      \ condensate.\nBasically, it's light that demonstrates liquid behavior, particularly\
+      \ the ability to flow out of its container.\nOrdinary light is thought to be\
+      \ composed of waves, but more recent findings \u2026 .\nSuperfluid Bose-Einstein\
+      \ condensates follow the rules of quantum physics instead of classical physics.\n\
+      Usually, they are only able to exist for fractions of a second in near absolute\
+      \ zero temperatures, but this work, published in the journal Nature Physics,\
+      \ proved that is not always necessary.\n\"The extraordinary observation in our\
+      \ work is that we have demonstrated that superfluidity can also occur at room-temperature,\
+      \ under ambient conditions, using light-matter particles called polaritons,\"\
+      \ lead researcher Daniele Sanvitto said in a press release.\n\u2026 130-nanometer-thick\
+      \ film of organic molecules between two very reflective mirrors, which they\
+      \ then exposed to a 35 femtosecond laser pulse blast.\nBecause of light's strong\
+      \ interaction with the organic molecules, a hybrid light-matter superfluid was\
+      \ formed.\n\"Under normal conditions, a fluid ripples and whirls around anything\
+      \ that interferes with its flow,\" St\xE9phane K\xE9na-Cohen, the Montreal team\
+      \ coordinator, explained in the press release.\n\"In a superfluid, this turbulence\
+      \ is suppressed around obstacles, causing the flow to continue on \u2026 research\
+      \ team looked to potential applications of this new form of matter.\nApart from\
+      \ providing a better foothold in the study of quantum hydrodynamics, the researchers\
+      \ said that it could also expand the study of room-temperature polariton devices\
+      \ - particularly in making super-conductive materials for electronics like LEDs,\
+      \ solar panels, and lasers.\n\"The fact that such an effect is observed under\
+      \ ambient conditions can spark an enormous amount of future work,\" the researchers\
+      \ wrote in the study, \"not only to study fundamental phenomena \u2026 , but\
+      \ also to conceive and design future photonic superfluid-based devices where\
+      \ losses are completely suppressed and new unexpected phenomena can be exploited.\n\
+      \""
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on a scientific discovery regarding the
+      creation of liquid light at room temperature, detailing the research conducted
+      by scientists from Italy and Canada. It presents factual information about the
+      experiment, the implications of the discovery, and quotes from researchers involved
+      in the study. The language used is technical and focused on the scientific process
+      and findings, without expressing personal opinions or biases. While it does
+      mention potential applications and future research directions, these are based
+      on the scientific findings rather than subjective interpretations. Therefore,
+      the article maintains a neutral and factual tone throughout, making it largely
+      objective.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article primarily reports on a scientific discovery regarding 'liquid
+      light' at room temperature. It provides factual information about the research,
+      including the institutions involved, the scientific principles behind the discovery,
+      and potential applications. The article includes quotes from researchers and
+      references to the scientific journal where the work was published. There is
+      no evident bias or opinion presented in the article; it focuses on the facts
+      of the discovery and its implications. Therefore, the article is objective in
+      nature.
+- publisher:
+    name: westernjournal
+    label: Questionable Source
+    bias: Extreme Right
+    factuality: Mixed
+  article:
+    title: US Deploys Nuclear-Capable Bombers to Within Striking Distance of Iran
+      - Reports
+    content: "As part of America's effort to be ready for any eventuality in the tense\
+      \ Persian Gulf region, the Pentagon has deployed six nuclear-capable B-52 bombers\
+      \ to an airbase within striking range of Iran, according to multiple reports.\
+      \ The six bombers will be based at Diego Garcia, a British-owned island base\
+      \ located in the Indian Ocean, according to the Washington Examiner. The location\
+      \ has military significance because it is located beyond the range of known\
+      \ Iranian missiles. Fox News reported that the B-52s departed from Barksdale\
+      \ Air Force Base in Louisiana. \u2026. \"For operational security, we are not\
+      \ discussing forces flowing into or out of the U.S. Central Command area of\
+      \ responsibility at this time,\" Cmdr. Rebecca Rebarich, a Pentagon spokeswoman,\
+      \ said. TRENDING: Comedian George Lopez on Iran's 'Bounty 'on Trump:' We 'll\
+      \ Do It for Half 'The B-52 first saw duty in the Cold War as a long-range strategic\
+      \ bomber capable of carrying nuclear payloads. The giant bomber then took on\
+      \ a new role in the delivery of air-launched cruise \u2026 Cold War and beyond.\
+      \ During America's war against the Taliban and the Islamic State, B-52s have\
+      \ been used sparingly to drop conventional bombs on suspected terrorist locations.\
+      \ The U.S. began building up its military forces in the region last year amid\
+      \ Iranian provocations in the Persian Gulf region. At that time, B-52s were\
+      \ dispatched to Qatar \u2026 \u2026 region, which is now estimated at 80,000,\
+      \ the Examiner reported. The most recent moves include 3,500 members of the\
+      \ 82nd Airborne who have been sent to Kuwait and 2,400 Marines of the 26th Marine\
+      \ Expeditionary Unit who are in the region aboard the USS Bataan. American forces\
+      \ in the region went to high alert Monday night over concerns that Iran or its\
+      \ proxies might launch a drone strike against U.S. sites, according to CNN,\
+      \ which quoted sources it did not name. \"There were indications that \u2026\
+      \ even closer, CNN quoted what it called a U.S. official as saying. It quoted\
+      \ a second official as saying that\" all Patriot batteries and forces in the\
+      \ area \"were on high alert against an\" imminent attack threat. \"In recent\
+      \ days, Iran has been observed to be moving military equipment, including drones\
+      \ and missiles, although the action is open to two interpretations. Iran could\
+      \ be positioning its assets for an attack or taking precautions in the event\
+      \ the U.S. attacks Iran. CNN reported \u2026 Iranian action in Iraq, Kuwait,\
+      \ Saudi Arabia, the United Arab Emirates and Jordan. On Monday, the U.S. Maritime\
+      \ Administration warned commercial shipping in the region that\" there remains\
+      \ the possibility of Iranian action against U.S. maritime interests in the region.\
+      \ \"We are committed to truth and accuracy in all of our journalism. Read our\
+      \ editorial standards \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on the deployment of U.S. nuclear-capable
+      bombers to the Persian Gulf region, providing factual information about military
+      movements and statements from Pentagon officials. It cites multiple sources,
+      including the Washington Examiner and CNN, and presents details about the strategic
+      significance of the deployment and the context of U.S.-Iran relations. While
+      it includes some quotes and interpretations regarding Iranian military actions,
+      the overall tone remains focused on reporting events rather than expressing
+      opinions or taking a stance. Therefore, the article can be classified as mostly
+      objective, as it presents factual information with minimal subjective interpretation.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article primarily reports on factual events, such as the deployment
+      of B-52 bombers to Diego Garcia, the military significance of the location,
+      and the current military tensions in the Persian Gulf region. It cites multiple
+      sources, including the Washington Examiner, Fox News, and CNN, and includes
+      statements from a Pentagon spokeswoman. The article does not appear to take
+      a stance for or against the deployment or the broader geopolitical situation.
+      It focuses on reporting the facts of the military movements and the context
+      of regional tensions. There is no evident opinion or subjective interpretation
+      presented in the article. Therefore, the article is objective in nature.
+- publisher:
+    name: theinquirer
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: Pennsylvania Woman Stashed Her Grandma's Body in Freezer for 15 Years to
+      Steal Her Social Security Checks
+    content: "According to a report by WHTM-TV in Harrisburg, Delahay's body had been\
+      \ found by two women who \u2026 Road home because they were interested in buying\
+      \ it from the bank after it foreclosed \u2026 told police they were looking\
+      \ around in an outbuilding when they discovered remains wrapped in \u2026 in\
+      \ a white chest freezer, the TV station reported."
+  GPT4o-mini:
+    Final Answer: entirely objective
+    Reasoning: The article presents a factual account of a crime involving a woman
+      who hid her grandmother's body in a freezer to continue receiving social security
+      checks. The title and body focus on reporting the discovery of the body and
+      the circumstances surrounding it, citing a news report as the source. There
+      is no evident opinion or subjective interpretation present in the text; it strictly
+      reports the events as they occurred. Therefore, the article can be classified
+      as objective, as it adheres to the principles of factual reporting without expressing
+      personal views or biases.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article appears to be reporting on a factual news event, specifically
+      the discovery of a body in a freezer and the associated criminal activity of
+      stealing social security checks. The language used is straightforward and focuses
+      on the details of the incident, such as the location, the people involved, and
+      the actions taken. There is no indication of opinion or bias in the text provided.
+      The article seems to be based on a report from a TV station, which suggests
+      it is relying on factual reporting. Therefore, the article is likely to be objective
+      in nature.
+- publisher:
+    name: themoscowtimes
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: Russia's Coronavirus Cases Jump By Nearly 10K in New One-Day Record
+    content: "President Vladimir Putin warned Tuesday that Russia had not yet reached\
+      \ the peak of coronavirus infections but said a \"phased exit\" from the country's\
+      \ lockdown measures could begin in two weeks.\nWith the number of cases rising\
+      \ by several thousand daily, Putin extended a non-working period across the\
+      \ country until May 11, telling officials to plan for a gradual lifting of quarantines\
+      \ after that.\nHe ordered the government to come up with a plan for a \"phased\
+      \ exit\" from quarantine regimes from May 12 \"depending on the epidemiological\
+      \ situation\" \u2026 also ordered officials to develop a new \"package of urgent\
+      \ measures to support the economy.\"\nWhile the country's industry has mobilized\
+      \ to manufacture more medical equipment and protective gear, shortages persist,\
+      \ Putin said.\nVirus testing has also expanded to a current level of around\
+      \ 150,000 tests per day, he said.\nPutin announced a month of non-working days\
+      \ at the start of April to encourage Russians to stay at home to prevent the\
+      \ spread of the virus.\nIndividual regions then imposed various quarantine measures\
+      \ \u2026 Moscow, which has been hardest-hit by the disease.\nSince March 30,\
+      \ all of Moscow's 12 million residents have been ordered to stay in their homes\
+      \ with few exceptions.\nCity officials have warned the capital \"will face difficult\
+      \ weeks\" ahead.\nRussia has carried out more than 3 million coronavirus tests,\
+      \ though there have been concerns about their reliability.\nWorldwide, the virus\
+      \ has infected over 3.4 million people."
+  GPT4o-mini:
+    Final Answer: entirely objective
+    Reasoning: The article primarily reports on factual information regarding the
+      rise in coronavirus cases in Russia, President Putin's statements, and the government's
+      actions in response to the pandemic. It includes specific data about testing
+      and the situation in Moscow, which are objective facts. While it does mention
+      the government's plans and the challenges faced, it does not express personal
+      opinions or subjective interpretations. The language used is neutral and focused
+      on reporting events rather than providing commentary or analysis. Therefore,
+      the article can be classified as 'entirely objective.'
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article primarily reports on factual information regarding the
+      situation in Russia concerning the coronavirus pandemic. It provides details
+      about the number of cases, government actions, and statements from President
+      Vladimir Putin. The article includes specific data such as the number of tests
+      conducted and the measures taken by the government, such as extending the non-working
+      period and planning for a phased exit from lockdown. While it mentions concerns
+      about the reliability of tests, it does not delve into opinion or analysis,
+      instead focusing on reporting the situation as it is. Therefore, the article
+      maintains a neutral tone and sticks to factual reporting without expressing
+      opinions or taking a stance.
+- publisher:
+    name: themanchestereveningnews
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: Manchester Crown Court to remain closed after staff test positive for Covid-19
+    content: "Manchester Crown Court will remain closed'until further notice 'after\
+      \ court and security staff tested positive for coronavirus.\nTwo members of\
+      \ HMCTS staff, and two members of security, who work at the Spinningfields court\
+      \ have contracted the virus.\nAnother two people, whose role within the court\
+      \ has not been identified, have also tested positive.\nThe court building was\
+      \ forced to close for a deep clean last Thursday (August 6) morning, but reopened\
+      \ later that afternoon.\nBut on Monday, the court had to shut again, after further\
+      \ \u2026 virus over the weekend.\nAll have provided details of their close contacts.\n\
+      An update to barristers provided by the Northern Circuit on Monday night said\
+      \ the court was awaiting advice from Public Health England.\nLisa Roberts QC\
+      \ said Crown Square Crown Court would remain closed until it was deemed safe\
+      \ and appropriate for staff to return.\n\"I have just spoken to our Presider,\
+      \ Mr Justice Dove.\nHe and HMCTS have been in close discussion all day, \"Ms\
+      \ Roberts said.\n\"They have been \u2026 of the situation.\nPHE will provide\
+      \ advice as to what next steps should be taken and by whom. \"\nThe advice from\
+      \ Public Health is expected to be delivered to senior court staff today (Tuesday).\n\
+      The court is expected to reopen when bosses have the right number of staff on\
+      \ site.\nMs Roberts said of those who had tested positive for Covid-19, two\
+      \ are court staff, and two are security staff.\n\"These are in addition to the\
+      \ individual who tested positive last week \u2026 do not know where these people\
+      \ have been deployed within the building or with whom they have, or are likely\
+      \ to have, come into contact.\"\nMs Roberts said as much Crown Square work as\
+      \ possible will be accommodated at neighbouring Minshull Street, Bolton Crown\
+      \ Court, or remotely.\nA HM Courts and Tribunals Service spokesperson said:\
+      \ \"Manchester Crown Court has been deep cleaned in line with public health\
+      \ guidance but will remain closed this week while a number of staff and contractors\
+      \ self-isolate."
+  GPT4o-mini:
+    Final Answer: entirely objective
+    Reasoning: The article primarily reports on the closure of Manchester Crown Court
+      due to staff testing positive for Covid-19. It provides factual information
+      about the situation, including the number of staff affected, the actions taken
+      (like deep cleaning), and statements from relevant officials. There are no opinions
+      or subjective interpretations present in the text; it strictly focuses on the
+      events and responses related to the court's closure. Therefore, the article
+      can be classified as entirely objective.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article provides factual information about the closure of Manchester
+      Crown Court due to staff testing positive for Covid-19. It reports on the number
+      of cases, the actions taken by the court, and statements from officials. The
+      language is neutral and focuses on reporting the situation without expressing
+      opinions or taking a stance. The article includes quotes from officials and
+      describes the measures being taken, such as deep cleaning and awaiting advice
+      from Public Health England. There is no subjective language or opinionated content
+      present in the article.
+- publisher:
+    name: birminghammail
+    label: Left-Center
+    bias: Right-Center
+    factuality: Mostly Factual
+  article:
+    title: Madeleine McCann cops announce huge breakthrough as suspect identified
+    content: "A German prisoner has been identified as a suspect in the disappearance\
+      \ of Madeleine McCann, cops have tonight announced. The Met Police, in an announcement\
+      \ to journalists on Wednesday, revealed they would not name the 43-year-old.\
+      \ But cops say he is known to have been in and around Praia da Luz on the Algarve\
+      \ coast at the time Madeleine vanished in 2007. Maddie disappeared while on\
+      \ holiday with her parents, Kate and Gerry McCann, and her twin siblings Sean\
+      \ and Amelie, on May 3. A half-hour phone call was made \u2026 hour before the\
+      \ tot is believed to have gone missing. The suspect, who is in prison in Germany\
+      \ for an unrelated matter, has been linked to an early 1980s camper van- with\
+      \ a white upper body and yellow skirting, registered in Portugal- which was\
+      \ pictured in the Algarve in 2007. Scotland Yard said he was driving the vehicle\
+      \ in the Praia da Luz area in the days before Madeleine's disappearance and\
+      \ is believed to have been living in it for days or weeks before and \u2026\
+      \ been linked to a 1993 Jaguar XJR6 with a German number plate seen in Praia\
+      \ da Luz and surrounding areas in 2006 and 2007. The day after Madeleine went\
+      \ missing, the suspect got the car re-registered in Germany under someone else's\
+      \ name, although it is believed the vehicle was still in Portugal. Both vehicles\
+      \ have been \u2026 have been used by the suspect and received a call from \u2026\
+      \ 916 510 683, while in the Praia da Luz area, starting at 7.32pm and ending\
+      \ at 8.02pm on the night of May 3 2007. Madeleine is believed to have disappeared\
+      \ between 9.10pm and 10pm that evening. The caller, who is not thought to have\
+      \ been in the Praia da Luz area, is not being treated as a suspect, but is said\
+      \ to be a \"key witness\" in the case. \"Any information in relation to these\
+      \ mobile numbers during the spring and summer \u2026 investigation,\" said Mr\
+      \ Cranwell. \"Some people will know the man we are describing today, the suspect\
+      \ in our investigation. I'm appealing to you directly.\" You may know, you may\
+      \ be aware of some of the things he has done. He may have confided in you about\
+      \ the disappearance of Madeleine. \"More than 13 years have passed and your\
+      \ loyalties may have changed.\" This individual is in prison and we are conscious\
+      \ that some people may have been concerned \u2026 Now is the time to come forward.\
+      \ \"I'm appealing to you to contact us, or the German authorities or the Portuguese\
+      \ authorities.\" I should be very, very clear on this- while this male is a\
+      \ suspect, we retain an open mind as to his involvement. \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on a recent development in the Madeleine
+      McCann case, specifically the identification of a suspect by the police. It
+      presents factual information about the suspect, the timeline of events, and
+      the police's appeal for information from the public. The language used is straightforward
+      and focuses on the details of the investigation without inserting personal opinions
+      or emotional language. However, there are slight subjective elements, such as
+      the police's appeal to the public, which could be seen as an attempt to influence
+      public perception or action. Overall, the article maintains a neutral tone and
+      emphasizes factual reporting, making it lean towards being objective, but with
+      minor subjective elements due to the nature of the police appeal. Therefore,
+      I would classify it as mostly objective.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article reports on a factual development in the Madeleine McCann
+      case, specifically the identification of a suspect by the police. It provides
+      details about the suspect, the vehicles involved, and the timeline of events.
+      The language used is neutral and focuses on presenting information from the
+      police announcement. There is no opinion or editorializing present in the text.
+      The article sticks to reporting facts and statements from authorities, which
+      aligns with the characteristics of an objective article.
+- publisher:
+    name: weareanonymous
+    label: Conspiracy-Pseudoscience
+    bias: null
+    factuality: Very Low
+  article:
+    title: Pentagon Releases 3 UFO Videos Taken By US Navy Pilots
+    content: "The US Department of Defense has released three declassified videos\
+      \ of \"unexplained aerial phenomena\". The US Department of Defense today officially\
+      \ released three short videos of \"unidentified aerial phenomena\"- aka unidentified\
+      \ flying objects- that it still apparently doesn't have an explanation for.\
+      \ The footage has already been widely circulated online, thanks to Blink-182\
+      \ guitarist Tom DeLonge: he is on a mission to obtain and publicly distribute\
+      \ UFO sightings via his To The Stars organization, and revealed the trio of\
+      \ videos between December 2017 and March 2018. \u2026 material online, which\
+      \ shows Navy pilots observing strange stuff mid-flight. The Pentagon said it\
+      \ released the videos \"to clear up any misconceptions by the public on whether\
+      \ or not the footage that has been circulating was real, or whether or not there\
+      \ is more to the videos.\" The first video, code-named FLIR presumably after\
+      \ the thermal-imaging tech involved, shows an encounter in 2004 off the coast\
+      \ of Mexico. A Navy fighter recorded what the commanding officer of Strike Fighter\
+      \ Squadron 41, David Fravor, \u2026 object hovering above the water, \"with\
+      \ no wings nor rotor wash. His aircraft circled the object, which in turn circled\
+      \ him, Fravor claimed, but when he approached the object it headed away at\"\
+      \ supersonic \"speeds. Here it is: The other two pieces of footage, codenamed\
+      \ GOFAST and GIMBAL, are \u2026 , spotted moving at high speeds against 120\
+      \ knot winds and seemingly rotating in flight. One of the pilots who witnessed\
+      \ the event, Lieutenant Ryan Graves, told The New York Times the object would\
+      \ skip between sea level and 30,000 feet at \"hypersonic speeds.\" \"After a\
+      \ thorough review, the department has \u2026 unclassified videos does not reveal\
+      \ any sensitive capabilities or systems, and does not impinge on any subsequent\
+      \ investigations of military air space incursions by unidentified aerial phenomena,\"\
+      \ the Pentagon said today. \"These aircraft- we 'll call them aircraft- are\
+      \ displaying characteristics that are not currently within the US inventory\
+      \ nor in any foreign inventory that we are aware of,\" Elizondo said of objects\
+      \ they researched. He says he resigned from the Defense Department in 2017 in\
+      \ protest over the secrecy surrounding the \u2026 it. \"If pilots at Oceana\
+      \ or elsewhere are reporting flight hazards that interfere with training or\
+      \ put them at risk, then Senator Warner wants answers. It doesn't matter if\
+      \ it's weather balloons, little green men, or something else entirely- we can't\
+      \ ask our pilots to put their lives at risk unnecessarily,\" Rachel Cohen, spokeswoman\
+      \ for Democratic Virginia Sen. Mark Warner, told CNN at the time. The aerial\
+      \ phenomena observed in the videos remain characterized as \u2026. Likely explanations\
+      \ for the strange blobs can be found here \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on the release of declassified UFO videos
+      by the Pentagon, providing factual information about the videos, the context
+      of their release, and statements from officials. It includes quotes from military
+      personnel and mentions the involvement of Tom DeLonge, which adds context but
+      does not introduce subjective opinions. The language used is mostly neutral,
+      focusing on the facts of the situation rather than expressing personal opinions
+      or biases. However, there are some elements that could be interpreted as subjective,
+      such as the mention of the videos being 'unexplained' and the reference to the
+      characteristics of the objects observed. Overall, the article maintains a factual
+      reporting style with minimal subjective interpretation, leaning towards objectivity.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article reports on the release of three declassified videos by
+      the US Department of Defense, showing unidentified aerial phenomena. It provides
+      factual information about the videos, including details about the encounters
+      and statements from officials and witnesses. The article does not take a stance
+      on the nature of the phenomena, instead focusing on the facts surrounding the
+      release and the content of the videos. It includes quotes from military personnel
+      and government officials, and mentions the involvement of Tom DeLonge in publicizing
+      the videos. The article does not express opinions or speculate on the nature
+      of the phenomena, making it objective in its reporting.
+- publisher:
+    name: organicfacts
+    label: Conspiracy-Pseudoscience
+    bias: null
+    factuality: Mixed
+  article:
+    title: Can You Freeze Celery
+    content: "to flavor your soup or stock. The celery then probably gets shoved to\
+      \ the crisper section in your and could likely get spoilt soon. Instead, you\
+      \ can freeze celery to save money as well as your time. This also works if you\
+      \ got lucky with seasonal celery at the's market and picked up several bundles\
+      \ for and If you have bought fresh celery from the supermarket, most times you\
+      \ would need just a stalk ofto flavor your soup or stock. The celery then probably\
+      \ gets shoved to the crisper section in yourand \u2026, you can freeze celery\
+      \ to save money as well as your time. This also works if you got lucky with\
+      \ seasonal celery at the's market and picked up several bundles forand celery\
+      \ juice. So, can you freeze celery, and what is the best way to do it? Here\
+      \ are the details., you can also freeze individual stalks. The only catch here\
+      \ is that celery stalks won't have the same crisp texture as the fresh ones.\
+      \ So frozen celery can \u2026 or as a snack with You can easily freeze raw celery.\
+      \ If you plan to use it for soups, stews, casseroles, and stocks, it is best\
+      \ to freeze diced celery. You can directly add it to the hot dish without thawing\
+      \ it. For healthy smoothies and green, you can also freeze individual stalks.\
+      \ The only \u2026 Wash the sticks thoroughly under tap water. Make sure you\
+      \ separate the stalks and clean so that all the dirt is removed properly. Blanch\
+      \ the celery: Most people skip this step as they intend to use celery in a couple\
+      \ of months. But you \u2026 for longer. Just make sure to pat the celery dry\
+      \ with paper towels after you blanch it. Flash freeze: Spread the stalks on\
+      \ a baking sheet and freeze for a couple of hours. If you are freezing diced\
+      \ celery, chop them and spread the pieces on a baking sheet, taking care not\
+      \ to overcrowd them. Pack and store: Now remove the stalks or diced pieces and\
+      \ add them to a zip lock bag or a vacuum seal pouch and store in a freezer.\
+      \ You \u2026 date on which you store the celery to ensure that you do not use\
+      \ it after a long time. You can also freeze celery leaves separately- make them\
+      \ into a shape of a log and freeze. This way, it will be easy for you to cut\
+      \ off how much you need. They make an excellent flavoring in soups. How Long\
+      \ Does Frozen Celery Keep in the Freezer? Frozen celery can keep up to two months\
+      \ if the celery has not been blanched. If you blanch \u2026 to 8 to 12 months.\
+      \ Here are our recipe recommendations if you want to use frozen celery \u2026"
+  GPT4o-mini:
+    Final Answer: entirely objective
+    Reasoning: The article primarily provides factual information about freezing celery,
+      including methods and tips for doing so. It does not express personal opinions
+      or subjective views but rather focuses on practical advice and instructions.
+      The language used is straightforward and instructional, which aligns with an
+      objective reporting style. There are no indications of bias or emotional language
+      that would suggest a subjective stance. Therefore, the article can be classified
+      as entirely objective.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article provides practical advice on how to freeze celery, including
+      detailed steps and tips for doing so effectively. It does not express opinions
+      or take a stance on any controversial topic. The language is instructional and
+      factual, focusing on the process of freezing celery and its benefits. There
+      is no subjective language or opinionated content present in the article. Therefore,
+      the article is objective in nature.
+- publisher:
+    name: pbs
+    label: Left-Center
+    bias: Left-Center
+    factuality: Mostly Factual
+  article:
+    title: Duncan Shin hopes journey through Minnesota, WHL leads to NHL
+    content: "TEMPE- Sidney Crosby, Jonathan Toews and Jack Johnson all had something\
+      \ in common before becoming hockey superstars. The trio are alumni of the prestigious\
+      \ Shattuck-Saint Mary's school and hockey program in Minnesota. Duncan Shin,\
+      \ a 15-year-old from Chandler, Arizona, attends the elite school where those\
+      \ players once roamed and is following in their skates. The dream of every young\
+      \ hockey player is to make it to the National Hockey League. Shin's dream moved\
+      \ a step closer on March 25, when he was selected by the Vancouver \u2026 with\
+      \ the 38th pick in the inaugural WHL U.S. Prospects draft. \"We were thrilled\
+      \ that he was still there in the second round,\" said Daryl Anning, the scouting\
+      \ director for the Vancouver Giants. \"I was just incredibly honored as there\
+      \ is so much talent in the western region of the United States,\" Shin said.\
+      \ Shin learned to skate around the age of 4, picked up a stick a few years later\
+      \ and, despite Arizona's burgeoning hockey culture, was \u2026 move halfway\
+      \ across the country to take his skills to the next level. \"I just wanted to\
+      \ go to the best possible place for my development and Shattuck-Saint Mary's\
+      \ is universally known as a very elite hockey school not only for their hockey\
+      \ but their academics as well,\" Shin said. Shattuck-Saint Mary's has a strong\
+      \ tradition of \u2026 Under 17 and 18 teams before playing at Boston University\
+      \ this past winter. \"My strongest attributes I contribute to my team is my\
+      \ passing abilities and my abilities to set up other players for quality scoring\
+      \ chances,\" Shin said. Shin has yet to sign a contract with the Vancouver Giants\
+      \ organization, He and his family are weighing all of his options to best suit\
+      \ his development moving forward. \"The college \u2026 junior's route are all\
+      \ viable options to get to my ultimate goal in the NHL,\" Shin said. \"We take\
+      \ it season by season and year by year. I'm grateful for the Vancouver Giants\
+      \ that I secured a viable option en route to the NHL.\" Playing in an elite\
+      \ program like Shattuck-Saint Mary's, Shin has the eyes of scouts and will return\
+      \ for another season before potentially moving onto the Vancouver Giants organization\
+      \ or pick a different route that would help \u2026 as a student. \"Duncan and\
+      \ his family are keeping their options open,\" Anning said. \"He's got all kinds\
+      \ of options at this point. They are viewing him as a 15-year-old kid that's\
+      \ got a number of options available to him and a bright future. They want to\
+      \ make sure they pick the right path for him and I'm sure any decision they\
+      \ make in the near future will be well thought out. \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily focuses on the journey of Duncan Shin, a young
+      hockey player, and his aspirations to reach the NHL. It includes factual information
+      about his background, his current situation, and quotes from relevant individuals
+      such as scouts and Shin himself. While it does present some opinions from Shin
+      and others regarding his development and options, these are framed within the
+      context of his experiences and aspirations rather than as subjective commentary.
+      The overall tone remains neutral, emphasizing facts about his achievements and
+      future possibilities without taking a strong stance for or against any particular
+      viewpoint. Therefore, the article can be classified as mostly objective, as
+      it leans towards factual reporting with minimal subjective interpretation.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article primarily reports on the journey and aspirations of a young
+      hockey player, Duncan Shin, and his potential path to the NHL. It provides factual
+      information about his background, his selection in the WHL U.S. Prospects draft,
+      and quotes from Shin and a scouting director. The article does not express opinions
+      or take a stance on any controversial issues. It focuses on reporting facts
+      about Shin's career and future options, making it objective in nature.
+- publisher:
+    name: varietymagazine
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: R Kelly's request for early release due to coronavirus concerns denied
+      by judge
+    content: "A Brooklyn judge on Tuesday denied R. Kelly's request for release due\
+      \ to the coronavirus pandemic, finding that he is not among the inmates most\
+      \ endangered by the disease.\nKelly is being held at the Chicago Metropolitan\
+      \ Correctional Center, where he is awaiting trial on racketeering, sexual misconduct\
+      \ and other charges in three jurisdictions.\nOn March 26, his attorneys asked\
+      \ that he be released, citing his age, 53, and a recent surgery as risk factors\
+      \ that made him susceptible to a severe bout of the illness.\nOn Tuesday \u2026\
+      \ the motion, finding that he remains a flight risk.\n\"The defendant is currently\
+      \ in custody because of the risks that he will flee or attempt to obstruct,\
+      \ threaten or intimidate prospective witnesses,\" Donnelly wrote.\n\"The defendant\
+      \ has not explained how those risks have changed.\n\"Kelly's attorneys had asked\
+      \ that he be placed on home confinement at the Roosevelt Collections Loft apartment\
+      \ complex in Chicago.\nThe attorneys had also complained that the prison's new\
+      \ restrictions to mitigate the spread of \u2026 to meet with Kelly and prepare\
+      \ for trial.\nKelly's attorneys, Steve Greenberg and Tom Farinella, also cited\
+      \ a long list of other defendants who have been granted release due to the pandemic.\n\
+      \"This is not a request to open the doors and allow all inmates out, this is\
+      \ a specific request concerning a specific inmate,\" they argued.\nIn its opposition,\
+      \ the government noted that MCC Chicago inmates are afforded free soap, and\
+      \ have the option to buy more soap from \u2026 MCC Chicago can not be a basis\
+      \ for being released, \"prosecutors wrote."
+  GPT4o-mini:
+    Final Answer: entirely objective
+    Reasoning: The article presents factual information regarding R. Kelly's request
+      for early release and the judge's decision. It includes details about the reasons
+      for the request, the judge's findings, and the arguments made by both the defense
+      and the prosecution. There are no apparent opinions or subjective interpretations;
+      the article focuses on reporting the events and statements made in the court
+      ruling. Therefore, it maintains a neutral stance and adheres to the principles
+      of objective reporting.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article reports on a legal decision regarding R. Kelly's request
+      for early release from prison due to coronavirus concerns. It provides factual
+      information about the judge's decision, the reasons for the denial, and the
+      arguments presented by both R. Kelly's attorneys and the government. The article
+      does not express any opinions or take a stance on whether the decision was right
+      or wrong. It sticks to reporting the facts of the case, the legal arguments,
+      and the judge's ruling. Therefore, the article is objective in nature.
+- publisher:
+    name: truepundit
+    label: Conspiracy-Pseudoscience
+    bias: Extreme Right
+    factuality: Low
+  article:
+    title: Texas Democrat Embraced by Beto and Top 2020 Candidates Loses in Landslide
+    content: "Democrat Eliz Markowitz suffered a major loss in Tuesday's special runoff\
+      \ election for Texas House District 28, despite a flood of support from liberal\
+      \ groups and top Democrats like Beto O'Rourke.\nRepublican Gary Gates beat Markowitz\
+      \ by 16 points in the suburban Houston race Democrats hoped would be a bellwether\
+      \ for flipping the state House to Democratic control.\nMarkowitz badly underperformed\
+      \ O'Rourke, who lost the district by three points in 2018 to Sen. Ted Cruz (R.,\
+      \ Texas), and even Hillary Clinton, who lost it by \u2026 Trump.\nO'Rourke campaigned\
+      \ heavily for Markowitz, making it his \"second home\" over the past month.\n\
+      The race was an early test of his political strength following his disappointing\
+      \ 2020 presidential campaign, which he suspended in November.\nHis new political\
+      \ action committee, Powered by People, founded in an effort to turn the Texas\
+      \ legislature blue, brought 1,000 people to the district to help in the contest.\n\
+      Outside liberal groups such as Planned Parenthood of Greater Texas, Moms Demand\
+      \ Action, \u2026 and poured hundreds of thousands of dollars into the race.\n\
+      - READ MORE"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article presents factual information about a political election,
+      including the candidates, the outcome, and the context surrounding the election.
+      It reports on the loss of Democrat Eliz Markowitz and mentions the support she
+      received from prominent Democrats and liberal groups. The language used is straightforward
+      and focuses on the events that occurred without expressing personal opinions
+      or biases. However, the article does mention the implications of the election
+      results for the Democratic Party, which could suggest a slight leaning towards
+      a narrative about the political landscape in Texas. Overall, while there are
+      elements that could be interpreted as subjective, the primary focus remains
+      on reporting the facts of the election, making it mostly objective.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article reports on the outcome of a political race in Texas, providing
+      factual information about the candidates, the election results, and the involvement
+      of various political figures and groups. It mentions the support Eliz Markowitz
+      received from Beto O'Rourke and other liberal groups, as well as the efforts
+      made by O'Rourke's political action committee. The article does not appear to
+      take a stance for or against any of the candidates or political groups involved.
+      It focuses on the facts of the election outcome and the context surrounding
+      it, such as the comparison to previous election results and the involvement
+      of outside groups. There is no evident opinion or bias in the language used,
+      suggesting that the article is objective in nature.
+- publisher:
+    name: themoscowtimes
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: Russians Face Trial for Iron-Bar Attack on English Fan
+    content: "Mikhail Ivkine, 34, and Pavel Kosov, 33, risk up to 15 years behind\
+      \ bars if found guilty of the attack on Andrew Bache.\nThe trial is expected\
+      \ to take place before March 2021.\nTwo Russians will face trial in France over\
+      \ a vicious assault that left an English fan partially paralyzed during Euro\
+      \ 2016, a judicial source said on Wednesday.\nStreet battles ahead of the Russia-England\
+      \ match in the French port city of Marseille on June 11, 2016, left 35 people\
+      \ injured, including two England fans who suffered serious \u2026 fifties, was\
+      \ left paralyzed on the left side of his body after being hit around the head\
+      \ with an iron bar.\nIvkine and Kosov, both from Moscow, do not contest hitting\
+      \ Bache, but they claim they were provoked by English supporters.\nThey also\
+      \ claim they were not to blame for the extent of the victim's injuries.\nThe\
+      \ pair have been held in custody since 2018 after being tracked on social media\
+      \ by a joint French and British investigation.\nKosov was arrested in Cologne\
+      \ and \u2026 their way to attend a match in Spain between Spartak Moscow and\
+      \ Athletic Bilbao."
+  GPT4o-mini:
+    Final Answer: entirely objective
+    Reasoning: The article presents factual information about a trial involving two
+      Russians accused of assaulting an English fan. It includes details about the
+      charges, the potential consequences, and the context of the incident. The language
+      used is straightforward and does not express personal opinions or biases. The
+      article focuses on reporting the events and the legal proceedings without taking
+      a stance for or against any party involved. Therefore, it can be classified
+      as objective.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article provides factual information about a legal case involving
+      two Russians who are facing trial for an attack on an English fan. It reports
+      on the potential legal consequences, the background of the incident, and the
+      claims made by the defendants. The language used is neutral and focuses on presenting
+      the facts of the case, such as the details of the attack, the legal proceedings,
+      and the statements from the defendants. There is no indication of opinion or
+      bias in the reporting, as it does not take a stance on the guilt or innocence
+      of the accused or the justification of their actions. Therefore, the article
+      is objective in nature.
+- publisher:
+    name: washingtonexaminer
+    label: Right
+    bias: Right
+    factuality: Mixed
+  article:
+    title: FISA court bans officials involved in Carter Page wiretaps from seeking
+      surveillance
+    content: "Justice Department and FBI officials under review for their role in\
+      \ the flawed wiretaps of former Trump campaign associate Carter Page are banned\
+      \ from having any involvement in the pursuit of electronic monitoring through\
+      \ the Foreign Intelligence Surveillance Court. Judge James Boasberg issued a\
+      \ 19-page opinion on Wednesday, ordering that \"no DOJ or FBI personnel under\
+      \ disciplinary or criminal review relating to their work on FISA applications\
+      \ shall participate in drafting, verifying, reviewing, or submitting such applications\
+      \ to the Court.\" \"Any finding of misconduct relating to the handling of FISA\
+      \ applications shall \u2026\" the U.S. District Court judge added. DOJ Inspector\
+      \ General Michael Horowitz released a report in December that criticized the\
+      \ DOJ and the FBI for at least 17 \"significant errors and omissions\" related\
+      \ to the FISA surveillance of Page, who was suspected of being an agent for\
+      \ Russia but was never charged with wrongdoing, and for its heavy reliance on\
+      \ British ex-spy Christopher Steele's salacious and unverified dossier. Steele\
+      \ put his research together in 2016 at the behest of the opposition research\
+      \ firm Fusion GPS \u2026 's presidential campaign and the Democratic National\
+      \ Committee through the Perkins Coie law firm. All the FBI employees mentioned\
+      \ in the FISA report were referred to the Office of Professional Responsibility,\
+      \ which is the bureau's disciplinary arm, FBI Director Christopher Wray told\
+      \ lawmakers last month. Boasberg said, \"The frequency and seriousness\" of\
+      \ \u2026 information that might reasonably call into question the accuracy of\
+      \ the information or the reasonableness of any FBI assessment in the application,\
+      \ or otherwise raise \u2026 also ordered the FBI to provide it with a copy of\
+      \ its updated confidential human source checklist, a description of the specific\
+      \ responsibilities that FBI Office of the General Counsel lawyers have during\
+      \ the FISA process, and a report on any other proposed FISA reforms by later\
+      \ this month. The judge noted two controversies were advancing on a \"separate\
+      \ track\" and were not addressed in much detail in the Wednesday opinion. Those\
+      \ controversies comprise scrutiny of all the filings touched by FBI lawyer Kevin\
+      \ Clinsemith and a \u2026 of the intelligence gleaned through the Page FISA\
+      \ monitoring. Clinesmith, who altered a document in FISA filings to say Page\
+      \ was \"not a source\" for the CIA when he was, is the only person publicly\
+      \ known to be under criminal investigation by U.S. Attorney John Durham, who\
+      \ is conducting a review of the Russia investigation. The Justice Department\
+      \ said at least the final two of four Page FISA warrants were \"not valid\"\
+      \ and that the FBI sought to \"sequester\" the information obtained \u2026 the\
+      \ behavior of some in the DOJ and the FBI was \"utterly unacceptable\" and agreed\
+      \ that there had been at least some illegal surveillance. He said he was working\
+      \ to \"claw back\" the FISA information \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article presents factual information regarding a ruling by the
+      FISA court concerning the involvement of DOJ and FBI officials in the wiretaps
+      of Carter Page. It includes direct quotes from the judge and references to reports
+      by the DOJ Inspector General, which adds to its factual basis. The language
+      used is primarily neutral, focusing on the details of the court's decision and
+      the implications for the officials involved. While it mentions controversies
+      and criticisms related to the actions of the DOJ and FBI, it does not express
+      personal opinions or advocate for a particular viewpoint. Therefore, the article
+      maintains a largely objective tone, as it reports on legal proceedings and findings
+      without inserting subjective commentary or bias.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article reports on a decision by the FISA court to ban certain
+      officials from involvement in surveillance applications due to their roles in
+      flawed wiretaps. It provides factual information about the court's decision,
+      the background of the Carter Page surveillance, and the findings of the DOJ
+      Inspector General's report. The article includes quotes from Judge Boasberg
+      and mentions the involvement of various officials and entities. The language
+      used is neutral and focuses on reporting the facts of the case, the court's
+      decision, and the context surrounding it. There is no evident opinion or bias
+      in the reporting, making it an objective piece of journalism.
+- publisher:
+    name: varietymagazine
+    label: Left-Center
+    bias: Left-Center
+    factuality: High
+  article:
+    title: Cannes Film Festival not taking place in June, organizers exploring options
+    content: "The Cannes Film Festival won't take place in June, after all, due to\
+      \ the coronavirus pandemic, but organizers continue to explore different options\
+      \ for 2020. \"Following the French President's statement, on Monday, April 13th,\
+      \ we acknowledged that the postponement of the 73rd International Cannes Film\
+      \ Festival, initially considered for the end of June to the beginning of July,\
+      \ is no longer an option,\" the festival said on Tuesday. \"It is clearly difficult\
+      \ to assume that the Festival de Cannes could be held \u2026\" Nevertheless,\
+      \ since yesterday evening we have started many discussions with professionals,\
+      \ in France and abroad, \"they added.\" They agree that the Festival de Cannes,\
+      \ an essential pillar for the film industry, must explore all contingencies\
+      \ allowing to support the year of Cinema by making Cannes 2020 real, in a way\
+      \ or another. \"CAN AMC THEATRES AFFORD TO FILE FOR BANKRUPTCY DURING THE CORONAVIRUS\
+      \ PANDEMIC? Since announcing on March 19 that the 2020 edition would not be\
+      \ held in May, the \u2026 plan to postpone the event until the end of June through\
+      \ the beginning of July. But the continued rise of casualties linked to COVID-19\
+      \ in France and the rest of the world has made it impossible to move ahead with\
+      \ a summer event. France President Emmanuel Macron said in a televised interview\
+      \ on Monday evening that festivals would be banned \u2026 , have yet to make\
+      \ announcements about their \u2026, expected to run alongside the festival as\
+      \ it always does, also has to decide whether it will take place this year as\
+      \ a digital event in mid-June/ late July. Since its first edition after World\
+      \ War II in 1946, the Cannes Film Festival has only been canceled once in 1968\
+      \ during the nationwide student riots, in which French New Wave icons Fran\xE7\
+      ois Truffaut and Jean-Luc Godard also took part. For the worldwide film community,\
+      \ the cancellation of the Cannes Festival would undoubtedly have a far-reaching\
+      \ impact, \u2026 which the Cannes film market is the year's key event for dealmaking.\
+      \ Last year's film market reported a record 12,527 participants. CANCEL OUTRIGHT\
+      \ OR GO DIGITAL? HOW ONE EUROPEAN FILM FESTIVAL MADE THE CALL Besides its importance\
+      \ to filmmakers, producers, distributors, and sales and talent agents, Cannes\
+      \ also plays a crucial role in positioning foreign-language movies commercially,\
+      \ as well as in the festival circuit and in major awards ceremonies, including\
+      \ Oscars, Golden Globes, BAFTAs, the European Film \u2026 and France's Cesar\
+      \ Awards, among others. Last year, for instance, three of the five foreign-language\
+      \ films nominated in the international feature film category at the Oscars world\
+      \ premiered at Cannes. \"Parasite\" went on to win four Academy Awards and made\
+      \ history as the first foreign-language film to nab best picture \u2026"
+  GPT4o-mini:
+    Final Answer: mostly objective
+    Reasoning: The article primarily reports on the cancellation of the Cannes Film
+      Festival due to the coronavirus pandemic, providing factual information about
+      the event's status and the statements from organizers. It includes quotes from
+      the festival's organizers and mentions the implications of the cancellation
+      for the film industry. While there are some opinions expressed about the importance
+      of the festival, the overall tone remains focused on reporting the facts surrounding
+      the event's cancellation and the ongoing discussions about alternatives. Therefore,
+      the article maintains a mostly objective stance, as it emphasizes factual reporting
+      over personal opinions or biases.
+  GPT4o:
+    Final Answer: entirely objective
+    Reasoning: The article primarily reports on the factual situation regarding the
+      Cannes Film Festival's postponement due to the coronavirus pandemic. It includes
+      statements from the festival organizers and the French President, which are
+      factual and verifiable. The article also provides historical context about the
+      festival and its significance, which is informative rather than opinionated.
+      There is no evident bias or subjective opinion presented in the article. The
+      focus is on reporting the news and the implications of the festival's postponement,
+      making it objective in nature.
