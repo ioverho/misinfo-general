@@ -1,0 +1,31 @@
+defaults:
+  - _self_
+  - global@_global_: default
+  - override hydra/hydra_logging: none
+  - override hydra/job_logging: none
+
+dataset_loc: "${data_dir}/hf/"
+metadata_db_loc: "${data_dir}/db/misinformation_benchmark_metadata.db"
+output_loc: "${data_dir}/llm_reliability_annotations/${model.provider}/"
+
+seed: 942
+
+max_publisher_topic_occurence: 1
+min_publisher_topic_occurence: 1
+
+k_shot: 0
+context_length: 512
+
+num_proc: null
+
+model:
+  provider: "deepseek"
+  model: "deepseek-reasoner"
+  max_tokens: 1024
+  thinking_budget: 1024
+  include_thoughts: false
+
+batch_size: 128
+batch_initial_index: 0
+batch_terminal_index: null
+dataset_limit: null

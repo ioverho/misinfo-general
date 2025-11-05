@@ -1,0 +1,25 @@
+name: pymc
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pip
+  - numpy
+  - ipykernel
+  - jupyter
+  - notebook
+  - pandas
+  - matplotlib
+  - scipy
+  - scikit-learn
+  - ruff
+  - pymc>=5
+  - arviz
+  - pip:
+      - PyYaml
+      - duckdb>=1.0.0
+      - python-dotenv
+      - statsmodels
+      - tabulate
+      - seaborn
+      - labelbox
